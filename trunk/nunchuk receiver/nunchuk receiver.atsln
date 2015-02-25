@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "nunchuk receiver", "nunchuk receiver\nunchuk receiver.cppproj", "{2B422E96-34BF-4426-89D8-305D4AB37D9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B422E96-34BF-4426-89D8-305D4AB37D9E}.Debug|AVR.ActiveCfg = Debug|AVR
+		{2B422E96-34BF-4426-89D8-305D4AB37D9E}.Debug|AVR.Build.0 = Debug|AVR
+		{2B422E96-34BF-4426-89D8-305D4AB37D9E}.Release|AVR.ActiveCfg = Release|AVR
+		{2B422E96-34BF-4426-89D8-305D4AB37D9E}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

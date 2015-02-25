@@ -1,0 +1,631 @@
+\hypertarget{classn_r_f24_l01}{\section{n\-R\-F24\-L01 Class Reference}
+\label{classn_r_f24_l01}\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classn_r_f24_l01_a4392a317b65252b3d620a6c557f5f148}{n\-R\-F24\-L01} ()
+\item 
+\hyperlink{classn_r_f24_l01_aa436e2da2244f8b76c102683272d5fa8}{n\-R\-F24\-L01} (uint8\-\_\-t ch, uint8\-\_\-t pl)
+\item 
+void \hyperlink{classn_r_f24_l01_a46c2fc5ad6598ededbecdbcb2cee5209}{init} ()
+\begin{DoxyCompactList}\small\item\em Initializes M\-C\-U to communicate with n\-R\-F25\-L01 module. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a83264df097487d6d4ecb2b35bb94f8ab}{mask\-I\-R\-Q} (uint8\-\_\-t irq)
+\begin{DoxyCompactList}\small\item\em Disables specified interrupts. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a764e54b67b24aeffea0876141725b492}{power\-Up} ()
+\begin{DoxyCompactList}\small\item\em Powers up the n\-R\-F. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_ab24900f30e454d1b8658aed8951e5c0a}{power\-Down} ()
+\begin{DoxyCompactList}\small\item\em Powers down the n\-R\-F. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a5b915f035b128a17b4d625a99870c66e}{set\-C\-R\-C} (uint8\-\_\-t crc)
+\begin{DoxyCompactList}\small\item\em Sets up the C\-R\-C for the n\-R\-F. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a7711544550f7e550c7d237c707733e4e}{enable\-Auto\-Acknowledge} (uint8\-\_\-t datapipes)
+\begin{DoxyCompactList}\small\item\em Enable Enhanced Shock\-Burst Auto Acknowledge for the specified datapipes. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_aa2ef2be88d4802495172126b1824d1ec}{enable\-R\-X\-Datapipes} (uint8\-\_\-t datapipes)
+\begin{DoxyCompactList}\small\item\em Enable the specified datapipes. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a0bc2975ae5cdbf1438cd391260349f64}{set\-Address\-Width} (uint8\-\_\-t address\-Width)
+\begin{DoxyCompactList}\small\item\em Sets the width of addresses for all data pipes. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a722dc7a3e25964386acc815ce35cda46}{setup\-Retransmit} (uint8\-\_\-t val)
+\begin{DoxyCompactList}\small\item\em Sets the Auto Transmit Delay and the number of retransmits. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_ad51e0ef24f71b5155f80cd9abb752fc4}{set\-Channel} (uint8\-\_\-t ch)
+\begin{DoxyCompactList}\small\item\em Sets the frequency channel \hyperlink{classn_r_f24_l01}{n\-R\-F24\-L01} operates on. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{classn_r_f24_l01_a835d79477f6d01ce0a0fb865799a2b01}{get\-Channel} (uint8\-\_\-t ch)
+\begin{DoxyCompactList}\small\item\em Gets the frequency channel \hyperlink{classn_r_f24_l01}{n\-R\-F24\-L01} operates on. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a539b8247127dd40fe71902d16c696633}{setup\-R\-F} (uint8\-\_\-t val)
+\begin{DoxyCompactList}\small\item\em Setup Data rate \& output power. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_ac7b8c99a09146999ca229da28a22edbc}{update\-Status} ()
+\begin{DoxyCompactList}\small\item\em Updates status of \hyperlink{classn_r_f24_l01}{n\-R\-F24\-L01}. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{classn_r_f24_l01_afe25c0ecd22624960b59611409fbae02}{data\-Ready} ()
+\begin{DoxyCompactList}\small\item\em Checks if data is available for reading. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_ad7985720f3d6dfd1c641505207be5522}{clear\-Interrupt} (uint8\-\_\-t interrupt)
+\begin{DoxyCompactList}\small\item\em Clears specified interrupt. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{classn_r_f24_l01_ac4dc2e7256c1698877b3b51514c821bf}{get\-Lost\-Packet\-Count} ()
+\begin{DoxyCompactList}\small\item\em Returns number of lost packets. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{classn_r_f24_l01_ad4bf459baa15057e7b4e761aee3d2362}{get\-Retransmit\-Packet\-Count} ()
+\begin{DoxyCompactList}\small\item\em Returns number of retransmitted packets. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{classn_r_f24_l01_a59115f6293757f9789caa4c40c051d85}{carrier\-Detected} ()
+\begin{DoxyCompactList}\small\item\em Check for carrier. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a225b0e2e380f86d846b96af343c3380b}{set\-R\-X\-Address} (uint8\-\_\-t $\ast$address)
+\item 
+void \hyperlink{classn_r_f24_l01_abf3f5c8e5f7f8f409eec13056be56b7a}{set\-R\-X\-Address} (uint8\-\_\-t data\-Pipe, uint8\-\_\-t $\ast$address)
+\item 
+void \hyperlink{classn_r_f24_l01_adcbfc14dcdbfc5d7ef840a471e41f91c}{set\-T\-X\-Address} (uint8\-\_\-t $\ast$address)
+\begin{DoxyCompactList}\small\item\em Sets the transmit address. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_ac6558318d4e55b6a79f2796047f0d9fe}{set\-Payload\-Length} (uint8\-\_\-t length)
+\begin{DoxyCompactList}\small\item\em Sets the length of the payload to be in data pipe 0. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a467c306a3f9fa0e394cc30b8d8b53e3e}{set\-Payload\-Length} (uint8\-\_\-t data\-Pipe, uint8\-\_\-t length)
+\begin{DoxyCompactList}\small\item\em Sets the length of the payload to be in specified data pipe. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{classn_r_f24_l01_a6139cb9b9c20430ac13a5de9811d916f}{is\-T\-X\-Full} ()
+\begin{DoxyCompactList}\small\item\em Returns full status of T\-X\-\_\-\-F\-I\-F\-O buffer. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{classn_r_f24_l01_ab5876a6b80e5e9fade8b8d5a7985913e}{is\-T\-X\-Empty} ()
+\begin{DoxyCompactList}\small\item\em Returns empty status of t\-X\-\_\-\-F\-I\-F\-O buffer. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{classn_r_f24_l01_aaefd1ad94f4b27f9fa957bce03e96a16}{is\-R\-X\-Full} ()
+\begin{DoxyCompactList}\small\item\em Returns full status of R\-X\-\_\-\-F\-I\-F\-O buffer. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{classn_r_f24_l01_a140024e311c9b64aeb381bb6076059b1}{is\-R\-X\-Empty} ()
+\begin{DoxyCompactList}\small\item\em Returns empty status of R\-X F\-I\-F\-O buffer. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_ae0d0977ad5ed69d14ed41e3ab10652e1}{enable\-Dynamic\-Payload\-Length} (uint8\-\_\-t datapipes)
+\begin{DoxyCompactList}\small\item\em Enables dynamic payload length on specified datapipes. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a61d5abec43f3e46b18e3ca22f848ae03}{enable\-D\-P\-L} ()
+\begin{DoxyCompactList}\small\item\em enables dynamic payload length \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a48c43c5c5fabfc9fa75323316e5e0d5e}{enable\-A\-C\-K\-Payload} ()
+\begin{DoxyCompactList}\small\item\em Enables payload with A\-C\-K. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_a3e68a295f5848e2cf3194c7462676e9d}{enable\-Dynamic\-A\-C\-K} ()
+\begin{DoxyCompactList}\small\item\em Enables the N\-R\-F24\-L01\-\_\-\-W\-\_\-\-T\-X\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-N\-A\-C\-K command. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_af044e93bfbee8a3362479318a43f93e1}{clear\-Feature} ()
+\begin{DoxyCompactList}\small\item\em Clears feature register. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_aa5e0e8a467af8cfcf264442f4d87411c}{read\-Payload} (uint8\-\_\-t $\ast$datain)
+\item 
+void \hyperlink{classn_r_f24_l01_a7fdf8f83f4f5a402f22aee6a20a7b581}{send\-Payload} (uint8\-\_\-t $\ast$dataout, uint8\-\_\-t length)
+\begin{DoxyCompactList}\small\item\em Sends out a multiple-\/byte payload. \end{DoxyCompactList}\item 
+void \hyperlink{classn_r_f24_l01_ace8af8e299a991fb913ecad5155f6bbf}{set\-Mode} (uint8\-\_\-t)
+\begin{DoxyCompactList}\small\item\em Sets power up and R\-X/\-T\-X modes in C\-O\-N\-F\-I\-G register. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{classn_r_f24_l01_a3d52b9fd9632d996f1bc84448fdc08f8}{get\-Mode} ()
+\begin{DoxyCompactList}\small\item\em Retrieve mode. \end{DoxyCompactList}\item 
+\hypertarget{classn_r_f24_l01_a990987b803e0d3215410c2d748840943}{void {\bfseries interrupt\-Handler} (void)}\label{classn_r_f24_l01_a990987b803e0d3215410c2d748840943}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classn_r_f24_l01_aa47c2eea0705d99f9515043892a11f85}{uint8\-\_\-t \hyperlink{classn_r_f24_l01_aa47c2eea0705d99f9515043892a11f85}{status}}\label{classn_r_f24_l01_aa47c2eea0705d99f9515043892a11f85}
+
+\begin{DoxyCompactList}\small\item\em Updated every time a command is sent to the \hyperlink{classn_r_f24_l01}{n\-R\-F24\-L01}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classn_r_f24_l01_a4392a317b65252b3d620a6c557f5f148}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!n\-R\-F24\-L01@{n\-R\-F24\-L01}}
+\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{n\-R\-F24\-L01}]{\setlength{\rightskip}{0pt plus 5cm}n\-R\-F24\-L01\-::n\-R\-F24\-L01 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a4392a317b65252b3d620a6c557f5f148}
+Basic constructor. Sets default channel and payload length. \hypertarget{classn_r_f24_l01_aa436e2da2244f8b76c102683272d5fa8}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!n\-R\-F24\-L01@{n\-R\-F24\-L01}}
+\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{n\-R\-F24\-L01}]{\setlength{\rightskip}{0pt plus 5cm}n\-R\-F24\-L01\-::n\-R\-F24\-L01 (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{ch, }
+\item[{uint8\-\_\-t}]{pl}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_aa436e2da2244f8b76c102683272d5fa8}
+Custom constructor. 
+\begin{DoxyParams}{Parameters}
+{\em ch} & Custom channel. \\
+\hline
+{\em pl} & Custom payload length. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classn_r_f24_l01_a59115f6293757f9789caa4c40c051d85}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!carrier\-Detected@{carrier\-Detected}}
+\index{carrier\-Detected@{carrier\-Detected}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{carrier\-Detected}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t n\-R\-F24\-L01\-::carrier\-Detected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a59115f6293757f9789caa4c40c051d85}
+
+
+Check for carrier. 
+
+\begin{DoxyReturn}{Returns}
+1 if carrier detected. 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_af044e93bfbee8a3362479318a43f93e1}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!clear\-Feature@{clear\-Feature}}
+\index{clear\-Feature@{clear\-Feature}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{clear\-Feature}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::clear\-Feature (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_af044e93bfbee8a3362479318a43f93e1}
+
+
+Clears feature register. 
+
+Disables\-: Dynamic Payload Length, Payload with A\-C\-K and the W\-\_\-\-T\-X\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-N\-A\-C\-K command. \hypertarget{classn_r_f24_l01_ad7985720f3d6dfd1c641505207be5522}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!clear\-Interrupt@{clear\-Interrupt}}
+\index{clear\-Interrupt@{clear\-Interrupt}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{clear\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::clear\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{interrupt}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_ad7985720f3d6dfd1c641505207be5522}
+
+
+Clears specified interrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em interrupt} & Valid values are\-: N\-R\-F24\-L01\-\_\-\-R\-X\-\_\-\-D\-R, N\-R\-F24\-L01\-\_\-\-T\-X\-\_\-\-D\-S, N\-R\-F24\-L01\-\_\-\-M\-A\-X\-\_\-\-R\-T \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_afe25c0ecd22624960b59611409fbae02}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!data\-Ready@{data\-Ready}}
+\index{data\-Ready@{data\-Ready}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{data\-Ready}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t n\-R\-F24\-L01\-::data\-Ready (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_afe25c0ecd22624960b59611409fbae02}
+
+
+Checks if data is available for reading. 
+
+\begin{DoxyReturn}{Returns}
+0 if in T\-X mode or there is no data in the R\-X F\-I\-F\-O 1 if there is data in the R\-X F\-I\-F\-O to be read 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_a48c43c5c5fabfc9fa75323316e5e0d5e}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!enable\-A\-C\-K\-Payload@{enable\-A\-C\-K\-Payload}}
+\index{enable\-A\-C\-K\-Payload@{enable\-A\-C\-K\-Payload}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{enable\-A\-C\-K\-Payload}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::enable\-A\-C\-K\-Payload (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a48c43c5c5fabfc9fa75323316e5e0d5e}
+
+
+Enables payload with A\-C\-K. 
+
+If A\-C\-K packet payload is activated, A\-C\-K packets have dynamic payload lengths, and the Dynamic Payload Length feature should be enabled for pipe 0 on the P\-T\-X and P\-R\-X. This is to ensure that they receive the A\-C\-K packets with payloads. If the payload in A\-C\-K is more than 15 byte in 2\-Mbps mode, the A\-R\-D must be 500μ\-S or more. If the payload is more than 5 byte in 1\-Mbps mode the A\-R\-D must be 500μ\-S or more. \hypertarget{classn_r_f24_l01_a7711544550f7e550c7d237c707733e4e}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!enable\-Auto\-Acknowledge@{enable\-Auto\-Acknowledge}}
+\index{enable\-Auto\-Acknowledge@{enable\-Auto\-Acknowledge}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{enable\-Auto\-Acknowledge}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::enable\-Auto\-Acknowledge (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{datapipes}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a7711544550f7e550c7d237c707733e4e}
+
+
+Enable Enhanced Shock\-Burst Auto Acknowledge for the specified datapipes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datapipes} & Valid bit values\-: 1$<$$<$N\-R\-F24\-L01\-\_\-\-E\-N\-A\-A\-\_\-\-P0, 1$<$$<$N\-R\-F24\-L01\-\_\-\-E\-N\-A\-A\-\_\-\-P1, etc. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_a61d5abec43f3e46b18e3ca22f848ae03}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!enable\-D\-P\-L@{enable\-D\-P\-L}}
+\index{enable\-D\-P\-L@{enable\-D\-P\-L}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{enable\-D\-P\-L}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::enable\-D\-P\-L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a61d5abec43f3e46b18e3ca22f848ae03}
+
+
+enables dynamic payload length 
+
+\hypertarget{classn_r_f24_l01_a3e68a295f5848e2cf3194c7462676e9d}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!enable\-Dynamic\-A\-C\-K@{enable\-Dynamic\-A\-C\-K}}
+\index{enable\-Dynamic\-A\-C\-K@{enable\-Dynamic\-A\-C\-K}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{enable\-Dynamic\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::enable\-Dynamic\-A\-C\-K (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a3e68a295f5848e2cf3194c7462676e9d}
+
+
+Enables the N\-R\-F24\-L01\-\_\-\-W\-\_\-\-T\-X\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-N\-A\-C\-K command. 
+
+\hypertarget{classn_r_f24_l01_ae0d0977ad5ed69d14ed41e3ab10652e1}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!enable\-Dynamic\-Payload\-Length@{enable\-Dynamic\-Payload\-Length}}
+\index{enable\-Dynamic\-Payload\-Length@{enable\-Dynamic\-Payload\-Length}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{enable\-Dynamic\-Payload\-Length}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::enable\-Dynamic\-Payload\-Length (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{datapipes}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_ae0d0977ad5ed69d14ed41e3ab10652e1}
+
+
+Enables dynamic payload length on specified datapipes. 
+
+D\-Y\-N\-P\-D register function  
+\begin{DoxyParams}{Parameters}
+{\em datapipes} & Valid bit values\-: 1$<$$<$N\-R\-F24\-L01\-\_\-\-D\-P\-L\-\_\-\-P0, 1$<$$<$N\-R\-F24\-L01\-\_\-\-D\-P\-L\-\_\-\-P1, etc. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_aa2ef2be88d4802495172126b1824d1ec}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!enable\-R\-X\-Datapipes@{enable\-R\-X\-Datapipes}}
+\index{enable\-R\-X\-Datapipes@{enable\-R\-X\-Datapipes}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{enable\-R\-X\-Datapipes}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::enable\-R\-X\-Datapipes (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{datapipes}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_aa2ef2be88d4802495172126b1824d1ec}
+
+
+Enable the specified datapipes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datapipes} & Valid bit values\-: 1$<$$<$N\-R\-F24\-L01\-\_\-\-E\-R\-X\-\_\-\-P0, 1$<$$<$N\-R\-F24\-L01\-\_\-\-E\-R\-X\-\_\-\-P1, etc. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_a835d79477f6d01ce0a0fb865799a2b01}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!get\-Channel@{get\-Channel}}
+\index{get\-Channel@{get\-Channel}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{get\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t n\-R\-F24\-L01\-::get\-Channel (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{ch}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a835d79477f6d01ce0a0fb865799a2b01}
+
+
+Gets the frequency channel \hyperlink{classn_r_f24_l01}{n\-R\-F24\-L01} operates on. 
+
+Reads from the R\-F\-\_\-\-C\-H register. 1 M\-Hz steps. Freq = 2400 + R\-F\-\_\-\-C\-H \mbox{[}M\-Hz\mbox{]}. \begin{DoxyReturn}{Returns}
+Channel. Must be between 0 and 127(0x7\-F). 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_ac4dc2e7256c1698877b3b51514c821bf}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!get\-Lost\-Packet\-Count@{get\-Lost\-Packet\-Count}}
+\index{get\-Lost\-Packet\-Count@{get\-Lost\-Packet\-Count}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{get\-Lost\-Packet\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t n\-R\-F24\-L01\-::get\-Lost\-Packet\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_ac4dc2e7256c1698877b3b51514c821bf}
+
+
+Returns number of lost packets. 
+
+Resets when channel is set. Maximum value of 15. \begin{DoxyReturn}{Returns}
+Number of lost packets. 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_a3d52b9fd9632d996f1bc84448fdc08f8}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!get\-Mode@{get\-Mode}}
+\index{get\-Mode@{get\-Mode}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{get\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t n\-R\-F24\-L01\-::get\-Mode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a3d52b9fd9632d996f1bc84448fdc08f8}
+
+
+Retrieve mode. 
+
+\begin{DoxyReturn}{Returns}
+N\-R\-F24\-L01\-\_\-\-M\-O\-D\-E\-\_\-\-T\-X or N\-R\-F24\-L01\-\_\-\-M\-O\-D\-E\-\_\-\-R\-X 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_ad4bf459baa15057e7b4e761aee3d2362}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!get\-Retransmit\-Packet\-Count@{get\-Retransmit\-Packet\-Count}}
+\index{get\-Retransmit\-Packet\-Count@{get\-Retransmit\-Packet\-Count}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{get\-Retransmit\-Packet\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t n\-R\-F24\-L01\-::get\-Retransmit\-Packet\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_ad4bf459baa15057e7b4e761aee3d2362}
+
+
+Returns number of retransmitted packets. 
+
+Resets when transmission of a new packet starts. \begin{DoxyReturn}{Returns}
+Number of retransmitted packets. 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_a46c2fc5ad6598ededbecdbcb2cee5209}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!init@{init}}
+\index{init@{init}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a46c2fc5ad6598ededbecdbcb2cee5209}
+
+
+Initializes M\-C\-U to communicate with n\-R\-F25\-L01 module. 
+
+Initializes M\-C\-U pins, interrupt, and S\-P\-I module. Should be called during startup. \hypertarget{classn_r_f24_l01_a140024e311c9b64aeb381bb6076059b1}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!is\-R\-X\-Empty@{is\-R\-X\-Empty}}
+\index{is\-R\-X\-Empty@{is\-R\-X\-Empty}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{is\-R\-X\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t n\-R\-F24\-L01\-::is\-R\-X\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a140024e311c9b64aeb381bb6076059b1}
+
+
+Returns empty status of R\-X F\-I\-F\-O buffer. 
+
+\begin{DoxyReturn}{Returns}
+1 if R\-X F\-I\-F\-O buffer is empty, 0 if data in R\-X F\-I\-F\-O buffer. 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_aaefd1ad94f4b27f9fa957bce03e96a16}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!is\-R\-X\-Full@{is\-R\-X\-Full}}
+\index{is\-R\-X\-Full@{is\-R\-X\-Full}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{is\-R\-X\-Full}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t n\-R\-F24\-L01\-::is\-R\-X\-Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_aaefd1ad94f4b27f9fa957bce03e96a16}
+
+
+Returns full status of R\-X\-\_\-\-F\-I\-F\-O buffer. 
+
+\begin{DoxyReturn}{Returns}
+1 if R\-X F\-I\-F\-O buffer is full, 0 if there are available locations. 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_ab5876a6b80e5e9fade8b8d5a7985913e}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!is\-T\-X\-Empty@{is\-T\-X\-Empty}}
+\index{is\-T\-X\-Empty@{is\-T\-X\-Empty}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{is\-T\-X\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t n\-R\-F24\-L01\-::is\-T\-X\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_ab5876a6b80e5e9fade8b8d5a7985913e}
+
+
+Returns empty status of t\-X\-\_\-\-F\-I\-F\-O buffer. 
+
+\begin{DoxyReturn}{Returns}
+1 if T\-X F\-I\-F\-O buffer is empty, 0 if data in T\-X F\-I\-F\-O buffer. 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_a6139cb9b9c20430ac13a5de9811d916f}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!is\-T\-X\-Full@{is\-T\-X\-Full}}
+\index{is\-T\-X\-Full@{is\-T\-X\-Full}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{is\-T\-X\-Full}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t n\-R\-F24\-L01\-::is\-T\-X\-Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a6139cb9b9c20430ac13a5de9811d916f}
+
+
+Returns full status of T\-X\-\_\-\-F\-I\-F\-O buffer. 
+
+\begin{DoxyReturn}{Returns}
+1 if T\-X F\-I\-F\-O buffer is full, 0 if there are available locations. 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_a83264df097487d6d4ecb2b35bb94f8ab}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!mask\-I\-R\-Q@{mask\-I\-R\-Q}}
+\index{mask\-I\-R\-Q@{mask\-I\-R\-Q}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{mask\-I\-R\-Q}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::mask\-I\-R\-Q (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{irq}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a83264df097487d6d4ecb2b35bb94f8ab}
+
+
+Disables specified interrupts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em irq} & Specifies which interrupts to disable. To disable all 3 interrupts\-: (1$<$$<$N\-R\-F24\-L01\-\_\-\-M\-A\-S\-K\-\_\-\-R\-X\-\_\-\-D\-R $|$ 1$<$$<$N\-R\-F24\-L01\-\_\-\-M\-A\-S\-K\-\_\-\-T\-X\-\_\-\-D\-S $|$ 1$<$$<$N\-R\-F24\-L01\-\_\-\-M\-A\-S\-K\-\_\-\-M\-A\-X\-\_\-\-R\-T) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_ab24900f30e454d1b8658aed8951e5c0a}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!power\-Down@{power\-Down}}
+\index{power\-Down@{power\-Down}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{power\-Down}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::power\-Down (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_ab24900f30e454d1b8658aed8951e5c0a}
+
+
+Powers down the n\-R\-F. 
+
+Clears the P\-W\-R\-\_\-\-U\-P bit of the C\-O\-N\-F\-I\-G register to low. \hypertarget{classn_r_f24_l01_a764e54b67b24aeffea0876141725b492}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!power\-Up@{power\-Up}}
+\index{power\-Up@{power\-Up}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{power\-Up}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::power\-Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a764e54b67b24aeffea0876141725b492}
+
+
+Powers up the n\-R\-F. 
+
+Sets the P\-W\-R\-\_\-\-U\-P bit of the C\-O\-N\-F\-I\-G register to high. \hypertarget{classn_r_f24_l01_aa5e0e8a467af8cfcf264442f4d87411c}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!read\-Payload@{read\-Payload}}
+\index{read\-Payload@{read\-Payload}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{read\-Payload}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::read\-Payload (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{datain}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_aa5e0e8a467af8cfcf264442f4d87411c}
+Read R\-X-\/\-Payload, length is determined by function \hyperlink{classn_r_f24_l01_ac6558318d4e55b6a79f2796047f0d9fe}{set\-Payload\-Length()}. Starts with byte 0. Payload is deleted by \hyperlink{classn_r_f24_l01}{n\-R\-F24\-L01} after it is read. Data Ready (R\-X\-\_\-\-D\-R) bit of S\-T\-A\-T\-U\-S register is reset. Used in R\-X mode. 
+\begin{DoxyParams}{Parameters}
+{\em datain} & Pointer to be filled with payload. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_a7fdf8f83f4f5a402f22aee6a20a7b581}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!send\-Payload@{send\-Payload}}
+\index{send\-Payload@{send\-Payload}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{send\-Payload}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::send\-Payload (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{dataout, }
+\item[{uint8\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a7fdf8f83f4f5a402f22aee6a20a7b581}
+
+
+Sends out a multiple-\/byte payload. 
+
+Sets mode to T\-X, flushes T\-X F\-I\-F\-O, writes payload to T\-X F\-I\-F\-O, begins transmission. 1–32 bytes. Always starts at byte 0 used in T\-X payload. Adds to T\-X F\-I\-F\-O if not empty. 
+\begin{DoxyParams}{Parameters}
+{\em dataout} & Pointer to data to be sent. \\
+\hline
+{\em length} & Number of bytes in dataout. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_a0bc2975ae5cdbf1438cd391260349f64}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!set\-Address\-Width@{set\-Address\-Width}}
+\index{set\-Address\-Width@{set\-Address\-Width}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{set\-Address\-Width}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::set\-Address\-Width (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{address\-Width}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a0bc2975ae5cdbf1438cd391260349f64}
+
+
+Sets the width of addresses for all data pipes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em address\-Width} & Valid values\-: N\-R\-F24\-L01\-\_\-\-A\-W\-\_\-3\-B\-Y\-T\-E\-S, N\-R\-F24\-L01\-\_\-\-A\-W\-\_\-4\-B\-Y\-T\-E\-S, N\-R\-F24\-L01\-\_\-\-A\-W\-\_\-5\-B\-Y\-T\-E\-S \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_ad51e0ef24f71b5155f80cd9abb752fc4}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!set\-Channel@{set\-Channel}}
+\index{set\-Channel@{set\-Channel}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{set\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::set\-Channel (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{ch}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_ad51e0ef24f71b5155f80cd9abb752fc4}
+
+
+Sets the frequency channel \hyperlink{classn_r_f24_l01}{n\-R\-F24\-L01} operates on. 
+
+Writes to the R\-F\-\_\-\-C\-H register. 1 M\-Hz steps. Freq = 2400 + R\-F\-\_\-\-C\-H \mbox{[}M\-Hz\mbox{]}. 
+\begin{DoxyParams}{Parameters}
+{\em ch} & Channel. Must be between 0 and 127(0x7\-F). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_a5b915f035b128a17b4d625a99870c66e}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!set\-C\-R\-C@{set\-C\-R\-C}}
+\index{set\-C\-R\-C@{set\-C\-R\-C}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{set\-C\-R\-C}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::set\-C\-R\-C (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{crc}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a5b915f035b128a17b4d625a99870c66e}
+
+
+Sets up the C\-R\-C for the n\-R\-F. 
+
+Cyclic redundancy check can either be off, 1-\/byte or 2-\/bytes. 
+\begin{DoxyParams}{Parameters}
+{\em crc} & Valid values\-: N\-R\-F24\-L01\-\_\-\-C\-R\-C\-\_\-\-O\-F\-F, N\-R\-F24\-L01\-\_\-\-C\-R\-C\-\_\-1\-B\-Y\-T\-E, N\-R\-F24\-L01\-\_\-\-C\-R\-C\-\_\-2\-B\-Y\-T\-E \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_ace8af8e299a991fb913ecad5155f6bbf}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!set\-Mode@{set\-Mode}}
+\index{set\-Mode@{set\-Mode}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{set\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::set\-Mode (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{mode}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_ace8af8e299a991fb913ecad5155f6bbf}
+
+
+Sets power up and R\-X/\-T\-X modes in C\-O\-N\-F\-I\-G register. 
+
+\begin{DoxyReturn}{Returns}
+N\-R\-F24\-L01\-\_\-\-M\-O\-D\-E\-\_\-\-T\-X or N\-R\-F24\-L01\-\_\-\-M\-O\-D\-E\-\_\-\-R\-X 
+\end{DoxyReturn}
+\hypertarget{classn_r_f24_l01_ac6558318d4e55b6a79f2796047f0d9fe}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!set\-Payload\-Length@{set\-Payload\-Length}}
+\index{set\-Payload\-Length@{set\-Payload\-Length}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{set\-Payload\-Length}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::set\-Payload\-Length (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_ac6558318d4e55b6a79f2796047f0d9fe}
+
+
+Sets the length of the payload to be in data pipe 0. 
+
+1-\/32 bytes long. \hypertarget{classn_r_f24_l01_a467c306a3f9fa0e394cc30b8d8b53e3e}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!set\-Payload\-Length@{set\-Payload\-Length}}
+\index{set\-Payload\-Length@{set\-Payload\-Length}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{set\-Payload\-Length}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::set\-Payload\-Length (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{data\-Pipe, }
+\item[{uint8\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a467c306a3f9fa0e394cc30b8d8b53e3e}
+
+
+Sets the length of the payload to be in specified data pipe. 
+
+1-\/32 bytes long. 
+\begin{DoxyParams}{Parameters}
+{\em data\-Pipe} & Index of data pipe (0-\/5). \\
+\hline
+{\em length} & Length of specified data pipe (1-\/32). \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_a225b0e2e380f86d846b96af343c3380b}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!set\-R\-X\-Address@{set\-R\-X\-Address}}
+\index{set\-R\-X\-Address@{set\-R\-X\-Address}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{set\-R\-X\-Address}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::set\-R\-X\-Address (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{address}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a225b0e2e380f86d846b96af343c3380b}
+Sets the receive address of data pipe 0. 
+\begin{DoxyParams}{Parameters}
+{\em address} & The 5-\/byte address to assign to data pipe 0. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_abf3f5c8e5f7f8f409eec13056be56b7a}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!set\-R\-X\-Address@{set\-R\-X\-Address}}
+\index{set\-R\-X\-Address@{set\-R\-X\-Address}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{set\-R\-X\-Address}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::set\-R\-X\-Address (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{data\-Pipe, }
+\item[{uint8\-\_\-t $\ast$}]{address}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_abf3f5c8e5f7f8f409eec13056be56b7a}
+Sets the receive address of any data pipe. 
+\begin{DoxyParams}{Parameters}
+{\em data\-Pipe} & Value 0 through 5 representing the index of the datapipe to be addressed. \\
+\hline
+{\em address} & The 5-\/byte address to assign to data pipe 0. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_adcbfc14dcdbfc5d7ef840a471e41f91c}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!set\-T\-X\-Address@{set\-T\-X\-Address}}
+\index{set\-T\-X\-Address@{set\-T\-X\-Address}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{set\-T\-X\-Address}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::set\-T\-X\-Address (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{address}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_adcbfc14dcdbfc5d7ef840a471e41f91c}
+
+
+Sets the transmit address. 
+
+Used for a P\-T\-X (primary transmit) device only. Set the receive address of data pipe 0 to the same address to handle automatic acknowledge if this is a P\-T\-X device with Enhanced Shockburst enabled. (see \hyperlink{classn_r_f24_l01}{n\-R\-F24\-L01} datasheet) 
+\begin{DoxyParams}{Parameters}
+{\em address} & The 5-\/byte address to assign to data pipe 0. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_a722dc7a3e25964386acc815ce35cda46}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!setup\-Retransmit@{setup\-Retransmit}}
+\index{setup\-Retransmit@{setup\-Retransmit}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{setup\-Retransmit}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::setup\-Retransmit (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{val}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a722dc7a3e25964386acc815ce35cda46}
+
+
+Sets the Auto Transmit Delay and the number of retransmits. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Valid bit values\-: bits 7\-:4 are the auto retransmit delay. 0000 = 250u\-S, 0001 = 500u\-S .... 1111 = 4000u\-S (xxxx$<$$<$N\-R\-F24\-L01\-\_\-\-A\-R\-D) where xxxx is the 4-\/bit value bits 3\-:0 are Auto Retransmit Count 0000 = disabled, 0001 = Up to 1 .... 1111 Up to 15 Re-\/\-Transmit on fail of A\-A (xxxx$<$$<$N\-R\-F24\-L01\-\_\-\-A\-R\-C) where xxxx is the 4-\/bit value \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_a539b8247127dd40fe71902d16c696633}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!setup\-R\-F@{setup\-R\-F}}
+\index{setup\-R\-F@{setup\-R\-F}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{setup\-R\-F}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::setup\-R\-F (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{val}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_a539b8247127dd40fe71902d16c696633}
+
+
+Setup Data rate \& output power. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Valid values\-: N\-R\-F24\-L01\-\_\-\-R\-F\-\_\-\-D\-R\-\_\-1\-M\-H\-Z, N\-R\-F24\-L01\-\_\-\-R\-F\-\_\-\-D\-R\-\_\-2\-M\-H\-Z, N\-R\-F24\-L01\-\_\-\-R\-F\-\_\-\-P\-W\-R\-\_\-18\-D\-B, N\-R\-F24\-L01\-\_\-\-R\-F\-\_\-\-P\-W\-R\-\_\-12\-D\-B, N\-R\-F24\-L01\-\_\-\-R\-F\-\_\-\-P\-W\-R\-\_\-6\-D\-B, N\-R\-F24\-L01\-\_\-\-R\-F\-\_\-\-P\-W\-R\-\_\-0\-D\-B, N\-R\-F24\-L01\-\_\-\-L\-N\-A\-\_\-\-H\-C\-U\-R\-R \\
+\hline
+\end{DoxyParams}
+\hypertarget{classn_r_f24_l01_ac7b8c99a09146999ca229da28a22edbc}{\index{n\-R\-F24\-L01@{n\-R\-F24\-L01}!update\-Status@{update\-Status}}
+\index{update\-Status@{update\-Status}!nRF24L01@{n\-R\-F24\-L01}}
+\subsubsection[{update\-Status}]{\setlength{\rightskip}{0pt plus 5cm}void n\-R\-F24\-L01\-::update\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classn_r_f24_l01_ac7b8c99a09146999ca229da28a22edbc}
+
+
+Updates status of \hyperlink{classn_r_f24_l01}{n\-R\-F24\-L01}. 
+
+Sends a N\-O\-P command to \hyperlink{classn_r_f24_l01}{n\-R\-F24\-L01}, receiving S\-T\-A\-T\-U\-S back, which is written to the public variable status. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/my\-Q\-\_\-2/\-Google Drive/\-Atmel Studio/my includes/n\-R\-F24\-L01.\-h\item 
+C\-:/\-Users/my\-Q\-\_\-2/\-Google Drive/\-Atmel Studio/my includes/n\-R\-F24\-L01.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "ble_proximity_template", "ble_proximity_template\ble_proximity_template.cppproj", "{F0E20E4B-0C43-4FFB-8940-BFBD4806A18A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0E20E4B-0C43-4FFB-8940-BFBD4806A18A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{F0E20E4B-0C43-4FFB-8940-BFBD4806A18A}.Debug|AVR.Build.0 = Debug|AVR
+		{F0E20E4B-0C43-4FFB-8940-BFBD4806A18A}.Release|AVR.ActiveCfg = Release|AVR
+		{F0E20E4B-0C43-4FFB-8940-BFBD4806A18A}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
