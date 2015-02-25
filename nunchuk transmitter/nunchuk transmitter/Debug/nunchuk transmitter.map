@@ -1,0 +1,723 @@
+Archive member included because of file (symbol)
+
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+                              c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o (exit)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+                              nunchuk transmitter.o (__do_copy_data)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+                              nunchuk transmitter.o (__do_clear_bss)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+                              nunchuk transmitter.o (__do_global_ctors)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_tablejump.o)
+                              c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o) (__tablejump__)
+
+Discarded input sections
+
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o
+ .text          0x00000000        0x0 myqI2C.o
+ .bss           0x00000000        0x0 myqI2C.o
+ .text.i2c_start_wait
+                0x00000000       0x50 myqI2C.o
+ .text.i2c_rep_start
+                0x00000000        0x6 myqI2C.o
+ .text          0x00000000        0x0 myqspi.o
+ .bss           0x00000000        0x0 myqspi.o
+ .text.spiTransfer
+                0x00000000       0x26 myqspi.o
+ .text          0x00000000        0x0 nRF24L01.o
+ .bss           0x00000000        0x0 nRF24L01.o
+ .text._ZN3NRF7maskIRQEh
+                0x00000000       0x24 nRF24L01.o
+ .text._ZN3NRF9powerDownEv
+                0x00000000       0x1a nRF24L01.o
+ .text._ZN3NRF11isPoweredUpEv
+                0x00000000        0xa nRF24L01.o
+ .text._ZN3NRF7getModeEv
+                0x00000000        0x8 nRF24L01.o
+ .text._ZN3NRF21enableAutoAcknowledgeEh
+                0x00000000        0xc nRF24L01.o
+ .text._ZN3NRF7getENAAEv
+                0x00000000        0x8 nRF24L01.o
+ .text._ZN3NRF17enableRXDatapipesEh
+                0x00000000        0xc nRF24L01.o
+ .text._ZN3NRF11getENRXADDREv
+                0x00000000        0x8 nRF24L01.o
+ .text._ZN3NRF10getChannelEv
+                0x00000000        0x8 nRF24L01.o
+ .text._ZN3NRF10getRFsetupEv
+                0x00000000        0x8 nRF24L01.o
+ .text._ZN3NRF12updateStatusEv
+                0x00000000       0x1c nRF24L01.o
+ .text._ZN3NRF9dataReadyEv
+                0x00000000       0x14 nRF24L01.o
+ .text._ZN3NRF22getDatapipeOfRXPayloadEv
+                0x00000000       0x16 nRF24L01.o
+ .text._ZN3NRF12isTXFIFOFullEv
+                0x00000000       0x14 nRF24L01.o
+ .text._ZN3NRF18getLostPacketCountEv
+                0x00000000        0xc nRF24L01.o
+ .text._ZN3NRF24getRetransmitPacketCountEv
+                0x00000000        0xa nRF24L01.o
+ .text._ZN3NRF21receivedPowerDetectedEv
+                0x00000000        0x8 nRF24L01.o
+ .text._ZN3NRF12setRXAddressEPh
+                0x00000000        0xc nRF24L01.o
+ .text._ZN3NRFC2Ev
+                0x00000000       0x20 nRF24L01.o
+ .text._ZN3NRF8isTXFullEv
+                0x00000000        0xe nRF24L01.o
+ .text._ZN3NRF8isRXFullEv
+                0x00000000        0xc nRF24L01.o
+ .text._ZN3NRF9isRXEmptyEv
+                0x00000000       0x12 nRF24L01.o
+ .text._ZN3NRF26enableDynamicPayloadLengthEh
+                0x00000000        0xc nRF24L01.o
+ .text._ZN3NRF9enableDPLEv
+                0x00000000       0x1e nRF24L01.o
+ .text._ZN3NRF16enableACKPayloadEv
+                0x00000000       0x1e nRF24L01.o
+ .text._ZN3NRF16enableDynamicACKEv
+                0x00000000       0x1e nRF24L01.o
+ .text._ZN3NRF12clearFeatureEv
+                0x00000000        0xa nRF24L01.o
+ .text          0x00000000        0x0 nunchuk.o
+ .bss           0x00000000        0x0 nunchuk.o
+ .text          0x00000000        0x0 nunchuk transmitter.o
+ .bss           0x00000000        0x0 nunchuk transmitter.o
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_tablejump.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_tablejump.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_tablejump.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_tablejump.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_tablejump.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_tablejump.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_tablejump.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o
+LOAD myqI2C.o
+LOAD myqspi.o
+LOAD nRF24L01.o
+LOAD nunchuk.o
+LOAD nunchuk transmitter.o
+START GROUP
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libm.a
+END GROUP
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libm.a
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x7d0
+ *(.vectors)
+ .vectors       0x00000000       0x68 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x00000068                . = ALIGN (0x2)
+                0x00000068                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000068        0x0 linker stubs
+ *(.trampolines*)
+                0x00000068                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000068                __ctors_start = .
+ *(.ctors)
+ .ctors         0x00000068        0x2 nunchuk transmitter.o
+                0x0000006a                __ctors_end = .
+                0x0000006a                __dtors_start = .
+ *(.dtors)
+                0x0000006a                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000006a        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o
+                0x0000006a                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000006a        0xc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000076       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+                0x00000076                __do_copy_data
+ .init4         0x0000008c       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+                0x0000008c                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ .init6         0x0000009c       0x16 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+                0x0000009c                __do_global_ctors
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000b2        0x8 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o
+ *(.init9)
+ *(.text)
+ .text          0x000000ba        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o
+                0x000000ba                __vector_22
+                0x000000ba                __vector_24
+                0x000000ba                __vector_12
+                0x000000ba                __bad_interrupt
+                0x000000ba                __vector_6
+                0x000000ba                __vector_3
+                0x000000ba                __vector_23
+                0x000000ba                __vector_25
+                0x000000ba                __vector_11
+                0x000000ba                __vector_13
+                0x000000ba                __vector_17
+                0x000000ba                __vector_19
+                0x000000ba                __vector_7
+                0x000000ba                __vector_5
+                0x000000ba                __vector_4
+                0x000000ba                __vector_9
+                0x000000ba                __vector_2
+                0x000000ba                __vector_21
+                0x000000ba                __vector_15
+                0x000000ba                __vector_8
+                0x000000ba                __vector_14
+                0x000000ba                __vector_10
+                0x000000ba                __vector_16
+                0x000000ba                __vector_18
+                0x000000ba                __vector_20
+                0x000000be                . = ALIGN (0x2)
+ *(.text.*)
+ .text.i2c_init
+                0x000000be        0xc myqI2C.o
+                0x000000be                i2c_init
+ .text.i2c_start
+                0x000000ca       0x4e myqI2C.o
+                0x000000ca                i2c_start
+ .text.i2c_stop
+                0x00000118       0x12 myqI2C.o
+                0x00000118                i2c_stop
+ .text.i2c_write
+                0x0000012a       0x24 myqI2C.o
+                0x0000012a                i2c_write
+ .text.i2c_readAck
+                0x0000014e       0x16 myqI2C.o
+                0x0000014e                i2c_readAck
+ .text.i2c_readNak
+                0x00000164       0x16 myqI2C.o
+                0x00000164                i2c_readNak
+ .text.spiInit  0x0000017a       0x12 myqspi.o
+                0x0000017a                spiInit
+ .text.spiRead  0x0000018c       0x20 myqspi.o
+                0x0000018c                spiRead
+ .text.spiWrite
+                0x000001ac       0x1e myqspi.o
+                0x000001ac                spiWrite
+ .text.spiTransfer1byte
+                0x000001ca        0xc myqspi.o
+                0x000001ca                spiTransfer1byte
+ .text._Z5setCEv
+                0x000001d6        0x4 nRF24L01.o
+                0x000001d6                _Z5setCEv
+ .text._Z7clearCEv
+                0x000001da        0x4 nRF24L01.o
+                0x000001da                _Z7clearCEv
+ .text._Z6setCSNv
+                0x000001de        0x4 nRF24L01.o
+                0x000001de                _Z6setCSNv
+ .text._Z8clearCSNv
+                0x000001e2        0x4 nRF24L01.o
+                0x000001e2                _Z8clearCSNv
+ .text._Z18getDataPipeAddressh
+                0x000001e6       0x32 nRF24L01.o
+                0x000001e6                _Z18getDataPipeAddressh
+ .text._Z30getDataPipePayloadWidthAddressh
+                0x00000218       0x32 nRF24L01.o
+                0x00000218                _Z30getDataPipePayloadWidthAddressh
+ .text._ZN3NRF4readEh
+                0x0000024a       0x2c nRF24L01.o
+                0x0000024a                _ZN3NRF4readEh
+ .text._ZN3NRF4readEhPhh
+                0x00000276       0x3c nRF24L01.o
+                0x00000276                _ZN3NRF4readEhPhh
+ .text._ZN3NRF5writeEh
+                0x000002b2       0x24 nRF24L01.o
+                0x000002b2                _ZN3NRF5writeEh
+ .text._ZN3NRF5writeEhh
+                0x000002d6       0x30 nRF24L01.o
+                0x000002d6                _ZN3NRF5writeEhh
+ .text._ZN3NRF5writeEhPhh
+                0x00000306       0x3e nRF24L01.o
+                0x00000306                _ZN3NRF5writeEhPhh
+ .text._ZN3NRF4initEv
+                0x00000344       0x2e nRF24L01.o
+                0x00000344                _ZN3NRF4initEv
+ .text._ZN3NRF7flushTXEv
+                0x00000372        0x8 nRF24L01.o
+                0x00000372                _ZN3NRF7flushTXEv
+ .text._ZN3NRF7flushRXEv
+                0x0000037a        0x8 nRF24L01.o
+                0x0000037a                _ZN3NRF7flushRXEv
+ .text._ZN3NRF9setConfigEh
+                0x00000382        0xc nRF24L01.o
+                0x00000382                _ZN3NRF9setConfigEh
+ .text._ZN3NRF9getConfigEv
+                0x0000038e        0x8 nRF24L01.o
+                0x0000038e                _ZN3NRF9getConfigEv
+ .text._ZN3NRF7powerUpEv
+                0x00000396       0x1a nRF24L01.o
+                0x00000396                _ZN3NRF7powerUpEv
+ .text._ZN3NRF6setCRCEh
+                0x000003b0       0x28 nRF24L01.o
+                0x000003b0                _ZN3NRF6setCRCEh
+ .text._ZN3NRF7setModeEh
+                0x000003d8       0x28 nRF24L01.o
+                0x000003d8                _ZN3NRF7setModeEh
+ .text._ZN3NRF15setAddressWidthEh
+                0x00000400        0xc nRF24L01.o
+                0x00000400                _ZN3NRF15setAddressWidthEh
+ .text._ZN3NRF15setupRetransmitEh
+                0x0000040c        0xa nRF24L01.o
+                0x0000040c                _ZN3NRF15setupRetransmitEh
+ .text._ZN3NRF10setChannelEh
+                0x00000416        0xc nRF24L01.o
+                0x00000416                _ZN3NRF10setChannelEh
+ .text._ZN3NRF7setupRFEh
+                0x00000422        0xc nRF24L01.o
+                0x00000422                _ZN3NRF7setupRFEh
+ .text._ZN3NRF14clearInterruptEh
+                0x0000042e       0x18 nRF24L01.o
+                0x0000042e                _ZN3NRF14clearInterruptEh
+ .text._ZN3NRF12setRXAddressEhPh
+                0x00000446       0x28 nRF24L01.o
+                0x00000446                _ZN3NRF12setRXAddressEhPh
+ .text._ZN3NRF12setTXAddressEPh
+                0x0000046e        0xc nRF24L01.o
+                0x0000046e                _ZN3NRF12setTXAddressEPh
+ .text._ZN3NRF16setPayloadLengthEh
+                0x0000047a       0x10 nRF24L01.o
+                0x0000047a                _ZN3NRF16setPayloadLengthEh
+ .text._ZN3NRFC2Ehh
+                0x0000048a       0x2c nRF24L01.o
+                0x0000048a                _ZN3NRFC2Ehh
+                0x0000048a                _ZN3NRFC1Ehh
+ .text._ZN3NRF16setPayloadLengthEhh
+                0x000004b6       0x26 nRF24L01.o
+                0x000004b6                _ZN3NRF16setPayloadLengthEhh
+ .text._ZN3NRF9isTXEmptyEv
+                0x000004dc        0xc nRF24L01.o
+                0x000004dc                _ZN3NRF9isTXEmptyEv
+ .text._ZN3NRF10getPayloadEPh
+                0x000004e8       0x20 nRF24L01.o
+                0x000004e8                _ZN3NRF10getPayloadEPh
+ .text._ZN3NRF11sendPayloadEPhh
+                0x00000508       0x46 nRF24L01.o
+                0x00000508                _ZN3NRF11sendPayloadEPhh
+ .text.__vector_1
+                0x0000054e       0xb4 nRF24L01.o
+                0x0000054e                __vector_1
+ .text.InitNunchuk
+                0x00000602       0x32 nunchuk.o
+                0x00000602                InitNunchuk
+ .text.ReadNunchuk
+                0x00000634       0x56 nunchuk.o
+                0x00000634                ReadNunchuk
+ .text._Z4initv
+                0x0000068a       0xb0 nunchuk transmitter.o
+                0x0000068a                _Z4initv
+ .text.main     0x0000073a       0x78 nunchuk transmitter.o
+                0x0000073a                main
+ .text._GLOBAL__sub_I_transmitter
+                0x000007b2        0xe nunchuk transmitter.o
+ .text.libgcc   0x000007c0        0xc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_tablejump.o)
+                0x000007c0                __tablejump2__
+                0x000007c4                __tablejump__
+                0x000007cc                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x000007cc        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+                0x000007cc                _exit
+                0x000007cc                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x000007cc        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x000007d0                _etext = .
+
+.data           0x00800100        0xc load address 0x000007d0
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o
+ .data          0x00800100        0x0 myqI2C.o
+ .data          0x00800100        0x0 myqspi.o
+ .data          0x00800100        0x0 nRF24L01.o
+ .data          0x00800100        0x0 nunchuk.o
+ .data          0x00800100        0x0 nunchuk transmitter.o
+ .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_copy_data.o)
+ .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_ctors.o)
+ .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_tablejump.o)
+ *(.data*)
+ .data.nunchuk  0x00800100        0x6 nunchuk transmitter.o
+                0x00800100                nunchuk
+ *(.rodata)
+ .rodata        0x00800106        0x5 nunchuk transmitter.o
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x0080010c                . = ALIGN (0x2)
+ *fill*         0x0080010b        0x1 
+                0x0080010c                _edata = .
+                0x0080010c                PROVIDE (__data_end, .)
+
+.bss            0x0080010c        0x8
+                0x0080010c                PROVIDE (__bss_start, .)
+ *(.bss)
+ *(.bss*)
+ .bss.payload   0x0080010c        0x6 nunchuk transmitter.o
+                0x0080010c                payload
+ .bss.transmitter
+                0x00800112        0x2 nunchuk transmitter.o
+                0x00800112                transmitter
+ *(COMMON)
+                0x00800114                PROVIDE (__bss_end, .)
+                0x000007d0                __data_load_start = LOADADDR (.data)
+                0x000007dc                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800114        0x0
+                0x00800114                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800114                PROVIDE (__noinit_end, .)
+                0x00800114                _end = .
+                0x00800114                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab           0x00000000      0x6cc
+ *(.stab)
+ .stab          0x00000000      0x6cc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o
+
+.stabstr        0x00000000       0x97
+ *(.stabstr)
+ .stabstr       0x00000000       0x97 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.939/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm168.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x2f
+ *(.comment)
+ .comment       0x00000000       0x2f myqI2C.o
+                                 0x30 (size before relaxing)
+ .comment       0x00000000       0x30 myqspi.o
+ .comment       0x00000000       0x30 nRF24L01.o
+ .comment       0x00000000       0x30 nunchuk.o
+ .comment       0x00000000       0x30 nunchuk transmitter.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x2e8
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x58 myqI2C.o
+ .debug_aranges
+                0x00000058       0x40 myqspi.o
+ .debug_aranges
+                0x00000098      0x1f8 nRF24L01.o
+ .debug_aranges
+                0x00000290       0x28 nunchuk.o
+ .debug_aranges
+                0x000002b8       0x30 nunchuk transmitter.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x30a1
+ *(.debug_info)
+ .debug_info    0x00000000      0x1bd myqI2C.o
+ .debug_info    0x000001bd      0x190 myqspi.o
+ .debug_info    0x0000034d     0x1e9b nRF24L01.o
+ .debug_info    0x000021e8      0x2c7 nunchuk.o
+ .debug_info    0x000024af      0xbf2 nunchuk transmitter.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x907
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0xe5 myqI2C.o
+ .debug_abbrev  0x000000e5       0xb9 myqspi.o
+ .debug_abbrev  0x0000019e      0x38c nRF24L01.o
+ .debug_abbrev  0x0000052a      0x161 nunchuk.o
+ .debug_abbrev  0x0000068b      0x27c nunchuk transmitter.o
+
+.debug_line     0x00000000      0xd19
+ *(.debug_line)
+ .debug_line    0x00000000      0x1dc myqI2C.o
+ .debug_line    0x000001dc      0x145 myqspi.o
+ .debug_line    0x00000321      0x629 nRF24L01.o
+ .debug_line    0x0000094a      0x1b8 nunchuk.o
+ .debug_line    0x00000b02      0x217 nunchuk transmitter.o
+
+.debug_frame    0x00000000      0x734
+ *(.debug_frame)
+ .debug_frame   0x00000000       0xa0 myqI2C.o
+ .debug_frame   0x000000a0       0x64 myqspi.o
+ .debug_frame   0x00000104      0x59c nRF24L01.o
+ .debug_frame   0x000006a0       0x40 nunchuk.o
+ .debug_frame   0x000006e0       0x54 nunchuk transmitter.o
+
+.debug_str      0x00000000      0xb04
+ *(.debug_str)
+ .debug_str     0x00000000      0x129 myqI2C.o
+                                0x15d (size before relaxing)
+ .debug_str     0x00000129       0x6a myqspi.o
+                                0x13c (size before relaxing)
+ .debug_str     0x00000193      0x899 nRF24L01.o
+                                0x9c3 (size before relaxing)
+ .debug_str     0x00000a2c       0x3d nunchuk.o
+                                0x1a1 (size before relaxing)
+ .debug_str     0x00000a69       0x9b nunchuk transmitter.o
+                                0x8ee (size before relaxing)
+
+.debug_loc      0x00000000     0x19cd
+ *(.debug_loc)
+ .debug_loc     0x00000000      0x11d myqI2C.o
+ .debug_loc     0x0000011d       0xcd myqspi.o
+ .debug_loc     0x000001ea     0x1717 nRF24L01.o
+ .debug_loc     0x00001901       0x65 nunchuk.o
+ .debug_loc     0x00001966       0x67 nunchuk transmitter.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000      0x298
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x48 myqI2C.o
+ .debug_ranges  0x00000048       0x30 myqspi.o
+ .debug_ranges  0x00000078      0x1e8 nRF24L01.o
+ .debug_ranges  0x00000260       0x18 nunchuk.o
+ .debug_ranges  0x00000278       0x20 nunchuk transmitter.o
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(nunchuk transmitter.elf elf32-avr)
+LOAD linker stubs

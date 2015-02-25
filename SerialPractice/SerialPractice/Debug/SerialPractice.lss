@@ -1,0 +1,246 @@
+
+SerialPractice.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000006a  00800100  00000132  000001a6  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000132  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .stab         000006cc  00000000  00000000  00000210  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000097  00000000  00000000  000008dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .comment      0000002f  00000000  00000000  00000973  2**0
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000048  00000000  00000000  000009a2  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000201  00000000  00000000  000009ea  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 0000013c  00000000  00000000  00000beb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000153  00000000  00000000  00000d27  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000080  00000000  00000000  00000e7c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000015c  00000000  00000000  00000efc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000007d  00000000  00000000  00001058  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000038  00000000  00000000  000010d5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   8:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+   c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  10:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  14:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  18:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  1c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  20:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  24:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  28:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  2c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  30:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  34:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  38:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  3c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  40:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  44:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  48:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  4c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  50:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  54:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  58:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  5c:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  60:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+  64:	0c 94 49 00 	jmp	0x92	; 0x92 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d4 e0       	ldi	r29, 0x04	; 4
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e2 e3       	ldi	r30, 0x32	; 50
+  7c:	f1 e0       	ldi	r31, 0x01	; 1
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	aa 36       	cpi	r26, 0x6A	; 106
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+  8a:	0e 94 7b 00 	call	0xf6	; 0xf6 <main>
+  8e:	0c 94 97 00 	jmp	0x12e	; 0x12e <_exit>
+
+00000092 <__bad_interrupt>:
+  92:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000096 <_Z10usart_initj>:
+/********************************************************************************
+usart Related
+********************************************************************************/
+void usart_init( uint16_t ubrr) {
+	// Set baud rate
+	UBRR0H = (uint8_t)(ubrr>>8);
+  96:	90 93 c5 00 	sts	0x00C5, r25
+	UBRR0L = (uint8_t)ubrr;
+  9a:	80 93 c4 00 	sts	0x00C4, r24
+	// Enable receiver and transmitter
+	UCSR0B = (1<<RXEN0)|(1<<TXEN0);
+  9e:	88 e1       	ldi	r24, 0x18	; 24
+  a0:	80 93 c1 00 	sts	0x00C1, r24
+	// Set frame format: 8data, 1stop bit
+	UCSR0C = (1<<UMSEL00)|(3<<UCSZ00);
+  a4:	86 e4       	ldi	r24, 0x46	; 70
+  a6:	80 93 c2 00 	sts	0x00C2, r24
+  aa:	08 95       	ret
+
+000000ac <_Z13usart_putcharc>:
+}
+void usart_putchar(char data) {
+	// Wait for empty transmit buffer
+	while ( !(UCSR0A & (_BV(UDRE0))) );
+  ac:	e0 ec       	ldi	r30, 0xC0	; 192
+  ae:	f0 e0       	ldi	r31, 0x00	; 0
+  b0:	90 81       	ld	r25, Z
+  b2:	95 ff       	sbrs	r25, 5
+  b4:	fd cf       	rjmp	.-6      	; 0xb0 <_Z13usart_putcharc+0x4>
+	// Start transmission
+	UDR0 = data;
+  b6:	80 93 c6 00 	sts	0x00C6, r24
+  ba:	08 95       	ret
+
+000000bc <_Z13usart_getcharv>:
+}
+char usart_getchar(void) {
+	// Wait for incoming data
+	while ( !(UCSR0A & (_BV(RXC0))) );
+  bc:	e0 ec       	ldi	r30, 0xC0	; 192
+  be:	f0 e0       	ldi	r31, 0x00	; 0
+  c0:	80 81       	ld	r24, Z
+  c2:	88 23       	and	r24, r24
+  c4:	ec f7       	brge	.-6      	; 0xc0 <_Z13usart_getcharv+0x4>
+	// Return the data
+	return UDR0;
+  c6:	80 91 c6 00 	lds	r24, 0x00C6
+}
+  ca:	08 95       	ret
+
+000000cc <_Z11usart_kbhitv>:
+unsigned char usart_kbhit(void) {
+	//return nonzero if char waiting polled version
+	unsigned char b;
+	b=0;
+	if(UCSR0A & (1<<RXC0)) b=1;
+  cc:	80 91 c0 00 	lds	r24, 0x00C0
+	return b;
+}
+  d0:	88 1f       	adc	r24, r24
+  d2:	88 27       	eor	r24, r24
+  d4:	88 1f       	adc	r24, r24
+  d6:	08 95       	ret
+
+000000d8 <_Z10usart_pstrPc>:
+void usart_pstr(char *s) {
+  d8:	cf 93       	push	r28
+  da:	df 93       	push	r29
+  dc:	ec 01       	movw	r28, r24
+	// loop through entire string
+	while (*s) {
+  de:	88 81       	ld	r24, Y
+  e0:	88 23       	and	r24, r24
+  e2:	31 f0       	breq	.+12     	; 0xf0 <_Z10usart_pstrPc+0x18>
+	unsigned char b;
+	b=0;
+	if(UCSR0A & (1<<RXC0)) b=1;
+	return b;
+}
+void usart_pstr(char *s) {
+  e4:	21 96       	adiw	r28, 0x01	; 1
+	// loop through entire string
+	while (*s) {
+		usart_putchar(*s);
+  e6:	0e 94 56 00 	call	0xac	; 0xac <_Z13usart_putcharc>
+	if(UCSR0A & (1<<RXC0)) b=1;
+	return b;
+}
+void usart_pstr(char *s) {
+	// loop through entire string
+	while (*s) {
+  ea:	89 91       	ld	r24, Y+
+  ec:	81 11       	cpse	r24, r1
+  ee:	fb cf       	rjmp	.-10     	; 0xe6 <_Z10usart_pstrPc+0xe>
+		usart_putchar(*s);
+		s++;
+	}
+  f0:	df 91       	pop	r29
+  f2:	cf 91       	pop	r28
+  f4:	08 95       	ret
+
+000000f6 <main>:
+Main
+********************************************************************************/
+int main( void ) {
+	
+	// setup PORTB data direction as an input
+	DDRB = 0;
+  f6:	14 b8       	out	0x04, r1	; 4
+	// make sure it is high impedance and will not source
+	PORTB = 0;
+  f8:	15 b8       	out	0x05, r1	; 5
+	// fire up the usart
+	usart_init ( MYUBRR );
+  fa:	89 e1       	ldi	r24, 0x19	; 25
+  fc:	90 e0       	ldi	r25, 0x00	; 0
+  fe:	0e 94 4b 00 	call	0x96	; 0x96 <_Z10usart_initj>
+	// dump some strings to the screen at power on
+	usart_pstr("Ready to rock and roll!\n\r");
+ 102:	80 e0       	ldi	r24, 0x00	; 0
+ 104:	91 e0       	ldi	r25, 0x01	; 1
+ 106:	0e 94 6c 00 	call	0xd8	; 0xd8 <_Z10usart_pstrPc>
+	usart_pstr("Type in a character, and I will transpose it up by 1:\n\r");
+ 10a:	8a e1       	ldi	r24, 0x1A	; 26
+ 10c:	91 e0       	ldi	r25, 0x01	; 1
+ 10e:	0e 94 6c 00 	call	0xd8	; 0xd8 <_Z10usart_pstrPc>
+	// main loop
+	while(true) {
+		// if a key has been pressed, then process it
+		if(usart_kbhit()) {
+ 112:	0e 94 66 00 	call	0xcc	; 0xcc <_Z11usart_kbhitv>
+ 116:	88 23       	and	r24, r24
+ 118:	29 f0       	breq	.+10     	; 0x124 <main+0x2e>
+			usart_putchar(usart_getchar() + 1);
+ 11a:	0e 94 5e 00 	call	0xbc	; 0xbc <_Z13usart_getcharv>
+ 11e:	8f 5f       	subi	r24, 0xFF	; 255
+ 120:	0e 94 56 00 	call	0xac	; 0xac <_Z13usart_putcharc>
+		}
+
+		
+			usart_pstr("OUCH! Stop poking me!\n\r");
+ 124:	82 e5       	ldi	r24, 0x52	; 82
+ 126:	91 e0       	ldi	r25, 0x01	; 1
+ 128:	0e 94 6c 00 	call	0xd8	; 0xd8 <_Z10usart_pstrPc>
+	usart_init ( MYUBRR );
+	// dump some strings to the screen at power on
+	usart_pstr("Ready to rock and roll!\n\r");
+	usart_pstr("Type in a character, and I will transpose it up by 1:\n\r");
+	// main loop
+	while(true) {
+ 12c:	f2 cf       	rjmp	.-28     	; 0x112 <main+0x1c>
+
+0000012e <_exit>:
+ 12e:	f8 94       	cli
+
+00000130 <__stop_program>:
+ 130:	ff cf       	rjmp	.-2      	; 0x130 <__stop_program>

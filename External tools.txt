@@ -1,0 +1,14 @@
+title:	USBasp Atmega168
+command 	C:\Program Files\arduino-1.5.2\hardware\tools\avr\bin\avrdude.exe
+arguments:	-C "C:\Program Files\arduino-1.5.2\hardware\tools\avr\etc\avrdude.conf" -c usbasp -p m168 -U flash:w:$(TargetDir)$(TargetName).hex:i 
+
+
+title:	USBasp Atmega168P
+command:	C:\Program Files\arduino-1.5.2\hardware\tools\avr\bin\avrdude.exe
+arguments:	-C "C:\Program Files\arduino-1.5.2\hardware\tools\avr\etc\avrdude.conf" -c usbasp -p m168p -U flash:w:$(TargetDir)$(TargetName).hex:i 
+
+title:	USBasp Atmega168P set fuses to 8Mhz
+command:	C:\Program Files\arduino-1.5.2\hardware\tools\avr\bin\avrdude.exe
+arguments:	-C "C:\Program Files\arduino-1.5.2\hardware\tools\avr\etc\avrdude.conf" -c usbasp -p m168p -U lfuse:w:0xe2:m -U hfuse:w:0xdf:m -U efuse:w:0xf9:m 
+
+
