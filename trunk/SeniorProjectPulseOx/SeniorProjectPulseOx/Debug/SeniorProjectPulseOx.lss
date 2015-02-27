@@ -3,1607 +3,1562 @@ SeniorProjectPulseOx.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         0000027a  00800100  00000b84  00000c18  2**0
+  0 .data         0000027a  00800100  00000ba6  00000c3a  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00000b84  00000000  00000000  00000094  2**1
+  1 .text         00000ba6  00000000  00000000  00000094  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000076  0080037a  0080037a  00000e92  2**0
+  2 .bss          00000076  0080037a  0080037a  00000eb4  2**0
                   ALLOC
-  3 .stab         000006cc  00000000  00000000  00000e94  2**2
-                  CONTENTS, READONLY, DEBUGGING
-  4 .stabstr      00000097  00000000  00000000  00001560  2**0
-                  CONTENTS, READONLY, DEBUGGING
-  5 .comment      0000002f  00000000  00000000  000015f7  2**0
+  3 .comment      00000030  00000000  00000000  00000eb4  2**0
                   CONTENTS, READONLY
-  6 .debug_aranges 00000428  00000000  00000000  00001626  2**0
+  4 .debug_aranges 00000318  00000000  00000000  00000ee4  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_info   00004756  00000000  00000000  00001a4e  2**0
+  5 .debug_info   00004059  00000000  00000000  000011fc  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_abbrev 00000c9b  00000000  00000000  000061a4  2**0
+  6 .debug_abbrev 00000b08  00000000  00000000  00005255  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_line   00001301  00000000  00000000  00006e3f  2**0
+  7 .debug_line   00000cbc  00000000  00000000  00005d5d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_frame  000009c4  00000000  00000000  00008140  2**2
+  8 .debug_frame  000007b4  00000000  00000000  00006a1c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_str    0000132a  00000000  00000000  00008b04  2**0
+  9 .debug_str    00001359  00000000  00000000  000071d0  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_loc    00002507  00000000  00000000  00009e2e  2**0
+ 10 .debug_loc    00002421  00000000  00000000  00008529  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_ranges 000003c0  00000000  00000000  0000c335  2**0
+ 11 .debug_ranges 000002e0  00000000  00000000  0000a94a  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
-    Write23008(GPIO, toLCD);
-}
+   0:	0c 94 6a 00 	jmp	0xd4	; 0xd4 <__ctors_end>
+   4:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+   8:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+   c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  10:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  14:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  18:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  1c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  20:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  24:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  28:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  2c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  30:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  34:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  38:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  3c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  40:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  44:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  48:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  4c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  50:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  54:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  58:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  5c:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  60:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  64:	0c 94 92 00 	jmp	0x124	; 0x124 <__bad_interrupt>
+  68:	14 03       	mulsu	r17, r20
+  6a:	18 03       	fmul	r17, r16
+  6c:	1c 03       	fmul	r17, r20
+  6e:	20 03       	mulsu	r18, r16
+  70:	24 03       	mulsu	r18, r20
+  72:	28 03       	fmul	r18, r16
+  74:	32 03       	mulsu	r19, r18
+  76:	36 03       	mulsu	r19, r22
+  78:	3a 03       	fmul	r19, r18
+  7a:	42 03       	mulsu	r20, r18
+  7c:	46 03       	mulsu	r20, r22
+  7e:	4a 03       	fmul	r20, r18
+  80:	7c 03       	fmul	r23, r20
+  82:	5d 03       	fmul	r21, r21
+  84:	7c 03       	fmul	r23, r20
+  86:	7c 03       	fmul	r23, r20
+  88:	7c 03       	fmul	r23, r20
+  8a:	61 03       	mulsu	r22, r17
+  8c:	7c 03       	fmul	r23, r20
+  8e:	7c 03       	fmul	r23, r20
+  90:	7c 03       	fmul	r23, r20
+  92:	7c 03       	fmul	r23, r20
+  94:	7c 03       	fmul	r23, r20
+  96:	7c 03       	fmul	r23, r20
+  98:	65 03       	mulsu	r22, r21
+  9a:	69 03       	fmul	r22, r17
+  9c:	6d 03       	fmul	r22, r21
+  9e:	71 03       	mulsu	r23, r17
+  a0:	75 03       	mulsu	r23, r21
+  a2:	79 03       	fmul	r23, r17
+  a4:	c9 03       	fmulsu	r20, r17
+  a6:	e7 03       	fmuls	r22, r23
+  a8:	f2 03       	fmuls	r23, r18
+  aa:	f5 03       	fmuls	r23, r21
+  ac:	f9 03       	fmulsu	r23, r17
+  ae:	fd 03       	fmulsu	r23, r21
+  b0:	00 04       	cpc	r0, r0
+  b2:	09 04       	cpc	r0, r9
+  b4:	1b 04       	cpc	r1, r11
+  b6:	24 04       	cpc	r2, r4
+  b8:	35 04       	cpc	r3, r5
+  ba:	2e 04       	cpc	r2, r14
+  bc:	31 04       	cpc	r3, r1
+  be:	1e 04       	cpc	r1, r14
+  c0:	21 04       	cpc	r2, r1
+  c2:	24 05       	cpc	r18, r4
+  c4:	30 05       	cpc	r19, r0
+  c6:	36 05       	cpc	r19, r6
+  c8:	42 05       	cpc	r20, r2
+  ca:	49 05       	cpc	r20, r9
+  cc:	59 05       	cpc	r21, r9
+  ce:	60 05       	cpc	r22, r0
 
-// write a byte to the LCD in 4 bit mode
-void lcdWrite(unsigned char address, unsigned char c)
-{
-   0:	0c 94 54 00 	jmp	0xa8	; 0xa8 <__ctors_end>
-   4:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-    clockLow();
-   8:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-   c:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  10:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  14:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-    if (address == CMD_REG){
-  18:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-        commandRegister();
-  1c:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  20:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  24:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  28:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  2c:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-    }
-    else dataRegister();
-  30:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  34:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  38:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  3c:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  40:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-	#else
-		//round up by default
-		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
-	#endif
+000000d0 <__ctors_start>:
+  d0:	5c 04       	cpc	r5, r12
+  d2:	c6 05       	cpc	r28, r6
 
-	__builtin_avr_delay_cycles(__ticks_dc);
-  44:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  48:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
+000000d4 <__ctors_end>:
+  d4:	11 24       	eor	r1, r1
+  d6:	1f be       	out	0x3f, r1	; 63
+  d8:	cf ef       	ldi	r28, 0xFF	; 255
+  da:	d4 e0       	ldi	r29, 0x04	; 4
+  dc:	de bf       	out	0x3e, r29	; 62
+  de:	cd bf       	out	0x3d, r28	; 61
 
-    _delay_us(1);      //1 cycle = 62.5ns (nop)
+000000e0 <__do_copy_data>:
+  e0:	13 e0       	ldi	r17, 0x03	; 3
+  e2:	a0 e0       	ldi	r26, 0x00	; 0
+  e4:	b1 e0       	ldi	r27, 0x01	; 1
+  e6:	e6 ea       	ldi	r30, 0xA6	; 166
+  e8:	fb e0       	ldi	r31, 0x0B	; 11
+  ea:	02 c0       	rjmp	.+4      	; 0xf0 <__do_copy_data+0x10>
+  ec:	05 90       	lpm	r0, Z+
+  ee:	0d 92       	st	X+, r0
+  f0:	aa 37       	cpi	r26, 0x7A	; 122
+  f2:	b1 07       	cpc	r27, r17
+  f4:	d9 f7       	brne	.-10     	; 0xec <__do_copy_data+0xc>
 
-    clockHigh();
-  4c:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  50:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  54:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  58:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
+000000f6 <__do_clear_bss>:
+  f6:	23 e0       	ldi	r18, 0x03	; 3
+  f8:	aa e7       	ldi	r26, 0x7A	; 122
+  fa:	b3 e0       	ldi	r27, 0x03	; 3
+  fc:	01 c0       	rjmp	.+2      	; 0x100 <.do_clear_bss_start>
 
-    // Write the 4 bits non-destructively to the port
-    lcdWriteNybble((c >> 4) & 0x0F);
-  5c:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  60:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  64:	0c 94 7c 00 	jmp	0xf8	; 0xf8 <__bad_interrupt>
-  68:	fd 02       	muls	r31, r29
-  6a:	01 03       	mulsu	r16, r17
-    wait(5);    //~250ns
+000000fe <.do_clear_bss_loop>:
+  fe:	1d 92       	st	X+, r1
 
-    clockLow();
-  6c:	05 03       	mulsu	r16, r21
-  6e:	09 03       	fmul	r16, r17
-  70:	0d 03       	fmul	r16, r21
-  72:	11 03       	mulsu	r17, r17
-  74:	1b 03       	fmul	r17, r19
-  76:	1f 03       	fmul	r17, r23
-  78:	23 03       	mulsu	r18, r19
-  7a:	2a 03       	fmul	r18, r18
-  7c:	2e 03       	fmul	r18, r22
-  7e:	32 03       	mulsu	r19, r18
-  80:	64 03       	mulsu	r22, r20
-  82:	45 03       	mulsu	r20, r21
+00000100 <.do_clear_bss_start>:
+ 100:	a0 3f       	cpi	r26, 0xF0	; 240
+ 102:	b2 07       	cpc	r27, r18
+ 104:	e1 f7       	brne	.-8      	; 0xfe <.do_clear_bss_loop>
 
-    wait(4);    //~200ns
-    clockHigh();
-  84:	64 03       	mulsu	r22, r20
-  86:	64 03       	mulsu	r22, r20
-  88:	64 03       	mulsu	r22, r20
-  8a:	49 03       	fmul	r20, r17
-  8c:	64 03       	mulsu	r22, r20
-  8e:	64 03       	mulsu	r22, r20
-  90:	64 03       	mulsu	r22, r20
-  92:	64 03       	mulsu	r22, r20
-    // Write the 4 bits non-destructively to the port
-    lcdWriteNybble(c & 0x0F);
-  94:	64 03       	mulsu	r22, r20
-  96:	64 03       	mulsu	r22, r20
-  98:	4d 03       	fmul	r20, r21
-  9a:	51 03       	mulsu	r21, r17
-  9c:	55 03       	mulsu	r21, r21
-  9e:	59 03       	fmul	r21, r17
-  a0:	5d 03       	fmul	r21, r21
-  a2:	61 03       	mulsu	r22, r17
+00000106 <__do_global_ctors>:
+ 106:	10 e0       	ldi	r17, 0x00	; 0
+ 108:	c4 ed       	ldi	r28, 0xD4	; 212
+ 10a:	d0 e0       	ldi	r29, 0x00	; 0
+ 10c:	04 c0       	rjmp	.+8      	; 0x116 <__do_global_ctors+0x10>
+ 10e:	22 97       	sbiw	r28, 0x02	; 2
+ 110:	fe 01       	movw	r30, r28
+ 112:	0e 94 cd 05 	call	0xb9a	; 0xb9a <__tablejump__>
+ 116:	c0 3d       	cpi	r28, 0xD0	; 208
+ 118:	d1 07       	cpc	r29, r17
+ 11a:	c9 f7       	brne	.-14     	; 0x10e <__do_global_ctors+0x8>
+ 11c:	0e 94 ab 04 	call	0x956	; 0x956 <main>
+ 120:	0c 94 d1 05 	jmp	0xba2	; 0xba2 <_exit>
 
-000000a4 <__ctors_start>:
+00000124 <__bad_interrupt>:
+ 124:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
-    wait(5);    //~250ns
-}
-  a4:	75 04       	cpc	r7, r5
-  a6:	b5 05       	cpc	r27, r5
-
-000000a8 <__ctors_end>:
-  a8:	11 24       	eor	r1, r1
-  aa:	1f be       	out	0x3f, r1	; 63
-  ac:	cf ef       	ldi	r28, 0xFF	; 255
-  ae:	d4 e0       	ldi	r29, 0x04	; 4
-  b0:	de bf       	out	0x3e, r29	; 62
-  b2:	cd bf       	out	0x3d, r28	; 61
-
-000000b4 <__do_copy_data>:
-  b4:	13 e0       	ldi	r17, 0x03	; 3
-  b6:	a0 e0       	ldi	r26, 0x00	; 0
-  b8:	b1 e0       	ldi	r27, 0x01	; 1
-  ba:	e4 e8       	ldi	r30, 0x84	; 132
-  bc:	fb e0       	ldi	r31, 0x0B	; 11
-  be:	02 c0       	rjmp	.+4      	; 0xc4 <__do_copy_data+0x10>
-  c0:	05 90       	lpm	r0, Z+
-  c2:	0d 92       	st	X+, r0
-  c4:	aa 37       	cpi	r26, 0x7A	; 122
-  c6:	b1 07       	cpc	r27, r17
-  c8:	d9 f7       	brne	.-10     	; 0xc0 <__do_copy_data+0xc>
-
-000000ca <__do_clear_bss>:
-  ca:	23 e0       	ldi	r18, 0x03	; 3
-  cc:	aa e7       	ldi	r26, 0x7A	; 122
-  ce:	b3 e0       	ldi	r27, 0x03	; 3
-  d0:	01 c0       	rjmp	.+2      	; 0xd4 <.do_clear_bss_start>
-
-000000d2 <.do_clear_bss_loop>:
-  d2:	1d 92       	st	X+, r1
-
-000000d4 <.do_clear_bss_start>:
-  d4:	a0 3f       	cpi	r26, 0xF0	; 240
-  d6:	b2 07       	cpc	r27, r18
-  d8:	e1 f7       	brne	.-8      	; 0xd2 <.do_clear_bss_loop>
-
-000000da <__do_global_ctors>:
-  da:	10 e0       	ldi	r17, 0x00	; 0
-  dc:	c8 ea       	ldi	r28, 0xA8	; 168
-  de:	d0 e0       	ldi	r29, 0x00	; 0
-  e0:	04 c0       	rjmp	.+8      	; 0xea <__do_global_ctors+0x10>
-  e2:	22 97       	sbiw	r28, 0x02	; 2
-  e4:	fe 01       	movw	r30, r28
-  e6:	0e 94 bc 05 	call	0xb78	; 0xb78 <__tablejump__>
-  ea:	c4 3a       	cpi	r28, 0xA4	; 164
-  ec:	d1 07       	cpc	r29, r17
-  ee:	c9 f7       	brne	.-14     	; 0xe2 <__do_global_ctors+0x8>
-  f0:	0e 94 b7 04 	call	0x96e	; 0x96e <main>
-  f4:	0c 94 c0 05 	jmp	0xb80	; 0xb80 <_exit>
-
-000000f8 <__bad_interrupt>:
-  f8:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
-
-000000fc <initADC>:
-
-//@brief initialize AD converter on Atmega168 for
-void initADC(uint8_t channel, uint8_t prescalar){
+00000128 <_ZN6ANALOG12reinitializeEv>:
 	
+}
+
+void ANALOG::reinitialize(){
 	//Power reduction ADC bit must be zero to enable ADC
 	PRR &= ~(1<<PRADC);
-  fc:	e4 e6       	ldi	r30, 0x64	; 100
-  fe:	f0 e0       	ldi	r31, 0x00	; 0
- 100:	90 81       	ld	r25, Z
- 102:	9e 7f       	andi	r25, 0xFE	; 254
- 104:	90 83       	st	Z, r25
+ 128:	e4 e6       	ldi	r30, 0x64	; 100
+ 12a:	f0 e0       	ldi	r31, 0x00	; 0
+ 12c:	20 81       	ld	r18, Z
+ 12e:	2e 7f       	andi	r18, 0xFE	; 254
+ 130:	20 83       	st	Z, r18
 	
 	
 	//ADC clock needs to be between 50kHz and 200kHz
 	//8MHz/64 = 125kHz
-	ADCSRA = (1<<ADEN | prescalar<<ADPS0);	
- 106:	60 68       	ori	r22, 0x80	; 128
- 108:	60 93 7a 00 	sts	0x007A, r22
+	ADCSRA = (1<<ADEN | prescalar<<ADPS0);
+ 132:	dc 01       	movw	r26, r24
+ 134:	11 96       	adiw	r26, 0x01	; 1
+ 136:	2c 91       	ld	r18, X
+ 138:	11 97       	sbiw	r26, 0x01	; 1
+ 13a:	20 68       	ori	r18, 0x80	; 128
+ 13c:	20 93 7a 00 	sts	0x007A, r18
 	
-	//Disable the digital input for the ADC channels we will be using
+	//Disable the digital input for the ADC channel we will be using
 	DIDR0 |= (1<<channel);
- 10c:	ee e7       	ldi	r30, 0x7E	; 126
- 10e:	f0 e0       	ldi	r31, 0x00	; 0
- 110:	40 81       	ld	r20, Z
- 112:	21 e0       	ldi	r18, 0x01	; 1
- 114:	30 e0       	ldi	r19, 0x00	; 0
- 116:	b9 01       	movw	r22, r18
- 118:	02 c0       	rjmp	.+4      	; 0x11e <initADC+0x22>
- 11a:	66 0f       	add	r22, r22
- 11c:	77 1f       	adc	r23, r23
- 11e:	8a 95       	dec	r24
- 120:	e2 f7       	brpl	.-8      	; 0x11a <initADC+0x1e>
- 122:	cb 01       	movw	r24, r22
- 124:	84 2b       	or	r24, r20
- 126:	80 83       	st	Z, r24
- 128:	08 95       	ret
+ 140:	ee e7       	ldi	r30, 0x7E	; 126
+ 142:	f0 e0       	ldi	r31, 0x00	; 0
+ 144:	40 81       	ld	r20, Z
+ 146:	21 e0       	ldi	r18, 0x01	; 1
+ 148:	30 e0       	ldi	r19, 0x00	; 0
+ 14a:	b9 01       	movw	r22, r18
+ 14c:	0c 90       	ld	r0, X
+ 14e:	02 c0       	rjmp	.+4      	; 0x154 <_ZN6ANALOG12reinitializeEv+0x2c>
+ 150:	66 0f       	add	r22, r22
+ 152:	77 1f       	adc	r23, r23
+ 154:	0a 94       	dec	r0
+ 156:	e2 f7       	brpl	.-8      	; 0x150 <_ZN6ANALOG12reinitializeEv+0x28>
+ 158:	cb 01       	movw	r24, r22
+ 15a:	84 2b       	or	r24, r20
+ 15c:	80 83       	st	Z, r24
+ 15e:	08 95       	ret
 
-0000012a <startADC>:
-	clearADCinterrupt();
+00000160 <_ZN6ANALOGC1Ehh>:
+	reinitialize();
 }
 
-void startADC(uint8_t channel){
+//@brief initialize AD converter on Atmega168 for
+ANALOG::ANALOG(uint8_t ch, uint8_t pscalar){
+	channel = ch;
+ 160:	fc 01       	movw	r30, r24
+ 162:	60 83       	st	Z, r22
+	prescalar = pscalar;
+ 164:	41 83       	std	Z+1, r20	; 0x01
+	reinitialize();
+ 166:	0e 94 94 00 	call	0x128	; 0x128 <_ZN6ANALOG12reinitializeEv>
+ 16a:	08 95       	ret
+
+0000016c <_ZN6ANALOG5startEv>:
+	return (ADC);
+}
+
+void ANALOG::start(){
 	//set ADC channel
-	ADMUX = (0x00) | channel;
- 12a:	80 93 7c 00 	sts	0x007C, r24
+	ADMUX = (1<<REFS0) | channel;
+ 16c:	fc 01       	movw	r30, r24
+ 16e:	80 81       	ld	r24, Z
+ 170:	80 64       	ori	r24, 0x40	; 64
+ 172:	80 93 7c 00 	sts	0x007C, r24
 	
 	//start conversion
 	ADCSRA |= (1<<ADSC);
- 12e:	ea e7       	ldi	r30, 0x7A	; 122
- 130:	f0 e0       	ldi	r31, 0x00	; 0
- 132:	80 81       	ld	r24, Z
- 134:	80 64       	ori	r24, 0x40	; 64
- 136:	80 83       	st	Z, r24
- 138:	08 95       	ret
+ 176:	ea e7       	ldi	r30, 0x7A	; 122
+ 178:	f0 e0       	ldi	r31, 0x00	; 0
+ 17a:	80 81       	ld	r24, Z
+ 17c:	80 64       	ori	r24, 0x40	; 64
+ 17e:	80 83       	st	Z, r24
+ 180:	08 95       	ret
 
-0000013a <isADCfinished>:
+00000182 <_ZN6ANALOG18isInterruptFlagSetEv>:
+uint8_t ANALOG::isReading(){
+	return (ADCSRA & (1<<ADSC));	
 }
 
-uint8_t isADCfinished(){
-	return ((ADCSRA & (1<<ADSC))?0:1);
- 13a:	80 91 7a 00 	lds	r24, 0x007A
- 13e:	86 fb       	bst	r24, 6
- 140:	88 27       	eor	r24, r24
- 142:	80 f9       	bld	r24, 0
-	//return ((ADCSRA & (1<<ADIF)));
+uint8_t	ANALOG::isInterruptFlagSet(){
+	return(ADCSRA & (1<<ADIF));
+ 182:	80 91 7a 00 	lds	r24, 0x007A
 }
- 144:	91 e0       	ldi	r25, 0x01	; 1
- 146:	89 27       	eor	r24, r25
- 148:	08 95       	ret
+ 186:	80 71       	andi	r24, 0x10	; 16
+ 188:	08 95       	ret
 
-0000014a <clearADCinterrupt>:
+0000018a <_ZN6ANALOG9clearFlagEv>:
 
-void clearADCinterrupt(){
+void ANALOG::clearFlag(){
 	//clear interrupt by setting ADIF to 1
 	ADCSRA |= (1<<ADIF);
- 14a:	ea e7       	ldi	r30, 0x7A	; 122
- 14c:	f0 e0       	ldi	r31, 0x00	; 0
- 14e:	80 81       	ld	r24, Z
- 150:	80 61       	ori	r24, 0x10	; 16
- 152:	80 83       	st	Z, r24
- 154:	08 95       	ret
+ 18a:	ea e7       	ldi	r30, 0x7A	; 122
+ 18c:	f0 e0       	ldi	r31, 0x00	; 0
+ 18e:	80 81       	ld	r24, Z
+ 190:	80 61       	ori	r24, 0x10	; 16
+ 192:	80 83       	st	Z, r24
+ 194:	08 95       	ret
 
-00000156 <_ZN3SPI4initEh>:
+00000196 <_ZN3SPI4initEh>:
 		init(SPCRvalue);
 	}
 	void SPI::init(uint8_t SPCRvalue)
 	// Initialize pins for spi communication
 	{
 		DDR_SPI &= ~((1<<DD_MOSI)|(1<<DD_MISO)|(1<<DD_SS)|(1<<DD_SCK));
- 156:	84 b1       	in	r24, 0x04	; 4
- 158:	83 7c       	andi	r24, 0xC3	; 195
- 15a:	84 b9       	out	0x04, r24	; 4
+ 196:	84 b1       	in	r24, 0x04	; 4
+ 198:	83 7c       	andi	r24, 0xC3	; 195
+ 19a:	84 b9       	out	0x04, r24	; 4
 		// Define the following pins as output
 		DDR_SPI |= ((1<<DD_MOSI)|(1<<DD_SS)|(1<<DD_SCK));
- 15c:	84 b1       	in	r24, 0x04	; 4
- 15e:	8c 62       	ori	r24, 0x2C	; 44
- 160:	84 b9       	out	0x04, r24	; 4
+ 19c:	84 b1       	in	r24, 0x04	; 4
+ 19e:	8c 62       	ori	r24, 0x2C	; 44
+ 1a0:	84 b9       	out	0x04, r24	; 4
 
 		if (SPCRvalue == 0x00){
- 162:	61 11       	cpse	r22, r1
- 164:	03 c0       	rjmp	.+6      	; 0x16c <_ZN3SPI4initEh+0x16>
+ 1a2:	61 11       	cpse	r22, r1
+ 1a4:	03 c0       	rjmp	.+6      	; 0x1ac <_ZN3SPI4initEh+0x16>
 			(0<<SPIE)|              // SPI Interrupt Enable
 			(0<<DORD)|              // Data Order (0:MSB first / 1:LSB first)
 			(1<<MSTR)|              // Master/Slave select
 			(0<<SPR1)|(1<<SPR0)|    // SPI Clock Rate
 			(0<<CPOL)|              // Clock Polarity (0:SCK low / 1:SCK hi when idle)
 			(0<<CPHA));             // Clock Phase (0:leading / 1:trailing edge sampling)
- 166:	81 e5       	ldi	r24, 0x51	; 81
- 168:	8c bd       	out	0x2c, r24	; 44
- 16a:	08 95       	ret
+ 1a6:	81 e5       	ldi	r24, 0x51	; 81
+ 1a8:	8c bd       	out	0x2c, r24	; 44
+ 1aa:	08 95       	ret
 		}
 		else SPCR = SPCRvalue;
- 16c:	6c bd       	out	0x2c, r22	; 44
- 16e:	08 95       	ret
+ 1ac:	6c bd       	out	0x2c, r22	; 44
+ 1ae:	08 95       	ret
 
-00000170 <_ZN3SPIC1Eh>:
+000001b0 <_ZN3SPIC1Eh>:
 	
 	SPI::SPI(){
 		init(0x00);
 	}
 	SPI::SPI(uint8_t SPCRvalue){
 		init(SPCRvalue);
- 170:	0e 94 ab 00 	call	0x156	; 0x156 <_ZN3SPI4initEh>
- 174:	08 95       	ret
+ 1b0:	0e 94 cb 00 	call	0x196	; 0x196 <_ZN3SPI4initEh>
+ 1b4:	08 95       	ret
 
-00000176 <_ZN3SPI8transferEPhS0_h>:
+000001b6 <_ZN3SPI8transferEPhS0_h>:
 	
 	void SPI::transfer (uint8_t * dataout, uint8_t * datain, uint8_t length)
 	// Shift full array through target device
 	{
 		uint8_t i;
 		for (i = 0; i < length; i++) {
- 176:	22 23       	and	r18, r18
- 178:	81 f0       	breq	.+32     	; 0x19a <_ZN3SPI8transferEPhS0_h+0x24>
- 17a:	96 2f       	mov	r25, r22
- 17c:	a4 2f       	mov	r26, r20
- 17e:	b5 2f       	mov	r27, r21
- 180:	e6 2f       	mov	r30, r22
- 182:	f7 2f       	mov	r31, r23
+ 1b6:	22 23       	and	r18, r18
+ 1b8:	81 f0       	breq	.+32     	; 0x1da <_ZN3SPI8transferEPhS0_h+0x24>
+ 1ba:	96 2f       	mov	r25, r22
+ 1bc:	a4 2f       	mov	r26, r20
+ 1be:	b5 2f       	mov	r27, r21
+ 1c0:	e6 2f       	mov	r30, r22
+ 1c2:	f7 2f       	mov	r31, r23
 			SPDR = dataout[i];
- 184:	81 91       	ld	r24, Z+
- 186:	8e bd       	out	0x2e, r24	; 46
+ 1c4:	81 91       	ld	r24, Z+
+ 1c6:	8e bd       	out	0x2e, r24	; 46
 			while((SPSR & (1<<SPIF))==0);
- 188:	0d b4       	in	r0, 0x2d	; 45
- 18a:	07 fe       	sbrs	r0, 7
- 18c:	fd cf       	rjmp	.-6      	; 0x188 <_ZN3SPI8transferEPhS0_h+0x12>
+ 1c8:	0d b4       	in	r0, 0x2d	; 45
+ 1ca:	07 fe       	sbrs	r0, 7
+ 1cc:	fd cf       	rjmp	.-6      	; 0x1c8 <_ZN3SPI8transferEPhS0_h+0x12>
 			datain[i] = SPDR;
- 18e:	8e b5       	in	r24, 0x2e	; 46
- 190:	8d 93       	st	X+, r24
+ 1ce:	8e b5       	in	r24, 0x2e	; 46
+ 1d0:	8d 93       	st	X+, r24
+ 1d2:	8e 2f       	mov	r24, r30
+ 1d4:	89 1b       	sub	r24, r25
 	
 	void SPI::transfer (uint8_t * dataout, uint8_t * datain, uint8_t length)
 	// Shift full array through target device
 	{
 		uint8_t i;
 		for (i = 0; i < length; i++) {
- 192:	8e 2f       	mov	r24, r30
- 194:	89 1b       	sub	r24, r25
- 196:	82 17       	cp	r24, r18
- 198:	a8 f3       	brcs	.-22     	; 0x184 <_ZN3SPI8transferEPhS0_h+0xe>
- 19a:	08 95       	ret
+ 1d6:	82 17       	cp	r24, r18
+ 1d8:	a8 f3       	brcs	.-22     	; 0x1c4 <_ZN3SPI8transferEPhS0_h+0xe>
+ 1da:	08 95       	ret
 
-0000019c <_ZN3SPI13transfer1byteEh>:
+000001dc <_ZN3SPI13transfer1byteEh>:
 	}
 	
 	uint8_t SPI::transfer1byte (uint8_t dataout)
 	// Clocks only one byte to target device and returns the received one
 	{
 		SPDR = dataout;
- 19c:	6e bd       	out	0x2e, r22	; 46
+ 1dc:	6e bd       	out	0x2e, r22	; 46
 		while((SPSR & (1<<SPIF))==0);
- 19e:	0d b4       	in	r0, 0x2d	; 45
- 1a0:	07 fe       	sbrs	r0, 7
- 1a2:	fd cf       	rjmp	.-6      	; 0x19e <_ZN3SPI13transfer1byteEh+0x2>
+ 1de:	0d b4       	in	r0, 0x2d	; 45
+ 1e0:	07 fe       	sbrs	r0, 7
+ 1e2:	fd cf       	rjmp	.-6      	; 0x1de <_ZN3SPI13transfer1byteEh+0x2>
 		return SPDR;
- 1a4:	8e b5       	in	r24, 0x2e	; 46
+ 1e4:	8e b5       	in	r24, 0x2e	; 46
 	}
- 1a6:	08 95       	ret
+ 1e6:	08 95       	ret
 
-000001a8 <_ZN3NRF14isInitializingEv>:
+000001e8 <_ZN3NRF14isInitializingEv>:
 #pragma endregion Data Command Functions
 
 #pragma region Status Functions
 uint8_t NRF::isInitializing(void){
 	//return ((status & (1<<NRF_INIT_MODE))?TRUE:FALSE);
 	return (mode == NRF_MODE_SETUP);
- 1a8:	fc 01       	movw	r30, r24
- 1aa:	ef 58       	subi	r30, 0x8F	; 143
- 1ac:	ff 4f       	sbci	r31, 0xFF	; 255
- 1ae:	81 e0       	ldi	r24, 0x01	; 1
- 1b0:	90 81       	ld	r25, Z
- 1b2:	92 30       	cpi	r25, 0x02	; 2
- 1b4:	09 f0       	breq	.+2      	; 0x1b8 <_ZN3NRF14isInitializingEv+0x10>
- 1b6:	80 e0       	ldi	r24, 0x00	; 0
+ 1e8:	fc 01       	movw	r30, r24
+ 1ea:	ef 58       	subi	r30, 0x8F	; 143
+ 1ec:	ff 4f       	sbci	r31, 0xFF	; 255
+ 1ee:	81 e0       	ldi	r24, 0x01	; 1
+ 1f0:	90 81       	ld	r25, Z
+ 1f2:	92 30       	cpi	r25, 0x02	; 2
+ 1f4:	09 f0       	breq	.+2      	; 0x1f8 <_ZN3NRF14isInitializingEv+0x10>
+ 1f6:	80 e0       	ldi	r24, 0x00	; 0
 }
- 1b8:	08 95       	ret
+ 1f8:	08 95       	ret
 
-000001ba <_ZN3NRF13hasDataToSendEv>:
+000001fa <_ZN3NRF13hasDataToSendEv>:
 uint8_t NRF::hasDataToSend(void){
 	return ((status & (1<<NRF_TX_READY))?TRUE:FALSE);
- 1ba:	fc 01       	movw	r30, r24
- 1bc:	82 8d       	ldd	r24, Z+26	; 0x1a
+ 1fa:	fc 01       	movw	r30, r24
+ 1fc:	82 8d       	ldd	r24, Z+26	; 0x1a
 }
- 1be:	86 fb       	bst	r24, 6
- 1c0:	88 27       	eor	r24, r24
- 1c2:	80 f9       	bld	r24, 0
- 1c4:	08 95       	ret
+ 1fe:	86 fb       	bst	r24, 6
+ 200:	88 27       	eor	r24, r24
+ 202:	80 f9       	bld	r24, 0
+ 204:	08 95       	ret
 
-000001c6 <_ZN3NRF20isReadyToReceiveDataEv>:
+00000206 <_ZN3NRF18waitingForResponseEv>:
 uint8_t NRF::isReadyToReceiveData(){
 	return ((status & (1<<NRF_RX_READY))?TRUE:FALSE);
- 1c6:	fc 01       	movw	r30, r24
- 1c8:	82 8d       	ldd	r24, Z+26	; 0x1a
 }
- 1ca:	88 1f       	adc	r24, r24
- 1cc:	88 27       	eor	r24, r24
- 1ce:	88 1f       	adc	r24, r24
- 1d0:	08 95       	ret
-
-000001d2 <_ZN3NRF18waitingForResponseEv>:
 uint8_t NRF::waitingForResponse(void){
 	return ((status & (1<<NRF_WAIT_FOR_RESPONSE))?TRUE:FALSE);
- 1d2:	fc 01       	movw	r30, r24
- 1d4:	82 8d       	ldd	r24, Z+26	; 0x1a
+ 206:	fc 01       	movw	r30, r24
+ 208:	82 8d       	ldd	r24, Z+26	; 0x1a
 	}
- 1d6:	82 95       	swap	r24
- 1d8:	81 70       	andi	r24, 0x01	; 1
- 1da:	08 95       	ret
+ 20a:	82 95       	swap	r24
+ 20c:	81 70       	andi	r24, 0x01	; 1
+ 20e:	08 95       	ret
 
-000001dc <_ZN3NRF11isConnectedEv>:
+00000210 <_ZN3NRF11isConnectedEv>:
 uint8_t NRF::isConnected(void){
 	return ((status & (1<<NRF_CONNECTED))?TRUE:FALSE);
- 1dc:	fc 01       	movw	r30, r24
- 1de:	82 8d       	ldd	r24, Z+26	; 0x1a
+ 210:	fc 01       	movw	r30, r24
+ 212:	82 8d       	ldd	r24, Z+26	; 0x1a
 }	
- 1e0:	83 fb       	bst	r24, 3
- 1e2:	88 27       	eor	r24, r24
- 1e4:	80 f9       	bld	r24, 0
- 1e6:	08 95       	ret
+ 214:	83 fb       	bst	r24, 3
+ 216:	88 27       	eor	r24, r24
+ 218:	80 f9       	bld	r24, 0
+ 21a:	08 95       	ret
 
-000001e8 <_ZN3NRF16hasDataToProcessEv>:
+0000021c <_ZN3NRF16hasDataToProcessEv>:
 uint8_t NRF::isBonded(void){
 	return ((status & (1<<NRF_BONDED))?TRUE:FALSE);	
 }
 uint8_t NRF::hasDataToProcess(void){
 	return ((status & (1<<NRF_DATA_TO_PROCESS))?TRUE:FALSE);
- 1e8:	fc 01       	movw	r30, r24
- 1ea:	82 8d       	ldd	r24, Z+26	; 0x1a
+ 21c:	fc 01       	movw	r30, r24
+ 21e:	82 8d       	ldd	r24, Z+26	; 0x1a
 }
- 1ec:	85 fb       	bst	r24, 5
- 1ee:	88 27       	eor	r24, r24
- 1f0:	80 f9       	bld	r24, 0
- 1f2:	08 95       	ret
+ 220:	85 fb       	bst	r24, 5
+ 222:	88 27       	eor	r24, r24
+ 224:	80 f9       	bld	r24, 0
+ 226:	08 95       	ret
 
-000001f4 <_ZN3NRF20dataHasBeenProcessedEv>:
+00000228 <_ZN3NRF20dataHasBeenProcessedEv>:
 void	NRF::dataHasBeenProcessed(void){
 	status &= ~(1<<NRF_DATA_TO_PROCESS);
- 1f4:	fc 01       	movw	r30, r24
- 1f6:	22 8d       	ldd	r18, Z+26	; 0x1a
- 1f8:	2f 7d       	andi	r18, 0xDF	; 223
- 1fa:	22 8f       	std	Z+26, r18	; 0x1a
- 1fc:	08 95       	ret
+ 228:	fc 01       	movw	r30, r24
+ 22a:	22 8d       	ldd	r18, Z+26	; 0x1a
+ 22c:	2f 7d       	andi	r18, 0xDF	; 223
+ 22e:	22 8f       	std	Z+26, r18	; 0x1a
+ 230:	08 95       	ret
 
-000001fe <_ZN3NRF15isSystemCommandEh>:
+00000232 <_ZN3NRF15isSystemCommandEh>:
 uint8_t	NRF::isSystemCommand(uint8_t command){
 	return ((	command == NRF_CMD_SET_LOCAL_DATA	||
 		command == NRF_CMD_SEND_DATA		||
 		command == NRF_CMD_SEND_DATA_ACK	||
 		command == NRF_CMD_REQUEST_DATA		||
 		command == NRF_CMD_SEND_DATA_NACK	 )	? FALSE: TRUE);
- 1fe:	6d 30       	cpi	r22, 0x0D	; 13
- 200:	59 f0       	breq	.+22     	; 0x218 <_ZN3NRF15isSystemCommandEh+0x1a>
- 202:	65 31       	cpi	r22, 0x15	; 21
- 204:	59 f0       	breq	.+22     	; 0x21c <_ZN3NRF15isSystemCommandEh+0x1e>
- 206:	66 31       	cpi	r22, 0x16	; 22
- 208:	59 f0       	breq	.+22     	; 0x220 <_ZN3NRF15isSystemCommandEh+0x22>
- 20a:	67 31       	cpi	r22, 0x17	; 23
- 20c:	59 f0       	breq	.+22     	; 0x224 <_ZN3NRF15isSystemCommandEh+0x26>
- 20e:	81 e0       	ldi	r24, 0x01	; 1
- 210:	68 31       	cpi	r22, 0x18	; 24
- 212:	49 f4       	brne	.+18     	; 0x226 <_ZN3NRF15isSystemCommandEh+0x28>
- 214:	80 e0       	ldi	r24, 0x00	; 0
- 216:	08 95       	ret
- 218:	80 e0       	ldi	r24, 0x00	; 0
- 21a:	08 95       	ret
- 21c:	80 e0       	ldi	r24, 0x00	; 0
- 21e:	08 95       	ret
- 220:	80 e0       	ldi	r24, 0x00	; 0
- 222:	08 95       	ret
- 224:	80 e0       	ldi	r24, 0x00	; 0
+ 232:	6d 30       	cpi	r22, 0x0D	; 13
+ 234:	31 f0       	breq	.+12     	; 0x242 <_ZN3NRF15isSystemCommandEh+0x10>
+	status &= ~(1<<NRF_DATA_TO_PROCESS);
 }
- 226:	08 95       	ret
+#pragma endregion Status Functions
 
-00000228 <_ZN3NRF4initEv>:
+uint8_t	NRF::isSystemCommand(uint8_t command){
+	return ((	command == NRF_CMD_SET_LOCAL_DATA	||
+ 236:	65 51       	subi	r22, 0x15	; 21
+ 238:	81 e0       	ldi	r24, 0x01	; 1
+ 23a:	64 30       	cpi	r22, 0x04	; 4
+ 23c:	18 f4       	brcc	.+6      	; 0x244 <_ZN3NRF15isSystemCommandEh+0x12>
+ 23e:	80 e0       	ldi	r24, 0x00	; 0
+ 240:	08 95       	ret
+		command == NRF_CMD_SEND_DATA		||
+		command == NRF_CMD_SEND_DATA_ACK	||
+		command == NRF_CMD_REQUEST_DATA		||
+		command == NRF_CMD_SEND_DATA_NACK	 )	? FALSE: TRUE);
+ 242:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 244:	08 95       	ret
+
+00000246 <_ZN3NRF4initEv>:
 }
 
 
 void NRF::init(){
 	//ACT and RDYN set as inputs	
 	ACT_DDR &= ~(1<<ACT_PIN);	
- 228:	20 98       	cbi	0x04, 0	; 4
+ 246:	20 98       	cbi	0x04, 0	; 4
 	RDYN_DDR &= ~(1<<RDYN_PIN);
- 22a:	22 98       	cbi	0x04, 2	; 4
+ 248:	22 98       	cbi	0x04, 2	; 4
 	
 	//REQN set as output
 	REQN_DDR |= (1<<REQN_PIN);
- 22c:	21 9a       	sbi	0x04, 1	; 4
+ 24a:	21 9a       	sbi	0x04, 1	; 4
 	//////DON'T KNOW WHY THIS IS CAUSING A PROBLEM********************************************************
 	//set pullup on RDYN
 	//RDYN_PORT |= (1<<RDYN_PIN);
 	
 	//REQN is active low, so initialize it HIGH
 	SetREQN();
- 22e:	29 9a       	sbi	0x05, 1	; 5
- 230:	08 95       	ret
+ 24c:	29 9a       	sbi	0x05, 1	; 5
+ 24e:	08 95       	ret
 
-00000232 <_ZN3NRFC1Ev>:
+00000250 <_ZN3NRFC1Ev>:
 
 //uint8_t initCodes[12][32];
 static uint8_t initCount = 0;
 
 //NRF::NRF(hal_aci_data_t *message){
 NRF::NRF(){
- 232:	cf 93       	push	r28
- 234:	df 93       	push	r29
- 236:	ec 01       	movw	r28, r24
+ 250:	cf 93       	push	r28
+ 252:	df 93       	push	r29
+ 254:	ec 01       	movw	r28, r24
 	//msg = message;
 	
 	init();
- 238:	0e 94 14 01 	call	0x228	; 0x228 <_ZN3NRF4initEv>
+ 256:	0e 94 23 01 	call	0x246	; 0x246 <_ZN3NRF4initEv>
 	RxCount = 0x00;
- 23c:	1d 8a       	std	Y+21, r1	; 0x15
+ 25a:	1d 8a       	std	Y+21, r1	; 0x15
 	//mode = 0x00;
 	//set to INIT_MODE and RX_READY
 	//we are waiting for a NRF_EVT_DEVICE_STARTED in NRF_MODE_SETUP
 	//status |= (1<<NRF_RX_READY | 1<<NRF_INIT_MODE | 1<<NRF_WAIT_FOR_RESPONSE);
 	status |= (1<<NRF_RX_READY | 1<<NRF_WAIT_FOR_RESPONSE);
- 23e:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 240:	80 69       	ori	r24, 0x90	; 144
- 242:	8a 8f       	std	Y+26, r24	; 0x1a
+ 25c:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 25e:	80 69       	ori	r24, 0x90	; 144
+ 260:	8a 8f       	std	Y+26, r24	; 0x1a
 }
- 244:	df 91       	pop	r29
- 246:	cf 91       	pop	r28
- 248:	08 95       	ret
+ 262:	df 91       	pop	r29
+ 264:	cf 91       	pop	r28
+ 266:	08 95       	ret
 
-0000024a <_ZN3NRF11clearTxDataEv>:
+00000268 <_ZN3NRF11clearTxDataEv>:
 		}
 		
 	}//else if(RDYN == 0)	
 	
 }//transferACI()
 void NRF::clearTxData(){
- 24a:	fc 01       	movw	r30, r24
- 24c:	fb 96       	adiw	r30, 0x3b	; 59
+ 268:	fc 01       	movw	r30, r24
+ 26a:	fb 96       	adiw	r30, 0x3b	; 59
 	for(int i = 0; i<32; i++) 
- 24e:	20 e0       	ldi	r18, 0x00	; 0
- 250:	30 e0       	ldi	r19, 0x00	; 0
+ 26c:	20 e0       	ldi	r18, 0x00	; 0
+ 26e:	30 e0       	ldi	r19, 0x00	; 0
 		TxData[i] = 0x00;		
- 252:	11 92       	st	Z+, r1
+ 270:	11 92       	st	Z+, r1
 		
 	}//else if(RDYN == 0)	
 	
 }//transferACI()
 void NRF::clearTxData(){
 	for(int i = 0; i<32; i++) 
- 254:	2f 5f       	subi	r18, 0xFF	; 255
- 256:	3f 4f       	sbci	r19, 0xFF	; 255
- 258:	20 32       	cpi	r18, 0x20	; 32
- 25a:	31 05       	cpc	r19, r1
- 25c:	d1 f7       	brne	.-12     	; 0x252 <_ZN3NRF11clearTxDataEv+0x8>
+ 272:	2f 5f       	subi	r18, 0xFF	; 255
+ 274:	3f 4f       	sbci	r19, 0xFF	; 255
+ 276:	20 32       	cpi	r18, 0x20	; 32
+ 278:	31 05       	cpc	r19, r1
+ 27a:	d1 f7       	brne	.-12     	; 0x270 <_ZN3NRF11clearTxDataEv+0x8>
 		TxData[i] = 0x00;		
 }
- 25e:	08 95       	ret
+ 27c:	08 95       	ret
 
-00000260 <_ZN3NRF11transferACIEv>:
-nRF8001 is capable of receiving an ACI command simultaneously as it sends an ACI event to the
-application controller.
-The application controller shall always read the length byte from nRF8001 and check if the length is
-greater than 0. If the length is greater than 0 the data on the MISO line shall be read
-*/
-void NRF::transferACI(void){
- 260:	1f 93       	push	r17
- 262:	cf 93       	push	r28
- 264:	df 93       	push	r29
- 266:	ec 01       	movw	r28, r24
-	uint8_t length; 
-	
-	//transmit and receive
-	if (hasDataToSend() && (TxData[0] > 0)){			
- 268:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN3NRF13hasDataToSendEv>
- 26c:	88 23       	and	r24, r24
- 26e:	09 f4       	brne	.+2      	; 0x272 <_ZN3NRF11transferACIEv+0x12>
- 270:	40 c0       	rjmp	.+128    	; 0x2f2 <_ZN3NRF11transferACIEv+0x92>
- 272:	8b ad       	ldd	r24, Y+59	; 0x3b
- 274:	81 11       	cpse	r24, r1
- 276:	40 c0       	rjmp	.+128    	; 0x2f8 <_ZN3NRF11transferACIEv+0x98>
- 278:	3c c0       	rjmp	.+120    	; 0x2f2 <_ZN3NRF11transferACIEv+0x92>
-		SetREQN();
-		
-		//when data is received, clear the ready to receive flag until
-		//the received data is handled by the process function
-		if (RxData[0] != 0x00){
-			status &= ~(1<<NRF_RX_READY);
- 27a:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 27c:	8f 77       	andi	r24, 0x7F	; 127
- 27e:	8a 8f       	std	Y+26, r24	; 0x1a
-		}
-		
-		
-		lastCommand = TxData[1];
- 280:	6c ad       	ldd	r22, Y+60	; 0x3c
- 282:	fe 01       	movw	r30, r28
- 284:	ed 58       	subi	r30, 0x8D	; 141
- 286:	ff 4f       	sbci	r31, 0xFF	; 255
- 288:	60 83       	st	Z, r22
-		
-		//clear the NRF_TX_READY flag in the status register
-		status &= ~(1<<NRF_TX_READY);
- 28a:	1a 8d       	ldd	r17, Y+26	; 0x1a
- 28c:	1f 7b       	andi	r17, 0xBF	; 191
-		
-		if (isSystemCommand(TxData[1]))
- 28e:	ce 01       	movw	r24, r28
- 290:	0e 94 ff 00 	call	0x1fe	; 0x1fe <_ZN3NRF15isSystemCommandEh>
- 294:	81 11       	cpse	r24, r1
- 296:	02 c0       	rjmp	.+4      	; 0x29c <_ZN3NRF11transferACIEv+0x3c>
-		
-		
-		lastCommand = TxData[1];
-		
-		//clear the NRF_TX_READY flag in the status register
-		status &= ~(1<<NRF_TX_READY);
- 298:	1a 8f       	std	Y+26, r17	; 0x1a
- 29a:	58 c0       	rjmp	.+176    	; 0x34c <_ZN3NRF11transferACIEv+0xec>
-		
-		if (isSystemCommand(TxData[1]))
-			status |= (1<<NRF_WAIT_FOR_RESPONSE);
- 29c:	10 61       	ori	r17, 0x10	; 16
- 29e:	1a 8f       	std	Y+26, r17	; 0x1a
- 2a0:	55 c0       	rjmp	.+170    	; 0x34c <_ZN3NRF11transferACIEv+0xec>
-	}//if hasDataToSend
-	
-	//receive only
-	else if(RDYN == 0)
-	{
-		clearTxData();
- 2a2:	ce 01       	movw	r24, r28
- 2a4:	0e 94 25 01 	call	0x24a	; 0x24a <_ZN3NRF11clearTxDataEv>
-		//Request communication with nRF8001
-		ClearREQN();
- 2a8:	29 98       	cbi	0x05, 1	; 5
-		
-		//transmit the DUMMY BYTE and receive the Rx DEBUG BYTE
-		//the LENGTH BYTE is not counted as part of the length
-		RxData[0] = spi.transfer1byte(0x00);
- 2aa:	60 e0       	ldi	r22, 0x00	; 0
- 2ac:	8a e7       	ldi	r24, 0x7A	; 122
- 2ae:	93 e0       	ldi	r25, 0x03	; 3
- 2b0:	0e 94 ce 00 	call	0x19c	; 0x19c <_ZN3SPI13transfer1byteEh>
- 2b4:	8b 8f       	std	Y+27, r24	; 0x1b
-		
-		//Transmit a DUMMY BYTE and receive the LENGTH BYTE
-		RxData[0] = spi.transfer1byte(0x00);
- 2b6:	60 e0       	ldi	r22, 0x00	; 0
- 2b8:	8a e7       	ldi	r24, 0x7A	; 122
- 2ba:	93 e0       	ldi	r25, 0x03	; 3
- 2bc:	0e 94 ce 00 	call	0x19c	; 0x19c <_ZN3SPI13transfer1byteEh>
- 2c0:	8b 8f       	std	Y+27, r24	; 0x1b
- 2c2:	28 2f       	mov	r18, r24
- 2c4:	80 32       	cpi	r24, 0x20	; 32
- 2c6:	08 f0       	brcs	.+2      	; 0x2ca <_ZN3NRF11transferACIEv+0x6a>
- 2c8:	2f e1       	ldi	r18, 0x1F	; 31
-		
-		length = RxData[0];
-		if (length>HAL_ACI_MAX_LENGTH)
-			length = HAL_ACI_MAX_LENGTH;
-		if (length>0)
- 2ca:	22 23       	and	r18, r18
- 2cc:	51 f0       	breq	.+20     	; 0x2e2 <_ZN3NRF11transferACIEv+0x82>
-		{
-			
-			spi.transfer(&TxData[2],&RxData[1],length);
- 2ce:	ae 01       	movw	r20, r28
- 2d0:	44 5e       	subi	r20, 0xE4	; 228
- 2d2:	5f 4f       	sbci	r21, 0xFF	; 255
- 2d4:	be 01       	movw	r22, r28
- 2d6:	63 5c       	subi	r22, 0xC3	; 195
- 2d8:	7f 4f       	sbci	r23, 0xFF	; 255
- 2da:	8a e7       	ldi	r24, 0x7A	; 122
- 2dc:	93 e0       	ldi	r25, 0x03	; 3
- 2de:	0e 94 bb 00 	call	0x176	; 0x176 <_ZN3SPI8transferEPhS0_h>
-		}//if length>0
-		
-		//Set REQN high to terminate the transfer
-		SetREQN();
- 2e2:	29 9a       	sbi	0x05, 1	; 5
-		
-		//when data is received, clear the ready to receive flag until
-		//the received data is handled by the process function
-		if (RxData[0] != 0x00){
- 2e4:	8b 8d       	ldd	r24, Y+27	; 0x1b
- 2e6:	88 23       	and	r24, r24
- 2e8:	89 f1       	breq	.+98     	; 0x34c <_ZN3NRF11transferACIEv+0xec>
-			status &= ~(1<<NRF_RX_READY);
- 2ea:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 2ec:	8f 77       	andi	r24, 0x7F	; 127
- 2ee:	8a 8f       	std	Y+26, r24	; 0x1a
- 2f0:	2d c0       	rjmp	.+90     	; 0x34c <_ZN3NRF11transferACIEv+0xec>
-			status |= (1<<NRF_WAIT_FOR_RESPONSE);
-				
-	}//if hasDataToSend
-	
-	//receive only
-	else if(RDYN == 0)
- 2f2:	2a 99       	sbic	0x05, 2	; 5
- 2f4:	2b c0       	rjmp	.+86     	; 0x34c <_ZN3NRF11transferACIEv+0xec>
- 2f6:	d5 cf       	rjmp	.-86     	; 0x2a2 <_ZN3NRF11transferACIEv+0x42>
-	//transmit and receive
-	if (hasDataToSend() && (TxData[0] > 0)){			
-		length = TxData[0];
-	
-		//Request communication with nRF8001
-		ClearREQN();
- 2f8:	29 98       	cbi	0x05, 1	; 5
-	
-		//Wait for nRF8001 to clear RDYN pin indicating it is ready to receive
-		while (RDYN == 1);
- 2fa:	85 b1       	in	r24, 0x05	; 5
-	
-		//transmit the Tx LENGTH BYTE and receive the Rx DEBUG BYTE
-		//the LENGTH BYTE is not counted as part of the length
-		RxData[0] = spi.transfer1byte(TxData[0]);
- 2fc:	6b ad       	ldd	r22, Y+59	; 0x3b
- 2fe:	8a e7       	ldi	r24, 0x7A	; 122
- 300:	93 e0       	ldi	r25, 0x03	; 3
- 302:	0e 94 ce 00 	call	0x19c	; 0x19c <_ZN3SPI13transfer1byteEh>
- 306:	8b 8f       	std	Y+27, r24	; 0x1b
-	
-	
-		//transmit the first byte of data while receiving the length byte
-		//we are discarding the Rx DEBUG BYTE
-		RxData[0] = spi.transfer1byte(TxData[1]);
- 308:	6c ad       	ldd	r22, Y+60	; 0x3c
- 30a:	8a e7       	ldi	r24, 0x7A	; 122
- 30c:	93 e0       	ldi	r25, 0x03	; 3
- 30e:	0e 94 ce 00 	call	0x19c	; 0x19c <_ZN3SPI13transfer1byteEh>
- 312:	8b 8f       	std	Y+27, r24	; 0x1b
-	
-		////set length to the greater of TxData less the byte we already sent or 
-		////RxData length
-		length = (RxData[0]>(TxData[0] -1))?RxData[0]:(TxData[0]-1);
- 314:	4b ad       	ldd	r20, Y+59	; 0x3b
- 316:	50 e0       	ldi	r21, 0x00	; 0
- 318:	41 50       	subi	r20, 0x01	; 1
- 31a:	51 09       	sbc	r21, r1
- 31c:	28 2f       	mov	r18, r24
- 31e:	30 e0       	ldi	r19, 0x00	; 0
- 320:	24 17       	cp	r18, r20
- 322:	35 07       	cpc	r19, r21
- 324:	0c f4       	brge	.+2      	; 0x328 <_ZN3NRF11transferACIEv+0xc8>
- 326:	9a 01       	movw	r18, r20
-		if (length>HAL_ACI_MAX_LENGTH) 
-			length = HAL_ACI_MAX_LENGTH;
-			
-		//if (length>0)
-		spi.transfer(&TxData[2],&RxData[1],length);
- 328:	20 32       	cpi	r18, 0x20	; 32
- 32a:	08 f0       	brcs	.+2      	; 0x32e <_ZN3NRF11transferACIEv+0xce>
- 32c:	2f e1       	ldi	r18, 0x1F	; 31
- 32e:	ae 01       	movw	r20, r28
- 330:	44 5e       	subi	r20, 0xE4	; 228
- 332:	5f 4f       	sbci	r21, 0xFF	; 255
- 334:	be 01       	movw	r22, r28
- 336:	63 5c       	subi	r22, 0xC3	; 195
- 338:	7f 4f       	sbci	r23, 0xFF	; 255
- 33a:	8a e7       	ldi	r24, 0x7A	; 122
- 33c:	93 e0       	ldi	r25, 0x03	; 3
- 33e:	0e 94 bb 00 	call	0x176	; 0x176 <_ZN3SPI8transferEPhS0_h>
-		//for (uint8_t i = 0; i< length; i++){
-			//RxData[i+1] = spi.transfer1byte(TxData[i+2]); 
-		//}
-	
-		//Set REQN high to terminate the transfer
-		SetREQN();
- 342:	29 9a       	sbi	0x05, 1	; 5
-		
-		//when data is received, clear the ready to receive flag until
-		//the received data is handled by the process function
-		if (RxData[0] != 0x00){
- 344:	8b 8d       	ldd	r24, Y+27	; 0x1b
- 346:	81 11       	cpse	r24, r1
- 348:	98 cf       	rjmp	.-208    	; 0x27a <_ZN3NRF11transferACIEv+0x1a>
- 34a:	9a cf       	rjmp	.-204    	; 0x280 <_ZN3NRF11transferACIEv+0x20>
-			status &= ~(1<<NRF_RX_READY);
-		}
-		
-	}//else if(RDYN == 0)	
-	
-}//transferACI()
- 34c:	df 91       	pop	r29
- 34e:	cf 91       	pop	r28
- 350:	1f 91       	pop	r17
- 352:	08 95       	ret
-
-00000354 <_ZN3NRF7connectEjj>:
-
-uint8_t NRF::radioReset(){
-	return (PrepareTxData(NRF_CMD_RADIO_RESET));
-}//
-
-uint8_t NRF::connect(uint16_t timeout, uint16_t advInterval){	
- 354:	ef 92       	push	r14
- 356:	ff 92       	push	r15
- 358:	0f 93       	push	r16
- 35a:	1f 93       	push	r17
- 35c:	cf 93       	push	r28
- 35e:	df 93       	push	r29
- 360:	ec 01       	movw	r28, r24
- 362:	e6 2e       	mov	r14, r22
- 364:	f7 2e       	mov	r15, r23
- 366:	04 2f       	mov	r16, r20
- 368:	15 2f       	mov	r17, r21
-	//localData[1] = (timeout&0xFF00)>>8; //MSB
-	//localData[2] = (advInterval&0x00FF);	//LSB
-	//localData[3] = (advInterval&0xFF00)>>8; //MSB
-	//return (PrepareTxData(NRF_CMD_CONNECT, localData, 4));
-	
-	if (isInitializing())
- 36a:	0e 94 d4 00 	call	0x1a8	; 0x1a8 <_ZN3NRF14isInitializingEv>
- 36e:	81 11       	cpse	r24, r1
- 370:	22 c0       	rjmp	.+68     	; 0x3b6 <_ZN3NRF7connectEjj+0x62>
-	return 0x01;
-	if (hasDataToSend())
- 372:	ce 01       	movw	r24, r28
- 374:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN3NRF13hasDataToSendEv>
- 378:	81 11       	cpse	r24, r1
- 37a:	1f c0       	rjmp	.+62     	; 0x3ba <_ZN3NRF7connectEjj+0x66>
-	return 0x02;
-	if (waitingForResponse())
- 37c:	ce 01       	movw	r24, r28
- 37e:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <_ZN3NRF18waitingForResponseEv>
- 382:	81 11       	cpse	r24, r1
- 384:	1c c0       	rjmp	.+56     	; 0x3be <_ZN3NRF7connectEjj+0x6a>
-	return 0x03;
-	
-	lastCommand = TxData[1];
- 386:	fe 01       	movw	r30, r28
- 388:	ed 58       	subi	r30, 0x8D	; 141
- 38a:	ff 4f       	sbci	r31, 0xFF	; 255
- 38c:	8c ad       	ldd	r24, Y+60	; 0x3c
- 38e:	80 83       	st	Z, r24
-	
-	clearTxData();
- 390:	ce 01       	movw	r24, r28
- 392:	0e 94 25 01 	call	0x24a	; 0x24a <_ZN3NRF11clearTxDataEv>
-	TxData[0] = 0x05;	//length
- 396:	85 e0       	ldi	r24, 0x05	; 5
- 398:	8b af       	std	Y+59, r24	; 0x3b
-	TxData[1] = NRF_CMD_CONNECT;
- 39a:	8f e0       	ldi	r24, 0x0F	; 15
- 39c:	8c af       	std	Y+60, r24	; 0x3c
-	TxData[2] = (timeout&0x00FF);	//LSB
- 39e:	ed ae       	std	Y+61, r14	; 0x3d
-	TxData[3] = (timeout&0xFF00)>>8; //MSB
- 3a0:	fe ae       	std	Y+62, r15	; 0x3e
-	TxData[4] = (advInterval&0x00FF);	//LSB
- 3a2:	0f af       	std	Y+63, r16	; 0x3f
-	TxData[5] = (advInterval&0xFF00)>>8; //MSB
- 3a4:	fe 01       	movw	r30, r28
- 3a6:	e0 5c       	subi	r30, 0xC0	; 192
- 3a8:	ff 4f       	sbci	r31, 0xFF	; 255
- 3aa:	10 83       	st	Z, r17
-	status |= (1<<NRF_TX_READY);
- 3ac:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 3ae:	80 64       	ori	r24, 0x40	; 64
- 3b0:	8a 8f       	std	Y+26, r24	; 0x1a
-	return 0x00;
- 3b2:	80 e0       	ldi	r24, 0x00	; 0
- 3b4:	05 c0       	rjmp	.+10     	; 0x3c0 <_ZN3NRF7connectEjj+0x6c>
-	//localData[2] = (advInterval&0x00FF);	//LSB
-	//localData[3] = (advInterval&0xFF00)>>8; //MSB
-	//return (PrepareTxData(NRF_CMD_CONNECT, localData, 4));
-	
-	if (isInitializing())
-	return 0x01;
- 3b6:	81 e0       	ldi	r24, 0x01	; 1
- 3b8:	03 c0       	rjmp	.+6      	; 0x3c0 <_ZN3NRF7connectEjj+0x6c>
-	if (hasDataToSend())
-	return 0x02;
- 3ba:	82 e0       	ldi	r24, 0x02	; 2
- 3bc:	01 c0       	rjmp	.+2      	; 0x3c0 <_ZN3NRF7connectEjj+0x6c>
-	if (waitingForResponse())
-	return 0x03;
- 3be:	83 e0       	ldi	r24, 0x03	; 3
-	TxData[3] = (timeout&0xFF00)>>8; //MSB
-	TxData[4] = (advInterval&0x00FF);	//LSB
-	TxData[5] = (advInterval&0xFF00)>>8; //MSB
-	status |= (1<<NRF_TX_READY);
-	return 0x00;
-}//
- 3c0:	df 91       	pop	r29
- 3c2:	cf 91       	pop	r28
- 3c4:	1f 91       	pop	r17
- 3c6:	0f 91       	pop	r16
- 3c8:	ff 90       	pop	r15
- 3ca:	ef 90       	pop	r14
- 3cc:	08 95       	ret
-
-000003ce <_ZN3NRF13PrepareTxDataEh>:
-	//data to send flag
-	status |= (1<<NRF_TX_READY);
-	return 0x00;	//success
-}//PrepareTxData
-
-uint8_t NRF::PrepareTxData(uint8_t command){
- 3ce:	1f 93       	push	r17
- 3d0:	cf 93       	push	r28
- 3d2:	df 93       	push	r29
- 3d4:	ec 01       	movw	r28, r24
- 3d6:	16 2f       	mov	r17, r22
-	if (isInitializing())
- 3d8:	0e 94 d4 00 	call	0x1a8	; 0x1a8 <_ZN3NRF14isInitializingEv>
- 3dc:	81 11       	cpse	r24, r1
- 3de:	12 c0       	rjmp	.+36     	; 0x404 <_ZN3NRF13PrepareTxDataEh+0x36>
-		return 0x01;
-	if (hasDataToSend())
- 3e0:	ce 01       	movw	r24, r28
- 3e2:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN3NRF13hasDataToSendEv>
- 3e6:	81 11       	cpse	r24, r1
- 3e8:	0f c0       	rjmp	.+30     	; 0x408 <_ZN3NRF13PrepareTxDataEh+0x3a>
-		return 0x02;
-	if (waitingForResponse() && isSystemCommand(command))
- 3ea:	ce 01       	movw	r24, r28
- 3ec:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <_ZN3NRF18waitingForResponseEv>
- 3f0:	88 23       	and	r24, r24
- 3f2:	61 f0       	breq	.+24     	; 0x40c <_ZN3NRF13PrepareTxDataEh+0x3e>
- 3f4:	61 2f       	mov	r22, r17
- 3f6:	ce 01       	movw	r24, r28
- 3f8:	0e 94 ff 00 	call	0x1fe	; 0x1fe <_ZN3NRF15isSystemCommandEh>
- 3fc:	88 23       	and	r24, r24
- 3fe:	31 f0       	breq	.+12     	; 0x40c <_ZN3NRF13PrepareTxDataEh+0x3e>
-		return 0x03;
- 400:	83 e0       	ldi	r24, 0x03	; 3
- 402:	12 c0       	rjmp	.+36     	; 0x428 <_ZN3NRF13PrepareTxDataEh+0x5a>
-	return 0x00;	//success
-}//PrepareTxData
-
-uint8_t NRF::PrepareTxData(uint8_t command){
-	if (isInitializing())
-		return 0x01;
- 404:	81 e0       	ldi	r24, 0x01	; 1
- 406:	10 c0       	rjmp	.+32     	; 0x428 <_ZN3NRF13PrepareTxDataEh+0x5a>
-	if (hasDataToSend())
-		return 0x02;
- 408:	82 e0       	ldi	r24, 0x02	; 2
- 40a:	0e c0       	rjmp	.+28     	; 0x428 <_ZN3NRF13PrepareTxDataEh+0x5a>
-	if (waitingForResponse() && isSystemCommand(command))
-		return 0x03;
-	
-	lastCommand = command;
- 40c:	fe 01       	movw	r30, r28
- 40e:	ed 58       	subi	r30, 0x8D	; 141
- 410:	ff 4f       	sbci	r31, 0xFF	; 255
- 412:	10 83       	st	Z, r17
-	
-	clearTxData();
- 414:	ce 01       	movw	r24, r28
- 416:	0e 94 25 01 	call	0x24a	; 0x24a <_ZN3NRF11clearTxDataEv>
-	TxData[0] = 0x01;
- 41a:	81 e0       	ldi	r24, 0x01	; 1
- 41c:	8b af       	std	Y+59, r24	; 0x3b
-	TxData[1] = command;
- 41e:	1c af       	std	Y+60, r17	; 0x3c
-	status |= (1<<NRF_TX_READY);
- 420:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 422:	80 64       	ori	r24, 0x40	; 64
- 424:	8a 8f       	std	Y+26, r24	; 0x1a
-	return 0x00;
- 426:	80 e0       	ldi	r24, 0x00	; 0
-}
- 428:	df 91       	pop	r29
- 42a:	cf 91       	pop	r28
- 42c:	1f 91       	pop	r17
- 42e:	08 95       	ret
-
-00000430 <_ZN3NRF10radioResetEv>:
-uint8_t NRF::getTemperature(void){	
-	return (PrepareTxData(NRF_CMD_GET_TEMPERATURE));
-}//getTemperature
-
-uint8_t NRF::radioReset(){
-	return (PrepareTxData(NRF_CMD_RADIO_RESET));
- 430:	6e e0       	ldi	r22, 0x0E	; 14
- 432:	0e 94 e7 01 	call	0x3ce	; 0x3ce <_ZN3NRF13PrepareTxDataEh>
-}//
- 436:	08 95       	ret
-
-00000438 <_ZN3NRF13PrepareTxDataEhhPhh>:
-	//data to send flag
-	status |= (1<<NRF_TX_READY);
-	return 0x00;	//success
-}//PrepareTxData
-
-uint8_t NRF::PrepareTxData(uint8_t command, uint8_t content, uint8_t *data, uint8_t length){
- 438:	df 92       	push	r13
- 43a:	ef 92       	push	r14
- 43c:	ff 92       	push	r15
- 43e:	0f 93       	push	r16
- 440:	1f 93       	push	r17
- 442:	cf 93       	push	r28
- 444:	df 93       	push	r29
- 446:	ec 01       	movw	r28, r24
- 448:	16 2f       	mov	r17, r22
- 44a:	f4 2e       	mov	r15, r20
- 44c:	d2 2e       	mov	r13, r18
- 44e:	e3 2e       	mov	r14, r19
-	
-	int i;
-	if (isInitializing())
- 450:	0e 94 d4 00 	call	0x1a8	; 0x1a8 <_ZN3NRF14isInitializingEv>
- 454:	81 11       	cpse	r24, r1
- 456:	1c c0       	rjmp	.+56     	; 0x490 <_ZN3NRF13PrepareTxDataEhhPhh+0x58>
-		return 0x01;
-	if (hasDataToSend())
- 458:	ce 01       	movw	r24, r28
- 45a:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN3NRF13hasDataToSendEv>
- 45e:	81 11       	cpse	r24, r1
- 460:	19 c0       	rjmp	.+50     	; 0x494 <_ZN3NRF13PrepareTxDataEhhPhh+0x5c>
-		return 0x02;
-	if (waitingForResponse() && isSystemCommand(command))
- 462:	ce 01       	movw	r24, r28
- 464:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <_ZN3NRF18waitingForResponseEv>
- 468:	88 23       	and	r24, r24
- 46a:	c1 f0       	breq	.+48     	; 0x49c <_ZN3NRF13PrepareTxDataEhhPhh+0x64>
- 46c:	61 2f       	mov	r22, r17
- 46e:	ce 01       	movw	r24, r28
- 470:	0e 94 ff 00 	call	0x1fe	; 0x1fe <_ZN3NRF15isSystemCommandEh>
- 474:	81 11       	cpse	r24, r1
- 476:	10 c0       	rjmp	.+32     	; 0x498 <_ZN3NRF13PrepareTxDataEhhPhh+0x60>
- 478:	11 c0       	rjmp	.+34     	; 0x49c <_ZN3NRF13PrepareTxDataEhhPhh+0x64>
-	//populate TxData with length and data
-	TxData[0] = length + 2;
-	TxData[1] = command;
-	TxData[2] = content;
-	for(i = 0; i < length; i++)
-		TxData[i+3] = data[i];
- 47a:	21 91       	ld	r18, Z+
- 47c:	2d 93       	st	X+, r18
-	clearTxData();
-	//populate TxData with length and data
-	TxData[0] = length + 2;
-	TxData[1] = command;
-	TxData[2] = content;
-	for(i = 0; i < length; i++)
- 47e:	01 96       	adiw	r24, 0x01	; 1
- 480:	80 17       	cp	r24, r16
- 482:	91 07       	cpc	r25, r17
- 484:	d4 f3       	brlt	.-12     	; 0x47a <_ZN3NRF13PrepareTxDataEhhPhh+0x42>
-		TxData[i+3] = data[i];
-	
-	//data to send flag
-	status |= (1<<NRF_TX_READY);
- 486:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 488:	80 64       	ori	r24, 0x40	; 64
- 48a:	8a 8f       	std	Y+26, r24	; 0x1a
-	return 0x00;	//success
- 48c:	80 e0       	ldi	r24, 0x00	; 0
- 48e:	1d c0       	rjmp	.+58     	; 0x4ca <_ZN3NRF13PrepareTxDataEhhPhh+0x92>
-
-uint8_t NRF::PrepareTxData(uint8_t command, uint8_t content, uint8_t *data, uint8_t length){
-	
-	int i;
-	if (isInitializing())
-		return 0x01;
- 490:	81 e0       	ldi	r24, 0x01	; 1
- 492:	1b c0       	rjmp	.+54     	; 0x4ca <_ZN3NRF13PrepareTxDataEhhPhh+0x92>
-	if (hasDataToSend())
-		return 0x02;
- 494:	82 e0       	ldi	r24, 0x02	; 2
- 496:	19 c0       	rjmp	.+50     	; 0x4ca <_ZN3NRF13PrepareTxDataEhhPhh+0x92>
-	if (waitingForResponse() && isSystemCommand(command))
-		return 0x03;
- 498:	83 e0       	ldi	r24, 0x03	; 3
- 49a:	17 c0       	rjmp	.+46     	; 0x4ca <_ZN3NRF13PrepareTxDataEhhPhh+0x92>
-	
-	lastCommand = command;
- 49c:	fe 01       	movw	r30, r28
- 49e:	ed 58       	subi	r30, 0x8D	; 141
- 4a0:	ff 4f       	sbci	r31, 0xFF	; 255
- 4a2:	10 83       	st	Z, r17
-	
-	clearTxData();
- 4a4:	ce 01       	movw	r24, r28
- 4a6:	0e 94 25 01 	call	0x24a	; 0x24a <_ZN3NRF11clearTxDataEv>
-	//populate TxData with length and data
-	TxData[0] = length + 2;
- 4aa:	80 2f       	mov	r24, r16
- 4ac:	8e 5f       	subi	r24, 0xFE	; 254
- 4ae:	8b af       	std	Y+59, r24	; 0x3b
-	TxData[1] = command;
- 4b0:	1c af       	std	Y+60, r17	; 0x3c
-	TxData[2] = content;
- 4b2:	fd ae       	std	Y+61, r15	; 0x3d
-	for(i = 0; i < length; i++)
- 4b4:	10 e0       	ldi	r17, 0x00	; 0
- 4b6:	10 16       	cp	r1, r16
- 4b8:	11 06       	cpc	r1, r17
- 4ba:	2c f7       	brge	.-54     	; 0x486 <_ZN3NRF13PrepareTxDataEhhPhh+0x4e>
- 4bc:	ed 2d       	mov	r30, r13
- 4be:	fe 2d       	mov	r31, r14
-	//data to send flag
-	status |= (1<<NRF_TX_READY);
-	return 0x00;	//success
-}//PrepareTxData
-
-uint8_t NRF::PrepareTxData(uint8_t command, uint8_t content, uint8_t *data, uint8_t length){
- 4c0:	de 01       	movw	r26, r28
- 4c2:	de 96       	adiw	r26, 0x3e	; 62
-	clearTxData();
-	//populate TxData with length and data
-	TxData[0] = length + 2;
-	TxData[1] = command;
-	TxData[2] = content;
-	for(i = 0; i < length; i++)
- 4c4:	80 e0       	ldi	r24, 0x00	; 0
- 4c6:	90 e0       	ldi	r25, 0x00	; 0
- 4c8:	d8 cf       	rjmp	.-80     	; 0x47a <_ZN3NRF13PrepareTxDataEhhPhh+0x42>
-		TxData[i+3] = data[i];
-	
-	//data to send flag
-	status |= (1<<NRF_TX_READY);
-	return 0x00;	//success
-}//PrepareTxData
- 4ca:	df 91       	pop	r29
- 4cc:	cf 91       	pop	r28
- 4ce:	1f 91       	pop	r17
- 4d0:	0f 91       	pop	r16
- 4d2:	ff 90       	pop	r15
- 4d4:	ef 90       	pop	r14
- 4d6:	df 90       	pop	r13
- 4d8:	08 95       	ret
-
-000004da <_ZN3NRF12setLocalDataEhPhh>:
-return (PrepareTxData(NRF_CMD_CLOSE_REMOTE_PIPE, &servicePipeNumber, 1));
-}//
-#pragma endregion System Command Functions
-
-#pragma region Data Command Functions
-uint8_t NRF::setLocalData(uint8_t servicePipeNumber, uint8_t *data, uint8_t length){	
- 4da:	0f 93       	push	r16
-	return (PrepareTxData(NRF_CMD_SET_LOCAL_DATA, servicePipeNumber, data, length));
- 4dc:	02 2f       	mov	r16, r18
- 4de:	9a 01       	movw	r18, r20
- 4e0:	46 2f       	mov	r20, r22
- 4e2:	6d e0       	ldi	r22, 0x0D	; 13
- 4e4:	0e 94 1c 02 	call	0x438	; 0x438 <_ZN3NRF13PrepareTxDataEhhPhh>
-}//
- 4e8:	0f 91       	pop	r16
- 4ea:	08 95       	ret
-
-000004ec <_ZN3NRF13PrepareTxDataEhPhh>:
+0000027e <_ZN3NRF13PrepareTxDataEhPhh>:
 ///@brief Send data from uC to nRF8001
 ///@param command
 ///@param data
 ///@param length Length of data
 ///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::PrepareTxData(uint8_t command, uint8_t *data, uint8_t length){
- 4ec:	ef 92       	push	r14
- 4ee:	ff 92       	push	r15
- 4f0:	0f 93       	push	r16
- 4f2:	1f 93       	push	r17
- 4f4:	cf 93       	push	r28
- 4f6:	df 93       	push	r29
- 4f8:	ec 01       	movw	r28, r24
- 4fa:	16 2f       	mov	r17, r22
- 4fc:	e4 2e       	mov	r14, r20
- 4fe:	f5 2e       	mov	r15, r21
- 500:	02 2f       	mov	r16, r18
+ 27e:	ef 92       	push	r14
+ 280:	ff 92       	push	r15
+ 282:	0f 93       	push	r16
+ 284:	1f 93       	push	r17
+ 286:	cf 93       	push	r28
+ 288:	df 93       	push	r29
+ 28a:	ec 01       	movw	r28, r24
+ 28c:	16 2f       	mov	r17, r22
+ 28e:	e4 2e       	mov	r14, r20
+ 290:	f5 2e       	mov	r15, r21
+ 292:	02 2f       	mov	r16, r18
+#pragma endregion Data Command Functions
+
+#pragma region Status Functions
+uint8_t NRF::isInitializing(void){
+	//return ((status & (1<<NRF_INIT_MODE))?TRUE:FALSE);
+	return (mode == NRF_MODE_SETUP);
+ 294:	fc 01       	movw	r30, r24
+ 296:	ef 58       	subi	r30, 0x8F	; 143
+ 298:	ff 4f       	sbci	r31, 0xFF	; 255
+///@param length Length of data
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
+uint8_t NRF::PrepareTxData(uint8_t command, uint8_t *data, uint8_t length){
 	//TODO: write this function
 	int i;
 	if (isInitializing())
- 502:	0e 94 d4 00 	call	0x1a8	; 0x1a8 <_ZN3NRF14isInitializingEv>
- 506:	81 11       	cpse	r24, r1
- 508:	1c c0       	rjmp	.+56     	; 0x542 <__stack+0x43>
+ 29a:	80 81       	ld	r24, Z
+ 29c:	82 30       	cpi	r24, 0x02	; 2
+ 29e:	e1 f0       	breq	.+56     	; 0x2d8 <_ZN3NRF13PrepareTxDataEhPhh+0x5a>
 		return 0x01;
 	if (hasDataToSend())
- 50a:	ce 01       	movw	r24, r28
- 50c:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN3NRF13hasDataToSendEv>
- 510:	81 11       	cpse	r24, r1
- 512:	19 c0       	rjmp	.+50     	; 0x546 <__stack+0x47>
+ 2a0:	ce 01       	movw	r24, r28
+ 2a2:	0e 94 fd 00 	call	0x1fa	; 0x1fa <_ZN3NRF13hasDataToSendEv>
+ 2a6:	81 11       	cpse	r24, r1
+ 2a8:	19 c0       	rjmp	.+50     	; 0x2dc <_ZN3NRF13PrepareTxDataEhPhh+0x5e>
 		return 0x02;
 	if (waitingForResponse() && isSystemCommand(command))
- 514:	ce 01       	movw	r24, r28
- 516:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <_ZN3NRF18waitingForResponseEv>
- 51a:	88 23       	and	r24, r24
- 51c:	c1 f0       	breq	.+48     	; 0x54e <__stack+0x4f>
- 51e:	61 2f       	mov	r22, r17
- 520:	ce 01       	movw	r24, r28
- 522:	0e 94 ff 00 	call	0x1fe	; 0x1fe <_ZN3NRF15isSystemCommandEh>
- 526:	81 11       	cpse	r24, r1
- 528:	10 c0       	rjmp	.+32     	; 0x54a <__stack+0x4b>
- 52a:	11 c0       	rjmp	.+34     	; 0x54e <__stack+0x4f>
+ 2aa:	ce 01       	movw	r24, r28
+ 2ac:	0e 94 03 01 	call	0x206	; 0x206 <_ZN3NRF18waitingForResponseEv>
+ 2b0:	88 23       	and	r24, r24
+ 2b2:	c1 f0       	breq	.+48     	; 0x2e4 <_ZN3NRF13PrepareTxDataEhPhh+0x66>
+ 2b4:	61 2f       	mov	r22, r17
+ 2b6:	ce 01       	movw	r24, r28
+ 2b8:	0e 94 19 01 	call	0x232	; 0x232 <_ZN3NRF15isSystemCommandEh>
+ 2bc:	81 11       	cpse	r24, r1
+ 2be:	10 c0       	rjmp	.+32     	; 0x2e0 <_ZN3NRF13PrepareTxDataEhPhh+0x62>
+ 2c0:	11 c0       	rjmp	.+34     	; 0x2e4 <_ZN3NRF13PrepareTxDataEhPhh+0x66>
 	
 	//populate TxData with length and data
 	TxData[0] = length + 1;
 	TxData[1] = command;
 	for(i = 0; i < length; i++)
 		TxData[i+2] = data[i];	
- 52c:	41 91       	ld	r20, Z+
- 52e:	4d 93       	st	X+, r20
+ 2c2:	41 91       	ld	r20, Z+
+ 2c4:	4d 93       	st	X+, r20
 	clearTxData();
 	
 	//populate TxData with length and data
 	TxData[0] = length + 1;
 	TxData[1] = command;
 	for(i = 0; i < length; i++)
- 530:	01 96       	adiw	r24, 0x01	; 1
- 532:	82 17       	cp	r24, r18
- 534:	93 07       	cpc	r25, r19
- 536:	d4 f3       	brlt	.-12     	; 0x52c <__stack+0x2d>
+ 2c6:	01 96       	adiw	r24, 0x01	; 1
+ 2c8:	82 17       	cp	r24, r18
+ 2ca:	93 07       	cpc	r25, r19
+ 2cc:	d4 f3       	brlt	.-12     	; 0x2c2 <_ZN3NRF13PrepareTxDataEhPhh+0x44>
 		TxData[i+2] = data[i];	
 		
 	//data to send flag
 	status |= (1<<NRF_TX_READY);
- 538:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 53a:	80 64       	ori	r24, 0x40	; 64
- 53c:	8a 8f       	std	Y+26, r24	; 0x1a
+ 2ce:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 2d0:	80 64       	ori	r24, 0x40	; 64
+ 2d2:	8a 8f       	std	Y+26, r24	; 0x1a
 	return 0x00;	//success
- 53e:	80 e0       	ldi	r24, 0x00	; 0
- 540:	1d c0       	rjmp	.+58     	; 0x57c <__stack+0x7d>
+ 2d4:	80 e0       	ldi	r24, 0x00	; 0
+ 2d6:	1d c0       	rjmp	.+58     	; 0x312 <_ZN3NRF13PrepareTxDataEhPhh+0x94>
 ///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::PrepareTxData(uint8_t command, uint8_t *data, uint8_t length){
 	//TODO: write this function
 	int i;
 	if (isInitializing())
 		return 0x01;
- 542:	81 e0       	ldi	r24, 0x01	; 1
- 544:	1b c0       	rjmp	.+54     	; 0x57c <__stack+0x7d>
+ 2d8:	81 e0       	ldi	r24, 0x01	; 1
+ 2da:	1b c0       	rjmp	.+54     	; 0x312 <_ZN3NRF13PrepareTxDataEhPhh+0x94>
 	if (hasDataToSend())
 		return 0x02;
- 546:	82 e0       	ldi	r24, 0x02	; 2
- 548:	19 c0       	rjmp	.+50     	; 0x57c <__stack+0x7d>
+ 2dc:	82 e0       	ldi	r24, 0x02	; 2
+ 2de:	19 c0       	rjmp	.+50     	; 0x312 <_ZN3NRF13PrepareTxDataEhPhh+0x94>
 	if (waitingForResponse() && isSystemCommand(command))
 		return 0x03;
- 54a:	83 e0       	ldi	r24, 0x03	; 3
- 54c:	17 c0       	rjmp	.+46     	; 0x57c <__stack+0x7d>
+ 2e0:	83 e0       	ldi	r24, 0x03	; 3
+ 2e2:	17 c0       	rjmp	.+46     	; 0x312 <_ZN3NRF13PrepareTxDataEhPhh+0x94>
 	
 	lastCommand = command;
- 54e:	fe 01       	movw	r30, r28
- 550:	ed 58       	subi	r30, 0x8D	; 141
- 552:	ff 4f       	sbci	r31, 0xFF	; 255
- 554:	10 83       	st	Z, r17
+ 2e4:	fe 01       	movw	r30, r28
+ 2e6:	ed 58       	subi	r30, 0x8D	; 141
+ 2e8:	ff 4f       	sbci	r31, 0xFF	; 255
+ 2ea:	10 83       	st	Z, r17
 	
 	clearTxData();
- 556:	ce 01       	movw	r24, r28
- 558:	0e 94 25 01 	call	0x24a	; 0x24a <_ZN3NRF11clearTxDataEv>
+ 2ec:	ce 01       	movw	r24, r28
+ 2ee:	0e 94 34 01 	call	0x268	; 0x268 <_ZN3NRF11clearTxDataEv>
 	
 	//populate TxData with length and data
 	TxData[0] = length + 1;
- 55c:	80 2f       	mov	r24, r16
- 55e:	8f 5f       	subi	r24, 0xFF	; 255
- 560:	8b af       	std	Y+59, r24	; 0x3b
+ 2f2:	81 e0       	ldi	r24, 0x01	; 1
+ 2f4:	80 0f       	add	r24, r16
+ 2f6:	8b af       	std	Y+59, r24	; 0x3b
 	TxData[1] = command;
- 562:	1c af       	std	Y+60, r17	; 0x3c
+ 2f8:	1c af       	std	Y+60, r17	; 0x3c
 	for(i = 0; i < length; i++)
- 564:	20 2f       	mov	r18, r16
- 566:	30 e0       	ldi	r19, 0x00	; 0
- 568:	12 16       	cp	r1, r18
- 56a:	13 06       	cpc	r1, r19
- 56c:	2c f7       	brge	.-54     	; 0x538 <__stack+0x39>
- 56e:	ee 2d       	mov	r30, r14
- 570:	ff 2d       	mov	r31, r15
-///@brief Send data from uC to nRF8001
-///@param command
-///@param data
-///@param length Length of data
-///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
-uint8_t NRF::PrepareTxData(uint8_t command, uint8_t *data, uint8_t length){
- 572:	de 01       	movw	r26, r28
- 574:	dd 96       	adiw	r26, 0x3d	; 61
-	clearTxData();
-	
-	//populate TxData with length and data
-	TxData[0] = length + 1;
-	TxData[1] = command;
-	for(i = 0; i < length; i++)
- 576:	80 e0       	ldi	r24, 0x00	; 0
- 578:	90 e0       	ldi	r25, 0x00	; 0
- 57a:	d8 cf       	rjmp	.-80     	; 0x52c <__stack+0x2d>
+ 2fa:	20 2f       	mov	r18, r16
+ 2fc:	30 e0       	ldi	r19, 0x00	; 0
+ 2fe:	12 16       	cp	r1, r18
+ 300:	13 06       	cpc	r1, r19
+ 302:	2c f7       	brge	.-54     	; 0x2ce <_ZN3NRF13PrepareTxDataEhPhh+0x50>
+ 304:	ee 2d       	mov	r30, r14
+ 306:	ff 2d       	mov	r31, r15
+ 308:	de 01       	movw	r26, r28
+ 30a:	dd 96       	adiw	r26, 0x3d	; 61
+ 30c:	80 e0       	ldi	r24, 0x00	; 0
+ 30e:	90 e0       	ldi	r25, 0x00	; 0
+ 310:	d8 cf       	rjmp	.-80     	; 0x2c2 <_ZN3NRF13PrepareTxDataEhPhh+0x44>
 		TxData[i+2] = data[i];	
 		
 	//data to send flag
 	status |= (1<<NRF_TX_READY);
 	return 0x00;	//success
 }//PrepareTxData
- 57c:	df 91       	pop	r29
- 57e:	cf 91       	pop	r28
- 580:	1f 91       	pop	r17
- 582:	0f 91       	pop	r16
- 584:	ff 90       	pop	r15
- 586:	ef 90       	pop	r14
- 588:	08 95       	ret
+ 312:	df 91       	pop	r29
+ 314:	cf 91       	pop	r28
+ 316:	1f 91       	pop	r17
+ 318:	0f 91       	pop	r16
+ 31a:	ff 90       	pop	r15
+ 31c:	ef 90       	pop	r14
+ 31e:	08 95       	ret
 
-0000058a <_ZN3NRF11requestDataEh>:
+00000320 <_ZN3NRF11requestDataEh>:
 	if (retVal == 0x00)
 		dataCredit-=1;
 	return (retVal);
 }//
 
 uint8_t NRF::requestData(uint8_t servicePipeNumber){
- 58a:	0f 93       	push	r16
- 58c:	1f 93       	push	r17
- 58e:	cf 93       	push	r28
- 590:	df 93       	push	r29
- 592:	1f 92       	push	r1
- 594:	cd b7       	in	r28, 0x3d	; 61
- 596:	de b7       	in	r29, 0x3e	; 62
- 598:	8c 01       	movw	r16, r24
- 59a:	69 83       	std	Y+1, r22	; 0x01
+ 320:	0f 93       	push	r16
+ 322:	1f 93       	push	r17
+ 324:	cf 93       	push	r28
+ 326:	df 93       	push	r29
+ 328:	1f 92       	push	r1
+ 32a:	cd b7       	in	r28, 0x3d	; 61
+ 32c:	de b7       	in	r29, 0x3e	; 62
+ 32e:	8c 01       	movw	r16, r24
+ 330:	69 83       	std	Y+1, r22	; 0x01
 	uint8_t retVal = PrepareTxData(NRF_CMD_REQUEST_DATA, &servicePipeNumber, 1);
- 59c:	21 e0       	ldi	r18, 0x01	; 1
- 59e:	ae 01       	movw	r20, r28
- 5a0:	4f 5f       	subi	r20, 0xFF	; 255
- 5a2:	5f 4f       	sbci	r21, 0xFF	; 255
- 5a4:	67 e1       	ldi	r22, 0x17	; 23
- 5a6:	0e 94 76 02 	call	0x4ec	; 0x4ec <_ZN3NRF13PrepareTxDataEhPhh>
+ 332:	21 e0       	ldi	r18, 0x01	; 1
+ 334:	ae 01       	movw	r20, r28
+ 336:	4f 5f       	subi	r20, 0xFF	; 255
+ 338:	5f 4f       	sbci	r21, 0xFF	; 255
+ 33a:	67 e1       	ldi	r22, 0x17	; 23
+ 33c:	0e 94 3f 01 	call	0x27e	; 0x27e <_ZN3NRF13PrepareTxDataEhPhh>
 	if (retVal == 0x00)
- 5aa:	81 11       	cpse	r24, r1
- 5ac:	06 c0       	rjmp	.+12     	; 0x5ba <_ZN3NRF11requestDataEh+0x30>
+ 340:	81 11       	cpse	r24, r1
+ 342:	06 c0       	rjmp	.+12     	; 0x350 <_ZN3NRF11requestDataEh+0x30>
 		dataCredit-=1;
- 5ae:	f8 01       	movw	r30, r16
- 5b0:	ee 58       	subi	r30, 0x8E	; 142
- 5b2:	ff 4f       	sbci	r31, 0xFF	; 255
- 5b4:	90 81       	ld	r25, Z
- 5b6:	91 50       	subi	r25, 0x01	; 1
- 5b8:	90 83       	st	Z, r25
+ 344:	f8 01       	movw	r30, r16
+ 346:	ee 58       	subi	r30, 0x8E	; 142
+ 348:	ff 4f       	sbci	r31, 0xFF	; 255
+ 34a:	90 81       	ld	r25, Z
+ 34c:	91 50       	subi	r25, 0x01	; 1
+ 34e:	90 83       	st	Z, r25
 	return (retVal);
 }//
- 5ba:	0f 90       	pop	r0
- 5bc:	df 91       	pop	r29
- 5be:	cf 91       	pop	r28
- 5c0:	1f 91       	pop	r17
- 5c2:	0f 91       	pop	r16
- 5c4:	08 95       	ret
+ 350:	0f 90       	pop	r0
+ 352:	df 91       	pop	r29
+ 354:	cf 91       	pop	r28
+ 356:	1f 91       	pop	r17
+ 358:	0f 91       	pop	r16
+ 35a:	08 95       	ret
 
-000005c6 <_ZN3NRF11clearRxDataEv>:
+0000035c <_ZN3NRF13PrepareTxDataEhhPhh>:
+	//data to send flag
+	status |= (1<<NRF_TX_READY);
+	return 0x00;	//success
+}//PrepareTxData
+
+uint8_t NRF::PrepareTxData(uint8_t command, uint8_t content, uint8_t *data, uint8_t length){
+ 35c:	df 92       	push	r13
+ 35e:	ef 92       	push	r14
+ 360:	ff 92       	push	r15
+ 362:	0f 93       	push	r16
+ 364:	1f 93       	push	r17
+ 366:	cf 93       	push	r28
+ 368:	df 93       	push	r29
+ 36a:	ec 01       	movw	r28, r24
+ 36c:	16 2f       	mov	r17, r22
+ 36e:	f4 2e       	mov	r15, r20
+ 370:	d2 2e       	mov	r13, r18
+ 372:	e3 2e       	mov	r14, r19
+#pragma endregion Data Command Functions
+
+#pragma region Status Functions
+uint8_t NRF::isInitializing(void){
+	//return ((status & (1<<NRF_INIT_MODE))?TRUE:FALSE);
+	return (mode == NRF_MODE_SETUP);
+ 374:	fc 01       	movw	r30, r24
+ 376:	ef 58       	subi	r30, 0x8F	; 143
+ 378:	ff 4f       	sbci	r31, 0xFF	; 255
+}//PrepareTxData
+
+uint8_t NRF::PrepareTxData(uint8_t command, uint8_t content, uint8_t *data, uint8_t length){
+	
+	int i;
+	if (isInitializing())
+ 37a:	80 81       	ld	r24, Z
+ 37c:	82 30       	cpi	r24, 0x02	; 2
+ 37e:	e1 f0       	breq	.+56     	; 0x3b8 <_ZN3NRF13PrepareTxDataEhhPhh+0x5c>
+		return 0x01;
+	if (hasDataToSend())
+ 380:	ce 01       	movw	r24, r28
+ 382:	0e 94 fd 00 	call	0x1fa	; 0x1fa <_ZN3NRF13hasDataToSendEv>
+ 386:	81 11       	cpse	r24, r1
+ 388:	19 c0       	rjmp	.+50     	; 0x3bc <_ZN3NRF13PrepareTxDataEhhPhh+0x60>
+		return 0x02;
+	if (waitingForResponse() && isSystemCommand(command))
+ 38a:	ce 01       	movw	r24, r28
+ 38c:	0e 94 03 01 	call	0x206	; 0x206 <_ZN3NRF18waitingForResponseEv>
+ 390:	88 23       	and	r24, r24
+ 392:	c1 f0       	breq	.+48     	; 0x3c4 <_ZN3NRF13PrepareTxDataEhhPhh+0x68>
+ 394:	61 2f       	mov	r22, r17
+ 396:	ce 01       	movw	r24, r28
+ 398:	0e 94 19 01 	call	0x232	; 0x232 <_ZN3NRF15isSystemCommandEh>
+ 39c:	81 11       	cpse	r24, r1
+ 39e:	10 c0       	rjmp	.+32     	; 0x3c0 <_ZN3NRF13PrepareTxDataEhhPhh+0x64>
+ 3a0:	11 c0       	rjmp	.+34     	; 0x3c4 <_ZN3NRF13PrepareTxDataEhhPhh+0x68>
+	//populate TxData with length and data
+	TxData[0] = length + 2;
+	TxData[1] = command;
+	TxData[2] = content;
+	for(i = 0; i < length; i++)
+		TxData[i+3] = data[i];
+ 3a2:	21 91       	ld	r18, Z+
+ 3a4:	2d 93       	st	X+, r18
+	clearTxData();
+	//populate TxData with length and data
+	TxData[0] = length + 2;
+	TxData[1] = command;
+	TxData[2] = content;
+	for(i = 0; i < length; i++)
+ 3a6:	01 96       	adiw	r24, 0x01	; 1
+ 3a8:	80 17       	cp	r24, r16
+ 3aa:	91 07       	cpc	r25, r17
+ 3ac:	d4 f3       	brlt	.-12     	; 0x3a2 <_ZN3NRF13PrepareTxDataEhhPhh+0x46>
+		TxData[i+3] = data[i];
+	
+	//data to send flag
+	status |= (1<<NRF_TX_READY);
+ 3ae:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 3b0:	80 64       	ori	r24, 0x40	; 64
+ 3b2:	8a 8f       	std	Y+26, r24	; 0x1a
+	return 0x00;	//success
+ 3b4:	80 e0       	ldi	r24, 0x00	; 0
+ 3b6:	1d c0       	rjmp	.+58     	; 0x3f2 <_ZN3NRF13PrepareTxDataEhhPhh+0x96>
+
+uint8_t NRF::PrepareTxData(uint8_t command, uint8_t content, uint8_t *data, uint8_t length){
+	
+	int i;
+	if (isInitializing())
+		return 0x01;
+ 3b8:	81 e0       	ldi	r24, 0x01	; 1
+ 3ba:	1b c0       	rjmp	.+54     	; 0x3f2 <_ZN3NRF13PrepareTxDataEhhPhh+0x96>
+	if (hasDataToSend())
+		return 0x02;
+ 3bc:	82 e0       	ldi	r24, 0x02	; 2
+ 3be:	19 c0       	rjmp	.+50     	; 0x3f2 <_ZN3NRF13PrepareTxDataEhhPhh+0x96>
+	if (waitingForResponse() && isSystemCommand(command))
+		return 0x03;
+ 3c0:	83 e0       	ldi	r24, 0x03	; 3
+ 3c2:	17 c0       	rjmp	.+46     	; 0x3f2 <_ZN3NRF13PrepareTxDataEhhPhh+0x96>
+	
+	lastCommand = command;
+ 3c4:	fe 01       	movw	r30, r28
+ 3c6:	ed 58       	subi	r30, 0x8D	; 141
+ 3c8:	ff 4f       	sbci	r31, 0xFF	; 255
+ 3ca:	10 83       	st	Z, r17
+	
+	clearTxData();
+ 3cc:	ce 01       	movw	r24, r28
+ 3ce:	0e 94 34 01 	call	0x268	; 0x268 <_ZN3NRF11clearTxDataEv>
+	//populate TxData with length and data
+	TxData[0] = length + 2;
+ 3d2:	82 e0       	ldi	r24, 0x02	; 2
+ 3d4:	80 0f       	add	r24, r16
+ 3d6:	8b af       	std	Y+59, r24	; 0x3b
+	TxData[1] = command;
+ 3d8:	1c af       	std	Y+60, r17	; 0x3c
+	TxData[2] = content;
+ 3da:	fd ae       	std	Y+61, r15	; 0x3d
+	for(i = 0; i < length; i++)
+ 3dc:	10 e0       	ldi	r17, 0x00	; 0
+ 3de:	10 16       	cp	r1, r16
+ 3e0:	11 06       	cpc	r1, r17
+ 3e2:	2c f7       	brge	.-54     	; 0x3ae <_ZN3NRF13PrepareTxDataEhhPhh+0x52>
+ 3e4:	ed 2d       	mov	r30, r13
+ 3e6:	fe 2d       	mov	r31, r14
+ 3e8:	de 01       	movw	r26, r28
+ 3ea:	de 96       	adiw	r26, 0x3e	; 62
+ 3ec:	80 e0       	ldi	r24, 0x00	; 0
+ 3ee:	90 e0       	ldi	r25, 0x00	; 0
+ 3f0:	d8 cf       	rjmp	.-80     	; 0x3a2 <_ZN3NRF13PrepareTxDataEhhPhh+0x46>
+		TxData[i+3] = data[i];
+	
+	//data to send flag
+	status |= (1<<NRF_TX_READY);
+	return 0x00;	//success
+}//PrepareTxData
+ 3f2:	df 91       	pop	r29
+ 3f4:	cf 91       	pop	r28
+ 3f6:	1f 91       	pop	r17
+ 3f8:	0f 91       	pop	r16
+ 3fa:	ff 90       	pop	r15
+ 3fc:	ef 90       	pop	r14
+ 3fe:	df 90       	pop	r13
+ 400:	08 95       	ret
+
+00000402 <_ZN3NRF12setLocalDataEhPhh>:
+return (PrepareTxData(NRF_CMD_CLOSE_REMOTE_PIPE, &servicePipeNumber, 1));
+}//
+#pragma endregion System Command Functions
+
+#pragma region Data Command Functions
+uint8_t NRF::setLocalData(uint8_t servicePipeNumber, uint8_t *data, uint8_t length){	
+ 402:	0f 93       	push	r16
+	return (PrepareTxData(NRF_CMD_SET_LOCAL_DATA, servicePipeNumber, data, length));
+ 404:	02 2f       	mov	r16, r18
+ 406:	9a 01       	movw	r18, r20
+ 408:	46 2f       	mov	r20, r22
+ 40a:	6d e0       	ldi	r22, 0x0D	; 13
+ 40c:	0e 94 ae 01 	call	0x35c	; 0x35c <_ZN3NRF13PrepareTxDataEhhPhh>
+}//
+ 410:	0f 91       	pop	r16
+ 412:	08 95       	ret
+
+00000414 <_ZN3NRF13PrepareTxDataEh>:
+	//data to send flag
+	status |= (1<<NRF_TX_READY);
+	return 0x00;	//success
+}//PrepareTxData
+
+uint8_t NRF::PrepareTxData(uint8_t command){
+ 414:	1f 93       	push	r17
+ 416:	cf 93       	push	r28
+ 418:	df 93       	push	r29
+ 41a:	ec 01       	movw	r28, r24
+ 41c:	16 2f       	mov	r17, r22
+#pragma endregion Data Command Functions
+
+#pragma region Status Functions
+uint8_t NRF::isInitializing(void){
+	//return ((status & (1<<NRF_INIT_MODE))?TRUE:FALSE);
+	return (mode == NRF_MODE_SETUP);
+ 41e:	fc 01       	movw	r30, r24
+ 420:	ef 58       	subi	r30, 0x8F	; 143
+ 422:	ff 4f       	sbci	r31, 0xFF	; 255
+	status |= (1<<NRF_TX_READY);
+	return 0x00;	//success
+}//PrepareTxData
+
+uint8_t NRF::PrepareTxData(uint8_t command){
+	if (isInitializing())
+ 424:	80 81       	ld	r24, Z
+ 426:	82 30       	cpi	r24, 0x02	; 2
+ 428:	91 f0       	breq	.+36     	; 0x44e <_ZN3NRF13PrepareTxDataEh+0x3a>
+		return 0x01;
+	if (hasDataToSend())
+ 42a:	ce 01       	movw	r24, r28
+ 42c:	0e 94 fd 00 	call	0x1fa	; 0x1fa <_ZN3NRF13hasDataToSendEv>
+ 430:	81 11       	cpse	r24, r1
+ 432:	0f c0       	rjmp	.+30     	; 0x452 <_ZN3NRF13PrepareTxDataEh+0x3e>
+		return 0x02;
+	if (waitingForResponse() && isSystemCommand(command))
+ 434:	ce 01       	movw	r24, r28
+ 436:	0e 94 03 01 	call	0x206	; 0x206 <_ZN3NRF18waitingForResponseEv>
+ 43a:	88 23       	and	r24, r24
+ 43c:	61 f0       	breq	.+24     	; 0x456 <_ZN3NRF13PrepareTxDataEh+0x42>
+ 43e:	61 2f       	mov	r22, r17
+ 440:	ce 01       	movw	r24, r28
+ 442:	0e 94 19 01 	call	0x232	; 0x232 <_ZN3NRF15isSystemCommandEh>
+ 446:	88 23       	and	r24, r24
+ 448:	31 f0       	breq	.+12     	; 0x456 <_ZN3NRF13PrepareTxDataEh+0x42>
+		return 0x03;
+ 44a:	83 e0       	ldi	r24, 0x03	; 3
+ 44c:	12 c0       	rjmp	.+36     	; 0x472 <_ZN3NRF13PrepareTxDataEh+0x5e>
+	return 0x00;	//success
+}//PrepareTxData
+
+uint8_t NRF::PrepareTxData(uint8_t command){
+	if (isInitializing())
+		return 0x01;
+ 44e:	81 e0       	ldi	r24, 0x01	; 1
+ 450:	10 c0       	rjmp	.+32     	; 0x472 <_ZN3NRF13PrepareTxDataEh+0x5e>
+	if (hasDataToSend())
+		return 0x02;
+ 452:	82 e0       	ldi	r24, 0x02	; 2
+ 454:	0e c0       	rjmp	.+28     	; 0x472 <_ZN3NRF13PrepareTxDataEh+0x5e>
+	if (waitingForResponse() && isSystemCommand(command))
+		return 0x03;
+	
+	lastCommand = command;
+ 456:	fe 01       	movw	r30, r28
+ 458:	ed 58       	subi	r30, 0x8D	; 141
+ 45a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 45c:	10 83       	st	Z, r17
+	
+	clearTxData();
+ 45e:	ce 01       	movw	r24, r28
+ 460:	0e 94 34 01 	call	0x268	; 0x268 <_ZN3NRF11clearTxDataEv>
+	TxData[0] = 0x01;
+ 464:	81 e0       	ldi	r24, 0x01	; 1
+ 466:	8b af       	std	Y+59, r24	; 0x3b
+	TxData[1] = command;
+ 468:	1c af       	std	Y+60, r17	; 0x3c
+	status |= (1<<NRF_TX_READY);
+ 46a:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 46c:	80 64       	ori	r24, 0x40	; 64
+ 46e:	8a 8f       	std	Y+26, r24	; 0x1a
+	return 0x00;
+ 470:	80 e0       	ldi	r24, 0x00	; 0
+}
+ 472:	df 91       	pop	r29
+ 474:	cf 91       	pop	r28
+ 476:	1f 91       	pop	r17
+ 478:	08 95       	ret
+
+0000047a <_ZN3NRF10radioResetEv>:
+uint8_t NRF::getTemperature(void){	
+	return (PrepareTxData(NRF_CMD_GET_TEMPERATURE));
+}//getTemperature
+
+uint8_t NRF::radioReset(){
+	return (PrepareTxData(NRF_CMD_RADIO_RESET));
+ 47a:	6e e0       	ldi	r22, 0x0E	; 14
+ 47c:	0e 94 0a 02 	call	0x414	; 0x414 <_ZN3NRF13PrepareTxDataEh>
+}//
+ 480:	08 95       	ret
+
+00000482 <_ZN3NRF7connectEjj>:
+
+uint8_t NRF::connect(uint16_t timeout, uint16_t advInterval){	
+ 482:	ef 92       	push	r14
+ 484:	ff 92       	push	r15
+ 486:	0f 93       	push	r16
+ 488:	1f 93       	push	r17
+ 48a:	cf 93       	push	r28
+ 48c:	df 93       	push	r29
+ 48e:	ec 01       	movw	r28, r24
+ 490:	e6 2e       	mov	r14, r22
+ 492:	f7 2e       	mov	r15, r23
+ 494:	04 2f       	mov	r16, r20
+ 496:	15 2f       	mov	r17, r21
+#pragma endregion Data Command Functions
+
+#pragma region Status Functions
+uint8_t NRF::isInitializing(void){
+	//return ((status & (1<<NRF_INIT_MODE))?TRUE:FALSE);
+	return (mode == NRF_MODE_SETUP);
+ 498:	fc 01       	movw	r30, r24
+ 49a:	ef 58       	subi	r30, 0x8F	; 143
+ 49c:	ff 4f       	sbci	r31, 0xFF	; 255
+	//localData[1] = (timeout&0xFF00)>>8; //MSB
+	//localData[2] = (advInterval&0x00FF);	//LSB
+	//localData[3] = (advInterval&0xFF00)>>8; //MSB
+	//return (PrepareTxData(NRF_CMD_CONNECT, localData, 4));
+	
+	if (isInitializing())
+ 49e:	80 81       	ld	r24, Z
+ 4a0:	82 30       	cpi	r24, 0x02	; 2
+ 4a2:	11 f1       	breq	.+68     	; 0x4e8 <_ZN3NRF7connectEjj+0x66>
+	return 0x01;
+	if (hasDataToSend())
+ 4a4:	ce 01       	movw	r24, r28
+ 4a6:	0e 94 fd 00 	call	0x1fa	; 0x1fa <_ZN3NRF13hasDataToSendEv>
+ 4aa:	81 11       	cpse	r24, r1
+ 4ac:	1f c0       	rjmp	.+62     	; 0x4ec <_ZN3NRF7connectEjj+0x6a>
+	return 0x02;
+	if (waitingForResponse())
+ 4ae:	ce 01       	movw	r24, r28
+ 4b0:	0e 94 03 01 	call	0x206	; 0x206 <_ZN3NRF18waitingForResponseEv>
+ 4b4:	81 11       	cpse	r24, r1
+ 4b6:	1c c0       	rjmp	.+56     	; 0x4f0 <_ZN3NRF7connectEjj+0x6e>
+	return 0x03;
+	
+	lastCommand = TxData[1];
+ 4b8:	fe 01       	movw	r30, r28
+ 4ba:	ed 58       	subi	r30, 0x8D	; 141
+ 4bc:	ff 4f       	sbci	r31, 0xFF	; 255
+ 4be:	8c ad       	ldd	r24, Y+60	; 0x3c
+ 4c0:	80 83       	st	Z, r24
+	
+	clearTxData();
+ 4c2:	ce 01       	movw	r24, r28
+ 4c4:	0e 94 34 01 	call	0x268	; 0x268 <_ZN3NRF11clearTxDataEv>
+	TxData[0] = 0x05;	//length
+ 4c8:	85 e0       	ldi	r24, 0x05	; 5
+ 4ca:	8b af       	std	Y+59, r24	; 0x3b
+	TxData[1] = NRF_CMD_CONNECT;
+ 4cc:	8f e0       	ldi	r24, 0x0F	; 15
+ 4ce:	8c af       	std	Y+60, r24	; 0x3c
+	TxData[2] = (timeout&0x00FF);	//LSB
+ 4d0:	ed ae       	std	Y+61, r14	; 0x3d
+	TxData[3] = (timeout&0xFF00)>>8; //MSB
+ 4d2:	fe ae       	std	Y+62, r15	; 0x3e
+	TxData[4] = (advInterval&0x00FF);	//LSB
+ 4d4:	0f af       	std	Y+63, r16	; 0x3f
+	TxData[5] = (advInterval&0xFF00)>>8; //MSB
+ 4d6:	fe 01       	movw	r30, r28
+ 4d8:	e0 5c       	subi	r30, 0xC0	; 192
+ 4da:	ff 4f       	sbci	r31, 0xFF	; 255
+ 4dc:	10 83       	st	Z, r17
+	status |= (1<<NRF_TX_READY);
+ 4de:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 4e0:	80 64       	ori	r24, 0x40	; 64
+ 4e2:	8a 8f       	std	Y+26, r24	; 0x1a
+	return 0x00;
+ 4e4:	80 e0       	ldi	r24, 0x00	; 0
+ 4e6:	05 c0       	rjmp	.+10     	; 0x4f2 <_ZN3NRF7connectEjj+0x70>
+	//localData[2] = (advInterval&0x00FF);	//LSB
+	//localData[3] = (advInterval&0xFF00)>>8; //MSB
+	//return (PrepareTxData(NRF_CMD_CONNECT, localData, 4));
+	
+	if (isInitializing())
+	return 0x01;
+ 4e8:	81 e0       	ldi	r24, 0x01	; 1
+ 4ea:	03 c0       	rjmp	.+6      	; 0x4f2 <_ZN3NRF7connectEjj+0x70>
+	if (hasDataToSend())
+	return 0x02;
+ 4ec:	82 e0       	ldi	r24, 0x02	; 2
+ 4ee:	01 c0       	rjmp	.+2      	; 0x4f2 <_ZN3NRF7connectEjj+0x70>
+	if (waitingForResponse())
+	return 0x03;
+ 4f0:	83 e0       	ldi	r24, 0x03	; 3
+	TxData[3] = (timeout&0xFF00)>>8; //MSB
+	TxData[4] = (advInterval&0x00FF);	//LSB
+	TxData[5] = (advInterval&0xFF00)>>8; //MSB
+	status |= (1<<NRF_TX_READY);
+	return 0x00;
+}//
+ 4f2:	df 91       	pop	r29
+ 4f4:	cf 91       	pop	r28
+ 4f6:	1f 91       	pop	r17
+ 4f8:	0f 91       	pop	r16
+ 4fa:	ff 90       	pop	r15
+ 4fc:	ef 90       	pop	r14
+ 4fe:	08 95       	ret
+
+00000500 <_ZN3NRF11transferACIEv>:
+nRF8001 is capable of receiving an ACI command simultaneously as it sends an ACI event to the
+application controller.
+The application controller shall always read the length byte from nRF8001 and check if the length is
+greater than 0. If the length is greater than 0 the data on the MISO line shall be read
+*/
+void NRF::transferACI(void){
+ 500:	1f 93       	push	r17
+ 502:	cf 93       	push	r28
+ 504:	df 93       	push	r29
+ 506:	ec 01       	movw	r28, r24
+	uint8_t length; 
+	
+	//transmit and receive
+	if (hasDataToSend() && (TxData[0] > 0)){			
+ 508:	0e 94 fd 00 	call	0x1fa	; 0x1fa <_ZN3NRF13hasDataToSendEv>
+ 50c:	88 23       	and	r24, r24
+ 50e:	09 f4       	brne	.+2      	; 0x512 <_ZN3NRF11transferACIEv+0x12>
+ 510:	40 c0       	rjmp	.+128    	; 0x592 <_ZN3NRF11transferACIEv+0x92>
+ 512:	8b ad       	ldd	r24, Y+59	; 0x3b
+ 514:	81 11       	cpse	r24, r1
+ 516:	40 c0       	rjmp	.+128    	; 0x598 <_ZN3NRF11transferACIEv+0x98>
+ 518:	3c c0       	rjmp	.+120    	; 0x592 <_ZN3NRF11transferACIEv+0x92>
+		SetREQN();
+		
+		//when data is received, clear the ready to receive flag until
+		//the received data is handled by the process function
+		if (RxData[0] != 0x00){
+			status &= ~(1<<NRF_RX_READY);
+ 51a:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 51c:	8f 77       	andi	r24, 0x7F	; 127
+ 51e:	8a 8f       	std	Y+26, r24	; 0x1a
+		}
+		
+		
+		lastCommand = TxData[1];
+ 520:	6c ad       	ldd	r22, Y+60	; 0x3c
+ 522:	fe 01       	movw	r30, r28
+ 524:	ed 58       	subi	r30, 0x8D	; 141
+ 526:	ff 4f       	sbci	r31, 0xFF	; 255
+ 528:	60 83       	st	Z, r22
+		
+		//clear the NRF_TX_READY flag in the status register
+		status &= ~(1<<NRF_TX_READY);
+ 52a:	1a 8d       	ldd	r17, Y+26	; 0x1a
+ 52c:	1f 7b       	andi	r17, 0xBF	; 191
+		
+		if (isSystemCommand(TxData[1]))
+ 52e:	ce 01       	movw	r24, r28
+ 530:	0e 94 19 01 	call	0x232	; 0x232 <_ZN3NRF15isSystemCommandEh>
+ 534:	81 11       	cpse	r24, r1
+ 536:	02 c0       	rjmp	.+4      	; 0x53c <_ZN3NRF11transferACIEv+0x3c>
+		
+		
+		lastCommand = TxData[1];
+		
+		//clear the NRF_TX_READY flag in the status register
+		status &= ~(1<<NRF_TX_READY);
+ 538:	1a 8f       	std	Y+26, r17	; 0x1a
+ 53a:	58 c0       	rjmp	.+176    	; 0x5ec <_ZN3NRF11transferACIEv+0xec>
+		
+		if (isSystemCommand(TxData[1]))
+			status |= (1<<NRF_WAIT_FOR_RESPONSE);
+ 53c:	10 61       	ori	r17, 0x10	; 16
+ 53e:	1a 8f       	std	Y+26, r17	; 0x1a
+ 540:	55 c0       	rjmp	.+170    	; 0x5ec <_ZN3NRF11transferACIEv+0xec>
+	}//if hasDataToSend
+	
+	//receive only
+	else if(RDYN == 0)
+	{
+		clearTxData();
+ 542:	ce 01       	movw	r24, r28
+ 544:	0e 94 34 01 	call	0x268	; 0x268 <_ZN3NRF11clearTxDataEv>
+		//Request communication with nRF8001
+		ClearREQN();
+ 548:	29 98       	cbi	0x05, 1	; 5
+		
+		//transmit the DUMMY BYTE and receive the Rx DEBUG BYTE
+		//the LENGTH BYTE is not counted as part of the length
+		RxData[0] = spi.transfer1byte(0x00);
+ 54a:	60 e0       	ldi	r22, 0x00	; 0
+ 54c:	8b e7       	ldi	r24, 0x7B	; 123
+ 54e:	93 e0       	ldi	r25, 0x03	; 3
+ 550:	0e 94 ee 00 	call	0x1dc	; 0x1dc <_ZN3SPI13transfer1byteEh>
+ 554:	8b 8f       	std	Y+27, r24	; 0x1b
+		
+		//Transmit a DUMMY BYTE and receive the LENGTH BYTE
+		RxData[0] = spi.transfer1byte(0x00);
+ 556:	60 e0       	ldi	r22, 0x00	; 0
+ 558:	8b e7       	ldi	r24, 0x7B	; 123
+ 55a:	93 e0       	ldi	r25, 0x03	; 3
+ 55c:	0e 94 ee 00 	call	0x1dc	; 0x1dc <_ZN3SPI13transfer1byteEh>
+ 560:	8b 8f       	std	Y+27, r24	; 0x1b
+ 562:	28 2f       	mov	r18, r24
+ 564:	80 32       	cpi	r24, 0x20	; 32
+ 566:	08 f0       	brcs	.+2      	; 0x56a <_ZN3NRF11transferACIEv+0x6a>
+ 568:	2f e1       	ldi	r18, 0x1F	; 31
+		
+		length = RxData[0];
+		if (length>HAL_ACI_MAX_LENGTH)
+			length = HAL_ACI_MAX_LENGTH;
+		if (length>0)
+ 56a:	22 23       	and	r18, r18
+ 56c:	51 f0       	breq	.+20     	; 0x582 <_ZN3NRF11transferACIEv+0x82>
+		{
+			
+			spi.transfer(&TxData[2],&RxData[1],length);
+ 56e:	ae 01       	movw	r20, r28
+ 570:	44 5e       	subi	r20, 0xE4	; 228
+ 572:	5f 4f       	sbci	r21, 0xFF	; 255
+ 574:	be 01       	movw	r22, r28
+ 576:	63 5c       	subi	r22, 0xC3	; 195
+ 578:	7f 4f       	sbci	r23, 0xFF	; 255
+ 57a:	8b e7       	ldi	r24, 0x7B	; 123
+ 57c:	93 e0       	ldi	r25, 0x03	; 3
+ 57e:	0e 94 db 00 	call	0x1b6	; 0x1b6 <_ZN3SPI8transferEPhS0_h>
+		}//if length>0
+		
+		//Set REQN high to terminate the transfer
+		SetREQN();
+ 582:	29 9a       	sbi	0x05, 1	; 5
+		
+		//when data is received, clear the ready to receive flag until
+		//the received data is handled by the process function
+		if (RxData[0] != 0x00){
+ 584:	8b 8d       	ldd	r24, Y+27	; 0x1b
+ 586:	88 23       	and	r24, r24
+ 588:	89 f1       	breq	.+98     	; 0x5ec <_ZN3NRF11transferACIEv+0xec>
+			status &= ~(1<<NRF_RX_READY);
+ 58a:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 58c:	8f 77       	andi	r24, 0x7F	; 127
+ 58e:	8a 8f       	std	Y+26, r24	; 0x1a
+ 590:	2d c0       	rjmp	.+90     	; 0x5ec <_ZN3NRF11transferACIEv+0xec>
+			status |= (1<<NRF_WAIT_FOR_RESPONSE);
+				
+	}//if hasDataToSend
+	
+	//receive only
+	else if(RDYN == 0)
+ 592:	2a 99       	sbic	0x05, 2	; 5
+ 594:	2b c0       	rjmp	.+86     	; 0x5ec <_ZN3NRF11transferACIEv+0xec>
+ 596:	d5 cf       	rjmp	.-86     	; 0x542 <_ZN3NRF11transferACIEv+0x42>
+	//transmit and receive
+	if (hasDataToSend() && (TxData[0] > 0)){			
+		length = TxData[0];
+	
+		//Request communication with nRF8001
+		ClearREQN();
+ 598:	29 98       	cbi	0x05, 1	; 5
+	
+		//Wait for nRF8001 to clear RDYN pin indicating it is ready to receive
+		while (RDYN == 1);
+ 59a:	85 b1       	in	r24, 0x05	; 5
+	
+		//transmit the Tx LENGTH BYTE and receive the Rx DEBUG BYTE
+		//the LENGTH BYTE is not counted as part of the length
+		RxData[0] = spi.transfer1byte(TxData[0]);
+ 59c:	6b ad       	ldd	r22, Y+59	; 0x3b
+ 59e:	8b e7       	ldi	r24, 0x7B	; 123
+ 5a0:	93 e0       	ldi	r25, 0x03	; 3
+ 5a2:	0e 94 ee 00 	call	0x1dc	; 0x1dc <_ZN3SPI13transfer1byteEh>
+ 5a6:	8b 8f       	std	Y+27, r24	; 0x1b
+	
+	
+		//transmit the first byte of data while receiving the length byte
+		//we are discarding the Rx DEBUG BYTE
+		RxData[0] = spi.transfer1byte(TxData[1]);
+ 5a8:	6c ad       	ldd	r22, Y+60	; 0x3c
+ 5aa:	8b e7       	ldi	r24, 0x7B	; 123
+ 5ac:	93 e0       	ldi	r25, 0x03	; 3
+ 5ae:	0e 94 ee 00 	call	0x1dc	; 0x1dc <_ZN3SPI13transfer1byteEh>
+ 5b2:	8b 8f       	std	Y+27, r24	; 0x1b
+	
+		////set length to the greater of TxData less the byte we already sent or 
+		////RxData length
+		length = (RxData[0]>(TxData[0] -1))?RxData[0]:(TxData[0]-1);
+ 5b4:	4b ad       	ldd	r20, Y+59	; 0x3b
+ 5b6:	50 e0       	ldi	r21, 0x00	; 0
+ 5b8:	41 50       	subi	r20, 0x01	; 1
+ 5ba:	51 09       	sbc	r21, r1
+ 5bc:	28 2f       	mov	r18, r24
+ 5be:	30 e0       	ldi	r19, 0x00	; 0
+ 5c0:	24 17       	cp	r18, r20
+ 5c2:	35 07       	cpc	r19, r21
+ 5c4:	0c f4       	brge	.+2      	; 0x5c8 <_ZN3NRF11transferACIEv+0xc8>
+ 5c6:	9a 01       	movw	r18, r20
+ 5c8:	20 32       	cpi	r18, 0x20	; 32
+ 5ca:	08 f0       	brcs	.+2      	; 0x5ce <_ZN3NRF11transferACIEv+0xce>
+ 5cc:	2f e1       	ldi	r18, 0x1F	; 31
+		if (length>HAL_ACI_MAX_LENGTH) 
+			length = HAL_ACI_MAX_LENGTH;
+			
+		//if (length>0)
+		spi.transfer(&TxData[2],&RxData[1],length);
+ 5ce:	ae 01       	movw	r20, r28
+ 5d0:	44 5e       	subi	r20, 0xE4	; 228
+ 5d2:	5f 4f       	sbci	r21, 0xFF	; 255
+ 5d4:	be 01       	movw	r22, r28
+ 5d6:	63 5c       	subi	r22, 0xC3	; 195
+ 5d8:	7f 4f       	sbci	r23, 0xFF	; 255
+ 5da:	8b e7       	ldi	r24, 0x7B	; 123
+ 5dc:	93 e0       	ldi	r25, 0x03	; 3
+ 5de:	0e 94 db 00 	call	0x1b6	; 0x1b6 <_ZN3SPI8transferEPhS0_h>
+		//for (uint8_t i = 0; i< length; i++){
+			//RxData[i+1] = spi.transfer1byte(TxData[i+2]); 
+		//}
+	
+		//Set REQN high to terminate the transfer
+		SetREQN();
+ 5e2:	29 9a       	sbi	0x05, 1	; 5
+		
+		//when data is received, clear the ready to receive flag until
+		//the received data is handled by the process function
+		if (RxData[0] != 0x00){
+ 5e4:	8b 8d       	ldd	r24, Y+27	; 0x1b
+ 5e6:	81 11       	cpse	r24, r1
+ 5e8:	98 cf       	rjmp	.-208    	; 0x51a <_ZN3NRF11transferACIEv+0x1a>
+ 5ea:	9a cf       	rjmp	.-204    	; 0x520 <_ZN3NRF11transferACIEv+0x20>
+			status &= ~(1<<NRF_RX_READY);
+		}
+		
+	}//else if(RDYN == 0)	
+	
 }//transferACI()
-void NRF::clearTxData(){
-	for(int i = 0; i<32; i++) 
-		TxData[i] = 0x00;		
-}
-void NRF::clearRxData(){
- 5c6:	fc 01       	movw	r30, r24
- 5c8:	7b 96       	adiw	r30, 0x1b	; 27
-	for(int i = 0; i<32; i++)
- 5ca:	20 e0       	ldi	r18, 0x00	; 0
- 5cc:	30 e0       	ldi	r19, 0x00	; 0
-		RxData[i] = 0x00;
- 5ce:	11 92       	st	Z+, r1
-void NRF::clearTxData(){
-	for(int i = 0; i<32; i++) 
-		TxData[i] = 0x00;		
-}
-void NRF::clearRxData(){
-	for(int i = 0; i<32; i++)
- 5d0:	2f 5f       	subi	r18, 0xFF	; 255
- 5d2:	3f 4f       	sbci	r19, 0xFF	; 255
- 5d4:	20 32       	cpi	r18, 0x20	; 32
- 5d6:	31 05       	cpc	r19, r1
- 5d8:	d1 f7       	brne	.-12     	; 0x5ce <_ZN3NRF11clearRxDataEv+0x8>
-		RxData[i] = 0x00;
-}
- 5da:	08 95       	ret
+ 5ec:	df 91       	pop	r29
+ 5ee:	cf 91       	pop	r28
+ 5f0:	1f 91       	pop	r17
+ 5f2:	08 95       	ret
 
-000005dc <_ZN3NRF22processCommandResponseEv>:
+000005f4 <_ZN3NRF11clearRxDataEv>:
+void NRF::clearTxData(){
+	for(int i = 0; i<32; i++) 
+		TxData[i] = 0x00;		
+}
+void NRF::clearRxData(){
+ 5f4:	fc 01       	movw	r30, r24
+ 5f6:	7b 96       	adiw	r30, 0x1b	; 27
+	for(int i = 0; i<32; i++)
+ 5f8:	20 e0       	ldi	r18, 0x00	; 0
+ 5fa:	30 e0       	ldi	r19, 0x00	; 0
+		RxData[i] = 0x00;
+ 5fc:	11 92       	st	Z+, r1
+void NRF::clearTxData(){
+	for(int i = 0; i<32; i++) 
+		TxData[i] = 0x00;		
+}
+void NRF::clearRxData(){
+	for(int i = 0; i<32; i++)
+ 5fe:	2f 5f       	subi	r18, 0xFF	; 255
+ 600:	3f 4f       	sbci	r19, 0xFF	; 255
+ 602:	20 32       	cpi	r18, 0x20	; 32
+ 604:	31 05       	cpc	r19, r1
+ 606:	d1 f7       	brne	.-12     	; 0x5fc <_ZN3NRF11clearRxDataEv+0x8>
+		RxData[i] = 0x00;
+}
+ 608:	08 95       	ret
+
+0000060a <_ZN3NRF22processCommandResponseEv>:
 			
 		}
 	}//else RxData
 }//process
 
 void NRF::processCommandResponse(){
- 5dc:	cf 93       	push	r28
- 5de:	df 93       	push	r29
- 5e0:	ec 01       	movw	r28, r24
+ 60a:	cf 93       	push	r28
+ 60c:	df 93       	push	r29
+ 60e:	ec 01       	movw	r28, r24
 	//	2		CommandOpCode (see switch statement below)
 	//	3		Status of command execution
 	//	4..31	Command specific data
 	
 	
 	switch (RxData[2]){	//CommandOpCode
- 5e2:	4d 8d       	ldd	r20, Y+29	; 0x1d
- 5e4:	50 e0       	ldi	r21, 0x00	; 0
- 5e6:	fa 01       	movw	r30, r20
- 5e8:	31 97       	sbiw	r30, 0x01	; 1
- 5ea:	ee 31       	cpi	r30, 0x1E	; 30
- 5ec:	f1 05       	cpc	r31, r1
- 5ee:	08 f0       	brcs	.+2      	; 0x5f2 <_ZN3NRF22processCommandResponseEv+0x16>
- 5f0:	6b c0       	rjmp	.+214    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
- 5f2:	ec 5c       	subi	r30, 0xCC	; 204
- 5f4:	ff 4f       	sbci	r31, 0xFF	; 255
- 5f6:	0c 94 ba 05 	jmp	0xb74	; 0xb74 <__tablejump2__>
+ 610:	4d 8d       	ldd	r20, Y+29	; 0x1d
+ 612:	50 e0       	ldi	r21, 0x00	; 0
+ 614:	fa 01       	movw	r30, r20
+ 616:	31 97       	sbiw	r30, 0x01	; 1
+ 618:	ee 31       	cpi	r30, 0x1E	; 30
+ 61a:	f1 05       	cpc	r31, r1
+ 61c:	08 f0       	brcs	.+2      	; 0x620 <_ZN3NRF22processCommandResponseEv+0x16>
+ 61e:	6c c0       	rjmp	.+216    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
+ 620:	ec 5c       	subi	r30, 0xCC	; 204
+ 622:	ff 4f       	sbci	r31, 0xFF	; 255
+ 624:	0c 94 cb 05 	jmp	0xb96	; 0xb96 <__tablejump2__>
 			//RxData[3]	:	Status
 			//					ACI_STATUS_ERROR_DEVICE_STATE_INVALID when used in incorrect mode
 			//						can only be used in NRF_MODE_TEST, NRF_MODE_SETUP, NRF_MODE_STANDBY
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 5fa:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 5fc:	8f 7e       	andi	r24, 0xEF	; 239
- 5fe:	8a 8f       	std	Y+26, r24	; 0x1a
+ 628:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 62a:	8f 7e       	andi	r24, 0xEF	; 239
+ 62c:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 600:	63 c0       	rjmp	.+198    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 62e:	64 c0       	rjmp	.+200    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 			//RxData[3]	:	Status
 			//					ACI_STATUS_ERROR_DEVICE_STATE_INVALID when used in incorrect mode
 			//						can only be used in NRF_MODE_TEST
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 602:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 604:	8f 7e       	andi	r24, 0xEF	; 239
- 606:	8a 8f       	std	Y+26, r24	; 0x1a
+ 630:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 632:	8f 7e       	andi	r24, 0xEF	; 239
+ 634:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 608:	5f c0       	rjmp	.+190    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 636:	60 c0       	rjmp	.+192    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 			//RxData[4-5]	:	DTM Event (2 bytes MSB/LSB)
 			//Refer to Bluetooth Core specification v4.0, Volume 6, Part F, Direct Test Mode,
 			//Sect.3.4, ‘Events’, for description of DTM event format and content
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 60a:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 60c:	8f 7e       	andi	r24, 0xEF	; 239
- 60e:	8a 8f       	std	Y+26, r24	; 0x1a
+ 638:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 63a:	8f 7e       	andi	r24, 0xEF	; 239
+ 63c:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 610:	5b c0       	rjmp	.+182    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 63e:	5c c0       	rjmp	.+184    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 			//RxData[3]	:	Status
 			//					ACI_STATUS_ERROR_DEVICE_STATE_INVALID when used in incorrect mode
 			//						can only be used in NRF_MODE_STANDBY
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 612:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 614:	8f 7e       	andi	r24, 0xEF	; 239
- 616:	8a 8f       	std	Y+26, r24	; 0x1a
+ 640:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 642:	8f 7e       	andi	r24, 0xEF	; 239
+ 644:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 618:	57 c0       	rjmp	.+174    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 646:	58 c0       	rjmp	.+176    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 			//then a NRF_EVT_COMMAND_RESPONSE with a NRF_CMD_WAKEUP, which brings us here
 			//RxData[3]		: status - better be success
 			//RxData[4]		: none
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 61a:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 61c:	8f 7e       	andi	r24, 0xEF	; 239
- 61e:	8a 8f       	std	Y+26, r24	; 0x1a
+ 648:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 64a:	8f 7e       	andi	r24, 0xEF	; 239
+ 64c:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 620:	53 c0       	rjmp	.+166    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 64e:	54 c0       	rjmp	.+168    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 			
 				
 			//on the last run of CMD_SETUP
 			//do NOT clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			//the NRF_CMD_SETUP will be followed by NRF_EVT_DEVICE_STARTED			
 			if (RxData[3] == ACI_STATUS_TRANSACTION_CONTINUE){
- 622:	8e 8d       	ldd	r24, Y+30	; 0x1e
- 624:	81 30       	cpi	r24, 0x01	; 1
- 626:	19 f4       	brne	.+6      	; 0x62e <_ZN3NRF22processCommandResponseEv+0x52>
+ 650:	8e 8d       	ldd	r24, Y+30	; 0x1e
+ 652:	81 30       	cpi	r24, 0x01	; 1
+ 654:	19 f4       	brne	.+6      	; 0x65c <_ZN3NRF22processCommandResponseEv+0x52>
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 628:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 62a:	8f 7e       	andi	r24, 0xEF	; 239
- 62c:	8a 8f       	std	Y+26, r24	; 0x1a
+ 656:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 658:	8f 7e       	andi	r24, 0xEF	; 239
+ 65a:	8a 8f       	std	Y+26, r24	; 0x1a
 			}
 			
 			//set the NRF_RX_READY bit in the status register
 			status |= (1<<NRF_RX_READY);
- 62e:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 630:	80 68       	ori	r24, 0x80	; 128
- 632:	8a 8f       	std	Y+26, r24	; 0x1a
+ 65c:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 65e:	80 68       	ori	r24, 0x80	; 128
+ 660:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 634:	49 c0       	rjmp	.+146    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 662:	4a c0       	rjmp	.+148    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 		case NRF_CMD_READ_DYNAMIC_DATA:
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 636:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 638:	8f 7e       	andi	r24, 0xEF	; 239
- 63a:	8a 8f       	std	Y+26, r24	; 0x1a
+ 664:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 666:	8f 7e       	andi	r24, 0xEF	; 239
+ 668:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 63c:	45 c0       	rjmp	.+138    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 66a:	46 c0       	rjmp	.+140    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 		case NRF_CMD_WRITE_DYNAMIC_DATA:
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 63e:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 640:	8f 7e       	andi	r24, 0xEF	; 239
- 642:	8a 8f       	std	Y+26, r24	; 0x1a
+ 66c:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 66e:	8f 7e       	andi	r24, 0xEF	; 239
+ 670:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 644:	41 c0       	rjmp	.+130    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 672:	42 c0       	rjmp	.+132    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 			//RxData[4-5]	:	Config ID - (LSB/MSB)
 			//RxData[6]		:	ACI Protocol version
 			//
 		
 			//TODO: finish this
 			version = RxData[6];
- 646:	89 a1       	ldd	r24, Y+33	; 0x21
- 648:	88 8f       	std	Y+24, r24	; 0x18
- 64a:	19 8e       	std	Y+25, r1	; 0x19
+ 674:	89 a1       	ldd	r24, Y+33	; 0x21
+ 676:	90 e0       	ldi	r25, 0x00	; 0
+ 678:	99 8f       	std	Y+25, r25	; 0x19
+ 67a:	88 8f       	std	Y+24, r24	; 0x18
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 64c:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 64e:	8f 7e       	andi	r24, 0xEF	; 239
- 650:	8a 8f       	std	Y+26, r24	; 0x1a
+ 67c:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 67e:	8f 7e       	andi	r24, 0xEF	; 239
+ 680:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 652:	3a c0       	rjmp	.+116    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 682:	3a c0       	rjmp	.+116    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 		case NRF_CMD_GET_DEVICE_ADDRESS:
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 654:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 656:	8f 7e       	andi	r24, 0xEF	; 239
- 658:	8a 8f       	std	Y+26, r24	; 0x1a
+ 684:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 686:	8f 7e       	andi	r24, 0xEF	; 239
+ 688:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 65a:	36 c0       	rjmp	.+108    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 68a:	36 c0       	rjmp	.+108    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 		case NRF_CMD_GET_BATTERY_LEVEL:
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 65c:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 65e:	8f 7e       	andi	r24, 0xEF	; 239
- 660:	8a 8f       	std	Y+26, r24	; 0x1a
+ 68c:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 68e:	8f 7e       	andi	r24, 0xEF	; 239
+ 690:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 662:	32 c0       	rjmp	.+100    	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
+ 692:	32 c0       	rjmp	.+100    	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
 			// RxData[5] : temperature MSB
 		
 			//data[0] = NRF_CMD_GET_TEMPERATURE;
 			//data[1] = RxData[4];
 			//data[2] = RxData[3];
 			if (RxData[3] == ACI_STATUS_SUCCESS)
- 664:	8e 8d       	ldd	r24, Y+30	; 0x1e
- 666:	81 11       	cpse	r24, r1
- 668:	09 c0       	rjmp	.+18     	; 0x67c <_ZN3NRF22processCommandResponseEv+0xa0>
+ 694:	8e 8d       	ldd	r24, Y+30	; 0x1e
+ 696:	81 11       	cpse	r24, r1
+ 698:	09 c0       	rjmp	.+18     	; 0x6ac <_ZN3NRF22processCommandResponseEv+0xa2>
 			temperature = (RxData[5]<<4 | RxData[4]);
- 66a:	88 a1       	ldd	r24, Y+32	; 0x20
- 66c:	20 e1       	ldi	r18, 0x10	; 16
- 66e:	82 9f       	mul	r24, r18
- 670:	c0 01       	movw	r24, r0
- 672:	11 24       	eor	r1, r1
- 674:	2f 8d       	ldd	r18, Y+31	; 0x1f
- 676:	82 2b       	or	r24, r18
- 678:	9f 8b       	std	Y+23, r25	; 0x17
- 67a:	8e 8b       	std	Y+22, r24	; 0x16
+ 69a:	88 a1       	ldd	r24, Y+32	; 0x20
+ 69c:	20 e1       	ldi	r18, 0x10	; 16
+ 69e:	82 9f       	mul	r24, r18
+ 6a0:	c0 01       	movw	r24, r0
+ 6a2:	11 24       	eor	r1, r1
+ 6a4:	2f 8d       	ldd	r18, Y+31	; 0x1f
+ 6a6:	82 2b       	or	r24, r18
+ 6a8:	9f 8b       	std	Y+23, r25	; 0x17
+ 6aa:	8e 8b       	std	Y+22, r24	; 0x16
 			clearRxData();
- 67c:	ce 01       	movw	r24, r28
- 67e:	0e 94 e3 02 	call	0x5c6	; 0x5c6 <_ZN3NRF11clearRxDataEv>
-		
-			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
-			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 682:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 684:	8f 7e       	andi	r24, 0xEF	; 239
- 686:	8a 8f       	std	Y+26, r24	; 0x1a
-		break;
- 688:	1f c0       	rjmp	.+62     	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
-			case NRF_CMD_RADIO_RESET:
-			//will initialization have to be redone upon reset?
-		
-			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
-			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 68a:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 68c:	8f 7e       	andi	r24, 0xEF	; 239
- 68e:	8a 8f       	std	Y+26, r24	; 0x1a
-			break;
- 690:	1b c0       	rjmp	.+54     	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
-			//status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
-			break;
-		case NRF_CMD_SET_TX_POWER:
-		
-			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
-			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 692:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 694:	8f 7e       	andi	r24, 0xEF	; 239
- 696:	8a 8f       	std	Y+26, r24	; 0x1a
-			break;
- 698:	17 c0       	rjmp	.+46     	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
-			//or by NRF_EVT_PIPE_ERROR(failure)
-			break;
-		case NRF_CMD_SET_APP_LATENCY:
-		
-			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
-			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 69a:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 69c:	8f 7e       	andi	r24, 0xEF	; 239
- 69e:	8a 8f       	std	Y+26, r24	; 0x1a
-			break;
- 6a0:	13 c0       	rjmp	.+38     	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
-		case NRF_CMD_SET_KEY:
-		
-			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
-			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 6a2:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 6a4:	8f 7e       	andi	r24, 0xEF	; 239
- 6a6:	8a 8f       	std	Y+26, r24	; 0x1a
-			break;
- 6a8:	0f c0       	rjmp	.+30     	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
-		case NRF_CMD_OPEN_ADV_PIPE:
-		
-			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
-			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 6aa:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 6ac:	8f 7e       	andi	r24, 0xEF	; 239
- 6ae:	8a 8f       	std	Y+26, r24	; 0x1a
-			break;
- 6b0:	0b c0       	rjmp	.+22     	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
-		case NRF_CMD_BROADCAST:
+ 6ac:	ce 01       	movw	r24, r28
+ 6ae:	0e 94 fa 02 	call	0x5f4	; 0x5f4 <_ZN3NRF11clearRxDataEv>
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
  6b2:	8a 8d       	ldd	r24, Y+26	; 0x1a
  6b4:	8f 7e       	andi	r24, 0xEF	; 239
  6b6:	8a 8f       	std	Y+26, r24	; 0x1a
-			break;
- 6b8:	07 c0       	rjmp	.+14     	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
-		case NRF_CMD_BOND_SEC_REQUEST:
+		break;
+ 6b8:	1f c0       	rjmp	.+62     	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
+			case NRF_CMD_RADIO_RESET:
+			//will initialization have to be redone upon reset?
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
@@ -1611,1127 +1566,1194 @@ void NRF::processCommandResponse(){
  6bc:	8f 7e       	andi	r24, 0xEF	; 239
  6be:	8a 8f       	std	Y+26, r24	; 0x1a
 			break;
- 6c0:	03 c0       	rjmp	.+6      	; 0x6c8 <_ZN3NRF22processCommandResponseEv+0xec>
-		case NRF_CMD_DIRECT_CONNECT:
+ 6c0:	1b c0       	rjmp	.+54     	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
+			//status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
+			break;
+		case NRF_CMD_SET_TX_POWER:
 		
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
  6c2:	8a 8d       	ldd	r24, Y+26	; 0x1a
  6c4:	8f 7e       	andi	r24, 0xEF	; 239
  6c6:	8a 8f       	std	Y+26, r24	; 0x1a
+			break;
+ 6c8:	17 c0       	rjmp	.+46     	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
+			//or by NRF_EVT_PIPE_ERROR(failure)
+			break;
+		case NRF_CMD_SET_APP_LATENCY:
+		
+			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
+			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
+ 6ca:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 6cc:	8f 7e       	andi	r24, 0xEF	; 239
+ 6ce:	8a 8f       	std	Y+26, r24	; 0x1a
+			break;
+ 6d0:	13 c0       	rjmp	.+38     	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
+		case NRF_CMD_SET_KEY:
+		
+			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
+			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
+ 6d2:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 6d4:	8f 7e       	andi	r24, 0xEF	; 239
+ 6d6:	8a 8f       	std	Y+26, r24	; 0x1a
+			break;
+ 6d8:	0f c0       	rjmp	.+30     	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
+		case NRF_CMD_OPEN_ADV_PIPE:
+		
+			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
+			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
+ 6da:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 6dc:	8f 7e       	andi	r24, 0xEF	; 239
+ 6de:	8a 8f       	std	Y+26, r24	; 0x1a
+			break;
+ 6e0:	0b c0       	rjmp	.+22     	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
+		case NRF_CMD_BROADCAST:
+		
+			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
+			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
+ 6e2:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 6e4:	8f 7e       	andi	r24, 0xEF	; 239
+ 6e6:	8a 8f       	std	Y+26, r24	; 0x1a
+			break;
+ 6e8:	07 c0       	rjmp	.+14     	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
+		case NRF_CMD_BOND_SEC_REQUEST:
+		
+			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
+			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
+ 6ea:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 6ec:	8f 7e       	andi	r24, 0xEF	; 239
+ 6ee:	8a 8f       	std	Y+26, r24	; 0x1a
+			break;
+ 6f0:	03 c0       	rjmp	.+6      	; 0x6f8 <_ZN3NRF22processCommandResponseEv+0xee>
+		case NRF_CMD_DIRECT_CONNECT:
+		
+			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
+			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
+ 6f2:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 6f4:	8f 7e       	andi	r24, 0xEF	; 239
+ 6f6:	8a 8f       	std	Y+26, r24	; 0x1a
 		default:
 			break;
 		
 	}//end switch RxData[2]
 	
 }//processCommandResponse()
- 6c8:	df 91       	pop	r29
- 6ca:	cf 91       	pop	r28
- 6cc:	08 95       	ret
+ 6f8:	df 91       	pop	r29
+ 6fa:	cf 91       	pop	r28
+ 6fc:	08 95       	ret
 
-000006ce <_ZN3NRF7processEv>:
+000006fe <_ZN3NRF7processEv>:
 	//set to INIT_MODE and RX_READY
 	//we are waiting for a NRF_EVT_DEVICE_STARTED in NRF_MODE_SETUP
 	//status |= (1<<NRF_RX_READY | 1<<NRF_INIT_MODE | 1<<NRF_WAIT_FOR_RESPONSE);
 	status |= (1<<NRF_RX_READY | 1<<NRF_WAIT_FOR_RESPONSE);
 }
 void NRF::process(void){	
- 6ce:	cf 93       	push	r28
- 6d0:	df 93       	push	r29
- 6d2:	ec 01       	movw	r28, r24
+ 6fe:	cf 93       	push	r28
+ 700:	df 93       	push	r29
+ 702:	ec 01       	movw	r28, r24
 	
 	if (isReadyToReceiveData()){
- 6d4:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN3NRF20isReadyToReceiveDataEv>
- 6d8:	88 23       	and	r24, r24
- 6da:	19 f0       	breq	.+6      	; 0x6e2 <_ZN3NRF7processEv+0x14>
+ 704:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 706:	88 23       	and	r24, r24
+ 708:	1c f4       	brge	.+6      	; 0x710 <_ZN3NRF7processEv+0x12>
 		clearRxData();
- 6dc:	ce 01       	movw	r24, r28
- 6de:	0e 94 e3 02 	call	0x5c6	; 0x5c6 <_ZN3NRF11clearRxDataEv>
+ 70a:	ce 01       	movw	r24, r28
+ 70c:	0e 94 fa 02 	call	0x5f4	; 0x5f4 <_ZN3NRF11clearRxDataEv>
 	}
 		
 	
 	//setup message from services.h file loaded onto nRF8001
 	if( (mode == NRF_MODE_SETUP)  && !hasDataToSend() && !waitingForResponse() ) {
- 6e2:	fe 01       	movw	r30, r28
- 6e4:	ef 58       	subi	r30, 0x8F	; 143
- 6e6:	ff 4f       	sbci	r31, 0xFF	; 255
- 6e8:	80 81       	ld	r24, Z
- 6ea:	82 30       	cpi	r24, 0x02	; 2
- 6ec:	b9 f5       	brne	.+110    	; 0x75c <_ZN3NRF7processEv+0x8e>
- 6ee:	ce 01       	movw	r24, r28
- 6f0:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN3NRF13hasDataToSendEv>
- 6f4:	81 11       	cpse	r24, r1
- 6f6:	32 c0       	rjmp	.+100    	; 0x75c <_ZN3NRF7processEv+0x8e>
- 6f8:	ce 01       	movw	r24, r28
- 6fa:	0e 94 e9 00 	call	0x1d2	; 0x1d2 <_ZN3NRF18waitingForResponseEv>
- 6fe:	81 11       	cpse	r24, r1
- 700:	2d c0       	rjmp	.+90     	; 0x75c <_ZN3NRF7processEv+0x8e>
-		//load current line of setup msg into TX buffer
-		for(int i = 0; i <= setup_msgs[initCount].buffer[0]; i++){
- 702:	90 91 7b 03 	lds	r25, 0x037B
- 706:	81 e2       	ldi	r24, 0x21	; 33
- 708:	98 9f       	mul	r25, r24
- 70a:	f0 01       	movw	r30, r0
- 70c:	11 24       	eor	r1, r1
- 70e:	e9 5f       	subi	r30, 0xF9	; 249
- 710:	fe 4f       	sbci	r31, 0xFE	; 254
- 712:	61 81       	ldd	r22, Z+1	; 0x01
- 714:	70 e0       	ldi	r23, 0x00	; 0
-	//set to INIT_MODE and RX_READY
-	//we are waiting for a NRF_EVT_DEVICE_STARTED in NRF_MODE_SETUP
-	//status |= (1<<NRF_RX_READY | 1<<NRF_INIT_MODE | 1<<NRF_WAIT_FOR_RESPONSE);
-	status |= (1<<NRF_RX_READY | 1<<NRF_WAIT_FOR_RESPONSE);
-}
-void NRF::process(void){	
- 716:	fe 01       	movw	r30, r28
- 718:	fb 96       	adiw	r30, 0x3b	; 59
- 71a:	20 e0       	ldi	r18, 0x00	; 0
- 71c:	30 e0       	ldi	r19, 0x00	; 0
+ 710:	fe 01       	movw	r30, r28
+ 712:	ef 58       	subi	r30, 0x8F	; 143
+ 714:	ff 4f       	sbci	r31, 0xFF	; 255
+ 716:	80 81       	ld	r24, Z
+ 718:	82 30       	cpi	r24, 0x02	; 2
+ 71a:	31 f5       	brne	.+76     	; 0x768 <_ZN3NRF7processEv+0x6a>
+ 71c:	ce 01       	movw	r24, r28
+ 71e:	0e 94 fd 00 	call	0x1fa	; 0x1fa <_ZN3NRF13hasDataToSendEv>
+ 722:	81 11       	cpse	r24, r1
+ 724:	21 c0       	rjmp	.+66     	; 0x768 <_ZN3NRF7processEv+0x6a>
+ 726:	ce 01       	movw	r24, r28
+ 728:	0e 94 03 01 	call	0x206	; 0x206 <_ZN3NRF18waitingForResponseEv>
+ 72c:	88 23       	and	r24, r24
+ 72e:	09 f4       	brne	.+2      	; 0x732 <_ZN3NRF7processEv+0x34>
+ 730:	ab c0       	rjmp	.+342    	; 0x888 <_ZN3NRF7processEv+0x18a>
+ 732:	1a c0       	rjmp	.+52     	; 0x768 <_ZN3NRF7processEv+0x6a>
 		//load current line of setup msg into TX buffer
 		for(int i = 0; i <= setup_msgs[initCount].buffer[0]; i++){
 #ifdef PROGRAMSPACE			
 			TxData[i] = pgm_read_byte(&setup_msgs[initCount].buffer[i]);
 #else
 			TxData[i] = setup_msgs[initCount].buffer[i];
- 71e:	81 e2       	ldi	r24, 0x21	; 33
- 720:	98 9f       	mul	r25, r24
- 722:	a0 01       	movw	r20, r0
- 724:	11 24       	eor	r1, r1
- 726:	49 5f       	subi	r20, 0xF9	; 249
- 728:	5e 4f       	sbci	r21, 0xFE	; 254
- 72a:	da 01       	movw	r26, r20
- 72c:	a2 0f       	add	r26, r18
- 72e:	b3 1f       	adc	r27, r19
- 730:	11 96       	adiw	r26, 0x01	; 1
- 732:	8c 91       	ld	r24, X
- 734:	81 93       	st	Z+, r24
+ 734:	dc 01       	movw	r26, r24
+ 736:	a2 0f       	add	r26, r18
+ 738:	b3 1f       	adc	r27, r19
+ 73a:	11 96       	adiw	r26, 0x01	; 1
+ 73c:	6c 91       	ld	r22, X
+ 73e:	61 93       	st	Z+, r22
 		
 	
 	//setup message from services.h file loaded onto nRF8001
 	if( (mode == NRF_MODE_SETUP)  && !hasDataToSend() && !waitingForResponse() ) {
 		//load current line of setup msg into TX buffer
 		for(int i = 0; i <= setup_msgs[initCount].buffer[0]; i++){
- 736:	2f 5f       	subi	r18, 0xFF	; 255
- 738:	3f 4f       	sbci	r19, 0xFF	; 255
- 73a:	62 17       	cp	r22, r18
- 73c:	73 07       	cpc	r23, r19
- 73e:	ac f7       	brge	.-22     	; 0x72a <_ZN3NRF7processEv+0x5c>
+ 740:	2f 5f       	subi	r18, 0xFF	; 255
+ 742:	3f 4f       	sbci	r19, 0xFF	; 255
+ 744:	42 17       	cp	r20, r18
+ 746:	53 07       	cpc	r21, r19
+ 748:	ac f7       	brge	.-22     	; 0x734 <_ZN3NRF7processEv+0x36>
 			TxData[i] = setup_msgs[initCount].buffer[i];
 #endif
 		}
 		
 		//set transmit ready and wait for response flags in status register
 		status |= ((1<<NRF_TX_READY));
- 740:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 742:	80 64       	ori	r24, 0x40	; 64
- 744:	8a 8f       	std	Y+26, r24	; 0x1a
+ 74a:	9a 8d       	ldd	r25, Y+26	; 0x1a
+ 74c:	90 64       	ori	r25, 0x40	; 64
+ 74e:	9a 8f       	std	Y+26, r25	; 0x1a
 		
 		initCount++;
- 746:	9f 5f       	subi	r25, 0xFF	; 255
+ 750:	81 e0       	ldi	r24, 0x01	; 1
+ 752:	87 0f       	add	r24, r23
 		////after the last setup message
 		if (initCount > NB_SETUP_MESSAGES) 
- 748:	94 31       	cpi	r25, 0x14	; 20
- 74a:	18 f4       	brcc	.+6      	; 0x752 <_ZN3NRF7processEv+0x84>
+ 754:	84 31       	cpi	r24, 0x14	; 20
+ 756:	18 f4       	brcc	.+6      	; 0x75e <_ZN3NRF7processEv+0x60>
 		}
 		
 		//set transmit ready and wait for response flags in status register
 		status |= ((1<<NRF_TX_READY));
 		
 		initCount++;
- 74c:	90 93 7b 03 	sts	0x037B, r25
- 750:	05 c0       	rjmp	.+10     	; 0x75c <_ZN3NRF7processEv+0x8e>
+ 758:	80 93 7a 03 	sts	0x037A, r24
+ 75c:	05 c0       	rjmp	.+10     	; 0x768 <_ZN3NRF7processEv+0x6a>
 		////after the last setup message
 		if (initCount > NB_SETUP_MESSAGES) 
 		{
 			initCount = 0;
- 752:	10 92 7b 03 	sts	0x037B, r1
+ 75e:	10 92 7a 03 	sts	0x037A, r1
 			
 			clearTxData();
- 756:	ce 01       	movw	r24, r28
- 758:	0e 94 25 01 	call	0x24a	; 0x24a <_ZN3NRF11clearTxDataEv>
+ 762:	ce 01       	movw	r24, r28
+ 764:	0e 94 34 01 	call	0x268	; 0x268 <_ZN3NRF11clearTxDataEv>
+}
+uint8_t NRF::hasDataToSend(void){
+	return ((status & (1<<NRF_TX_READY))?TRUE:FALSE);
+}
+uint8_t NRF::isReadyToReceiveData(){
+	return ((status & (1<<NRF_RX_READY))?TRUE:FALSE);
+ 768:	8a 8d       	ldd	r24, Y+26	; 0x1a
 	}//setup message
 	
 	
 	//handle messages received from nRF8001
 	//else //testing**************************************************************************************
 	if (!isReadyToReceiveData()){
- 75c:	ce 01       	movw	r24, r28
- 75e:	0e 94 e3 00 	call	0x1c6	; 0x1c6 <_ZN3NRF20isReadyToReceiveDataEv>
- 762:	81 11       	cpse	r24, r1
- 764:	b5 c0       	rjmp	.+362    	; 0x8d0 <_ZN3NRF7processEv+0x202>
+ 76a:	88 23       	and	r24, r24
+ 76c:	0c f4       	brge	.+2      	; 0x770 <_ZN3NRF7processEv+0x72>
+ 76e:	81 c0       	rjmp	.+258    	; 0x872 <_ZN3NRF7processEv+0x174>
 		RxCount++;
- 766:	9d 89       	ldd	r25, Y+21	; 0x15
- 768:	89 2f       	mov	r24, r25
- 76a:	8f 5f       	subi	r24, 0xFF	; 255
- 76c:	8d 8b       	std	Y+21, r24	; 0x15
+ 770:	9d 89       	ldd	r25, Y+21	; 0x15
+ 772:	21 e0       	ldi	r18, 0x01	; 1
+ 774:	29 0f       	add	r18, r25
+ 776:	2d 8b       	std	Y+21, r18	; 0x15
 				
 		switch (RxData[1]){
- 76e:	8c 8d       	ldd	r24, Y+28	; 0x1c
- 770:	88 38       	cpi	r24, 0x88	; 136
- 772:	09 f4       	brne	.+2      	; 0x776 <_ZN3NRF7processEv+0xa8>
- 774:	6c c0       	rjmp	.+216    	; 0x84e <_ZN3NRF7processEv+0x180>
- 776:	90 f4       	brcc	.+36     	; 0x79c <_ZN3NRF7processEv+0xce>
- 778:	84 38       	cpi	r24, 0x84	; 132
- 77a:	09 f4       	brne	.+2      	; 0x77e <_ZN3NRF7processEv+0xb0>
- 77c:	51 c0       	rjmp	.+162    	; 0x820 <_ZN3NRF7processEv+0x152>
- 77e:	40 f4       	brcc	.+16     	; 0x790 <_ZN3NRF7processEv+0xc2>
- 780:	82 38       	cpi	r24, 0x82	; 130
- 782:	f1 f1       	breq	.+124    	; 0x800 <_ZN3NRF7processEv+0x132>
- 784:	08 f0       	brcs	.+2      	; 0x788 <_ZN3NRF7processEv+0xba>
- 786:	48 c0       	rjmp	.+144    	; 0x818 <_ZN3NRF7processEv+0x14a>
- 788:	81 38       	cpi	r24, 0x81	; 129
- 78a:	09 f0       	breq	.+2      	; 0x78e <_ZN3NRF7processEv+0xc0>
- 78c:	9c c0       	rjmp	.+312    	; 0x8c6 <_ZN3NRF7processEv+0x1f8>
- 78e:	19 c0       	rjmp	.+50     	; 0x7c2 <_ZN3NRF7processEv+0xf4>
- 790:	86 38       	cpi	r24, 0x86	; 134
- 792:	09 f4       	brne	.+2      	; 0x796 <_ZN3NRF7processEv+0xc8>
- 794:	4e c0       	rjmp	.+156    	; 0x832 <_ZN3NRF7processEv+0x164>
- 796:	08 f0       	brcs	.+2      	; 0x79a <_ZN3NRF7processEv+0xcc>
- 798:	50 c0       	rjmp	.+160    	; 0x83a <_ZN3NRF7processEv+0x16c>
- 79a:	46 c0       	rjmp	.+140    	; 0x828 <_ZN3NRF7processEv+0x15a>
- 79c:	8c 38       	cpi	r24, 0x8C	; 140
- 79e:	09 f4       	brne	.+2      	; 0x7a2 <_ZN3NRF7processEv+0xd4>
- 7a0:	8a c0       	rjmp	.+276    	; 0x8b6 <_ZN3NRF7processEv+0x1e8>
- 7a2:	30 f4       	brcc	.+12     	; 0x7b0 <_ZN3NRF7processEv+0xe2>
- 7a4:	8a 38       	cpi	r24, 0x8A	; 138
- 7a6:	09 f4       	brne	.+2      	; 0x7aa <_ZN3NRF7processEv+0xdc>
- 7a8:	7b c0       	rjmp	.+246    	; 0x8a0 <_ZN3NRF7processEv+0x1d2>
- 7aa:	08 f0       	brcs	.+2      	; 0x7ae <_ZN3NRF7processEv+0xe0>
- 7ac:	8d c0       	rjmp	.+282    	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
- 7ae:	6c c0       	rjmp	.+216    	; 0x888 <_ZN3NRF7processEv+0x1ba>
- 7b0:	8e 38       	cpi	r24, 0x8E	; 142
- 7b2:	09 f4       	brne	.+2      	; 0x7b6 <_ZN3NRF7processEv+0xe8>
- 7b4:	6d c0       	rjmp	.+218    	; 0x890 <_ZN3NRF7processEv+0x1c2>
- 7b6:	08 f4       	brcc	.+2      	; 0x7ba <_ZN3NRF7processEv+0xec>
- 7b8:	82 c0       	rjmp	.+260    	; 0x8be <_ZN3NRF7processEv+0x1f0>
- 7ba:	8f 38       	cpi	r24, 0x8F	; 143
- 7bc:	09 f0       	breq	.+2      	; 0x7c0 <_ZN3NRF7processEv+0xf2>
- 7be:	83 c0       	rjmp	.+262    	; 0x8c6 <_ZN3NRF7processEv+0x1f8>
- 7c0:	6b c0       	rjmp	.+214    	; 0x898 <_ZN3NRF7processEv+0x1ca>
+ 778:	4c 8d       	ldd	r20, Y+28	; 0x1c
+ 77a:	50 e0       	ldi	r21, 0x00	; 0
+ 77c:	fa 01       	movw	r30, r20
+ 77e:	e1 58       	subi	r30, 0x81	; 129
+ 780:	f1 09       	sbc	r31, r1
+ 782:	ef 30       	cpi	r30, 0x0F	; 15
+ 784:	f1 05       	cpc	r31, r1
+ 786:	08 f0       	brcs	.+2      	; 0x78a <_ZN3NRF7processEv+0x8c>
+ 788:	6f c0       	rjmp	.+222    	; 0x868 <_ZN3NRF7processEv+0x16a>
+ 78a:	ee 5a       	subi	r30, 0xAE	; 174
+ 78c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 78e:	0c 94 cb 05 	jmp	0xb96	; 0xb96 <__tablejump2__>
 				//					0x02	Setup
 				//					0x03	Standby
 				//RxData[3]	:	HWError 0x01 = error, 0x00 = no error
 				//RxData[4]	:	DataCreditAvailable - Number of DataCommand buffers available
 				
 				if (RxData[2]>0)
- 7c2:	8d 8d       	ldd	r24, Y+29	; 0x1d
- 7c4:	88 23       	and	r24, r24
- 7c6:	21 f0       	breq	.+8      	; 0x7d0 <_ZN3NRF7processEv+0x102>
+ 792:	9d 8d       	ldd	r25, Y+29	; 0x1d
+ 794:	99 23       	and	r25, r25
+ 796:	21 f0       	breq	.+8      	; 0x7a0 <_ZN3NRF7processEv+0xa2>
 					mode = RxData[2];
- 7c8:	fe 01       	movw	r30, r28
- 7ca:	ef 58       	subi	r30, 0x8F	; 143
- 7cc:	ff 4f       	sbci	r31, 0xFF	; 255
- 7ce:	80 83       	st	Z, r24
+ 798:	fe 01       	movw	r30, r28
+ 79a:	ef 58       	subi	r30, 0x8F	; 143
+ 79c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 79e:	90 83       	st	Z, r25
 				
 				
 				//when NRF_CMD_WAKEUP has been called, the NRF_WAIT_FOR_RESPONSE bit in the status register should NOT be cleared
 				//when finishing a NRF_CMD_SETUP, the NRF_WAIT_FOR_RESPONSE bit in the status register SHOULD be cleared
 				if (mode == NRF_MODE_SETUP){
- 7d0:	fe 01       	movw	r30, r28
- 7d2:	ef 58       	subi	r30, 0x8F	; 143
- 7d4:	ff 4f       	sbci	r31, 0xFF	; 255
- 7d6:	80 81       	ld	r24, Z
- 7d8:	82 30       	cpi	r24, 0x02	; 2
- 7da:	21 f4       	brne	.+8      	; 0x7e4 <_ZN3NRF7processEv+0x116>
+ 7a0:	fe 01       	movw	r30, r28
+ 7a2:	ef 58       	subi	r30, 0x8F	; 143
+ 7a4:	ff 4f       	sbci	r31, 0xFF	; 255
+ 7a6:	90 81       	ld	r25, Z
+ 7a8:	92 30       	cpi	r25, 0x02	; 2
+ 7aa:	19 f4       	brne	.+6      	; 0x7b2 <_ZN3NRF7processEv+0xb4>
 				//if (isInitializing()){
 					//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 					status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 7dc:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 7de:	8f 7e       	andi	r24, 0xEF	; 239
- 7e0:	8a 8f       	std	Y+26, r24	; 0x1a
- 7e2:	0a c0       	rjmp	.+20     	; 0x7f8 <_ZN3NRF7processEv+0x12a>
+ 7ac:	8f 7e       	andi	r24, 0xEF	; 239
+ 7ae:	8a 8f       	std	Y+26, r24	; 0x1a
+ 7b0:	0a c0       	rjmp	.+20     	; 0x7c6 <_ZN3NRF7processEv+0xc8>
 					
 				}
 				
 				
 				if (mode == NRF_MODE_STANDBY){
- 7e4:	83 30       	cpi	r24, 0x03	; 3
- 7e6:	41 f4       	brne	.+16     	; 0x7f8 <_ZN3NRF7processEv+0x12a>
+ 7b2:	93 30       	cpi	r25, 0x03	; 3
+ 7b4:	41 f4       	brne	.+16     	; 0x7c6 <_ZN3NRF7processEv+0xc8>
 					//clear the NRF_INIT_MODE bit in the status register when SETUP finishes
 					//status &= ~(1<<NRF_INIT_MODE);
 					dataCredit = RxData[4];
- 7e8:	fe 01       	movw	r30, r28
- 7ea:	ee 58       	subi	r30, 0x8E	; 142
- 7ec:	ff 4f       	sbci	r31, 0xFF	; 255
- 7ee:	8f 8d       	ldd	r24, Y+31	; 0x1f
- 7f0:	80 83       	st	Z, r24
+ 7b6:	8f 8d       	ldd	r24, Y+31	; 0x1f
+ 7b8:	fe 01       	movw	r30, r28
+ 7ba:	ee 58       	subi	r30, 0x8E	; 142
+ 7bc:	ff 4f       	sbci	r31, 0xFF	; 255
+ 7be:	80 83       	st	Z, r24
 					status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 7f2:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 7f4:	8f 7e       	andi	r24, 0xEF	; 239
- 7f6:	8a 8f       	std	Y+26, r24	; 0x1a
+ 7c0:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 7c2:	8f 7e       	andi	r24, 0xEF	; 239
+ 7c4:	8a 8f       	std	Y+26, r24	; 0x1a
 				}
 				
 				
 				
 				//set the NRF_RX_READY bit in the status register
 				status |= (1<<NRF_RX_READY);
- 7f8:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 7fa:	80 68       	ori	r24, 0x80	; 128
- 7fc:	8a 8f       	std	Y+26, r24	; 0x1a
+ 7c6:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 7c8:	80 68       	ori	r24, 0x80	; 128
+ 7ca:	8a 8f       	std	Y+26, r24	; 0x1a
 				
 				//TODO: error handling
 				break;
- 7fe:	64 c0       	rjmp	.+200    	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 7cc:	4e c0       	rjmp	.+156    	; 0x86a <_ZN3NRF7processEv+0x16c>
 			case NRF_EVT_ECHO:				//0x82
 				//returns an identical copy of the PDU sent using the echo command in Test Mode
 				//RxData[0]	:	length
 				//RxData[1]	:	NRF_EVT_ECHO (0x82)
 				//RxData[2..31]	:	Identical message to one sent with NRF_CMD_ECHO
 				data[0] = RxData[0];
- 800:	8b 8d       	ldd	r24, Y+27	; 0x1b
- 802:	88 83       	st	Y, r24
+ 7ce:	9b 8d       	ldd	r25, Y+27	; 0x1b
+ 7d0:	98 83       	st	Y, r25
 				data[1] = RxData[1];
- 804:	82 e8       	ldi	r24, 0x82	; 130
- 806:	89 83       	std	Y+1, r24	; 0x01
+ 7d2:	92 e8       	ldi	r25, 0x82	; 130
+ 7d4:	99 83       	std	Y+1, r25	; 0x01
 				data[2] = RxData[2];
- 808:	8d 8d       	ldd	r24, Y+29	; 0x1d
- 80a:	8a 83       	std	Y+2, r24	; 0x02
+ 7d6:	9d 8d       	ldd	r25, Y+29	; 0x1d
+ 7d8:	9a 83       	std	Y+2, r25	; 0x02
 				data[3] = RxData[3];
- 80c:	8e 8d       	ldd	r24, Y+30	; 0x1e
- 80e:	8b 83       	std	Y+3, r24	; 0x03
+ 7da:	9e 8d       	ldd	r25, Y+30	; 0x1e
+ 7dc:	9b 83       	std	Y+3, r25	; 0x03
 				
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 810:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 812:	8f 7e       	andi	r24, 0xEF	; 239
- 814:	8a 8f       	std	Y+26, r24	; 0x1a
+ 7de:	8f 7e       	andi	r24, 0xEF	; 239
+ 7e0:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 816:	58 c0       	rjmp	.+176    	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 7e2:	43 c0       	rjmp	.+134    	; 0x86a <_ZN3NRF7processEv+0x16c>
 			case NRF_EVT_HARDWARE_ERROR:	//0x83
 				//provides debug information
 				//in case of firmware failure, this event follows NRF_EVT_DEVICE_STARTED
 				
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 818:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 81a:	8f 7e       	andi	r24, 0xEF	; 239
- 81c:	8a 8f       	std	Y+26, r24	; 0x1a
+ 7e4:	8f 7e       	andi	r24, 0xEF	; 239
+ 7e6:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 81e:	54 c0       	rjmp	.+168    	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 7e8:	40 c0       	rjmp	.+128    	; 0x86a <_ZN3NRF7processEv+0x16c>
 			case NRF_EVT_COMMAND_RESPONSE:	//0x84
 				//confirms reception or execution of an ACI command
 				processCommandResponse();				
- 820:	ce 01       	movw	r24, r28
- 822:	0e 94 ee 02 	call	0x5dc	; 0x5dc <_ZN3NRF22processCommandResponseEv>
+ 7ea:	ce 01       	movw	r24, r28
+ 7ec:	0e 94 05 03 	call	0x60a	; 0x60a <_ZN3NRF22processCommandResponseEv>
 				break;
- 826:	50 c0       	rjmp	.+160    	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 7f0:	3c c0       	rjmp	.+120    	; 0x86a <_ZN3NRF7processEv+0x16c>
 				status |= (1<<NRF_CONNECTED);
 				
 							//do NOT clear the NRF_WAIT_FOR_RESPONSE bit of the status register here
 							//there will be either a NRF_EVT_BOND_STATUS or a NRF_EVT_PIPE_STATUS following NRF_EVT_CONNECTED
 				//actually it seems to need to be cleared here
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 828:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 82a:	8f 7e       	andi	r24, 0xEF	; 239
- 82c:	88 60       	ori	r24, 0x08	; 8
- 82e:	8a 8f       	std	Y+26, r24	; 0x1a
+ 7f2:	8f 7e       	andi	r24, 0xEF	; 239
+ 7f4:	88 60       	ori	r24, 0x08	; 8
+ 7f6:	8a 8f       	std	Y+26, r24	; 0x1a
 				
 				break;
- 830:	4b c0       	rjmp	.+150    	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 7f8:	38 c0       	rjmp	.+112    	; 0x86a <_ZN3NRF7processEv+0x16c>
 				
 				//TODO: can we be still connected if we get here through a failure to bond
 				status &= ~(1<<NRF_CONNECTED | 1<<NRF_BONDED);
 				
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 832:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 834:	83 7e       	andi	r24, 0xE3	; 227
- 836:	8a 8f       	std	Y+26, r24	; 0x1a
+ 7fa:	83 7e       	andi	r24, 0xE3	; 227
+ 7fc:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 838:	47 c0       	rjmp	.+142    	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 7fe:	35 c0       	rjmp	.+106    	; 0x86a <_ZN3NRF7processEv+0x16c>
 				//					0x02		: generated by the remote peer.
 				//	4		:	BondStatus-SecMode1 - LE Security Mode 1
 				//	5		:	LE Security Mode 2
 				//	6		:	Keys Exchanged (slave)
 				//	7		:	Keys Exchanged (master)
 				if (RxData[2] == 0x00){ // successful bond
- 83a:	8d 8d       	ldd	r24, Y+29	; 0x1d
- 83c:	81 11       	cpse	r24, r1
- 83e:	03 c0       	rjmp	.+6      	; 0x846 <_ZN3NRF7processEv+0x178>
+ 800:	9d 8d       	ldd	r25, Y+29	; 0x1d
+ 802:	91 11       	cpse	r25, r1
+ 804:	02 c0       	rjmp	.+4      	; 0x80a <_ZN3NRF7processEv+0x10c>
 					status |= (1<<NRF_BONDED);
- 840:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 842:	84 60       	ori	r24, 0x04	; 4
- 844:	8a 8f       	std	Y+26, r24	; 0x1a
+ 806:	84 60       	ori	r24, 0x04	; 4
+ 808:	8a 8f       	std	Y+26, r24	; 0x1a
 				}
 				
 				
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 846:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 848:	8f 7e       	andi	r24, 0xEF	; 239
- 84a:	8a 8f       	std	Y+26, r24	; 0x1a
+ 80a:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 80c:	8f 7e       	andi	r24, 0xEF	; 239
+ 80e:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 84c:	3d c0       	rjmp	.+122    	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
-	//set to INIT_MODE and RX_READY
-	//we are waiting for a NRF_EVT_DEVICE_STARTED in NRF_MODE_SETUP
-	//status |= (1<<NRF_RX_READY | 1<<NRF_INIT_MODE | 1<<NRF_WAIT_FOR_RESPONSE);
-	status |= (1<<NRF_RX_READY | 1<<NRF_WAIT_FOR_RESPONSE);
-}
-void NRF::process(void){	
- 84e:	9e 01       	movw	r18, r28
- 850:	23 5e       	subi	r18, 0xE3	; 227
- 852:	3f 4f       	sbci	r19, 0xFF	; 255
- 854:	ce 01       	movw	r24, r28
- 856:	85 5a       	subi	r24, 0xA5	; 165
- 858:	9f 4f       	sbci	r25, 0xFF	; 255
- 85a:	de 01       	movw	r26, r28
- 85c:	95 96       	adiw	r26, 0x25	; 37
- 85e:	be 01       	movw	r22, r28
- 860:	6d 59       	subi	r22, 0x9D	; 157
- 862:	7f 4f       	sbci	r23, 0xFF	; 255
- 864:	40 e0       	ldi	r20, 0x00	; 0
+ 810:	2c c0       	rjmp	.+88     	; 0x86a <_ZN3NRF7processEv+0x16c>
+ 812:	fe 01       	movw	r30, r28
+ 814:	ed 59       	subi	r30, 0x9D	; 157
+ 816:	ff 4f       	sbci	r31, 0xFF	; 255
+	//handle messages received from nRF8001
+	//else //testing**************************************************************************************
+	if (!isReadyToReceiveData()){
+		RxCount++;
+				
+		switch (RxData[1]){
+ 818:	98 e0       	ldi	r25, 0x08	; 8
+ 81a:	df 01       	movw	r26, r30
+ 81c:	a6 54       	subi	r26, 0x46	; 70
+ 81e:	b1 09       	sbc	r27, r1
 				//this event is sent when there is a change in service pipe availability
 				//RxData[2..9]		: 64-bit PipesOpen bitmap
 				//RxData[10..17]	: 64-bit PipesClosed bitmap
 				//see pg 148 of datasheet for details
 				for (uint8_t i = 0 ; i<8; i++){
 					pipesOpen[i] = RxData[i+2];
- 866:	f9 01       	movw	r30, r18
- 868:	51 91       	ld	r21, Z+
- 86a:	9f 01       	movw	r18, r30
- 86c:	fc 01       	movw	r30, r24
- 86e:	51 93       	st	Z+, r21
- 870:	cf 01       	movw	r24, r30
+ 820:	2c 91       	ld	r18, X
+ 822:	de 96       	adiw	r26, 0x3e	; 62
+ 824:	2c 93       	st	X, r18
+ 826:	d6 97       	sbiw	r26, 0x36	; 54
 					pipesClosed[i] = RxData[i+10];
- 872:	5d 91       	ld	r21, X+
- 874:	fb 01       	movw	r30, r22
- 876:	51 93       	st	Z+, r21
- 878:	bf 01       	movw	r22, r30
+ 828:	2c 91       	ld	r18, X
+ 82a:	21 93       	st	Z+, r18
+ 82c:	91 50       	subi	r25, 0x01	; 1
 			case NRF_EVT_PIPE_STATUS:
 				//this event is sent when there is a change in service pipe availability
 				//RxData[2..9]		: 64-bit PipesOpen bitmap
 				//RxData[10..17]	: 64-bit PipesClosed bitmap
 				//see pg 148 of datasheet for details
 				for (uint8_t i = 0 ; i<8; i++){
- 87a:	4f 5f       	subi	r20, 0xFF	; 255
- 87c:	48 30       	cpi	r20, 0x08	; 8
- 87e:	99 f7       	brne	.-26     	; 0x866 <_ZN3NRF7processEv+0x198>
+ 82e:	a9 f7       	brne	.-22     	; 0x81a <_ZN3NRF7processEv+0x11c>
 					pipesOpen[i] = RxData[i+2];
 					pipesClosed[i] = RxData[i+10];
 				}
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 880:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 882:	8f 7e       	andi	r24, 0xEF	; 239
- 884:	8a 8f       	std	Y+26, r24	; 0x1a
+ 830:	8f 7e       	andi	r24, 0xEF	; 239
+ 832:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 886:	20 c0       	rjmp	.+64     	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 834:	1a c0       	rjmp	.+52     	; 0x86a <_ZN3NRF7processEv+0x16c>
 				//RxData[2-3]	: ConnectionInterval (MSB first)
 				//RxData[4-5]	: SlaveLatency (LSB/MSB)
 				//RxData[6-7]	: SupervisionTimeout (x10ms)
 				
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 888:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 88a:	8f 7e       	andi	r24, 0xEF	; 239
- 88c:	8a 8f       	std	Y+26, r24	; 0x1a
+ 836:	8f 7e       	andi	r24, 0xEF	; 239
+ 838:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 88e:	1c c0       	rjmp	.+56     	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 83a:	17 c0       	rjmp	.+46     	; 0x86a <_ZN3NRF7processEv+0x16c>
 			case NRF_EVT_DISPLAY_KEY:
 				//RxData[2..7] A fixed 6-byte ASCII string representing the passkey
 				//padded with zeros if shorter than 6 digits
 				
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 890:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 892:	8f 7e       	andi	r24, 0xEF	; 239
- 894:	8a 8f       	std	Y+26, r24	; 0x1a
+ 83c:	8f 7e       	andi	r24, 0xEF	; 239
+ 83e:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 896:	18 c0       	rjmp	.+48     	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 840:	14 c0       	rjmp	.+40     	; 0x86a <_ZN3NRF7processEv+0x16c>
 			case NRF_EVT_KEY_REQUEST:
 				//RxData[2] : key requested
 				//must send the SetKey command within 30 seconds after receiving this command
 				
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 898:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 89a:	8f 7e       	andi	r24, 0xEF	; 239
- 89c:	8a 8f       	std	Y+26, r24	; 0x1a
+ 842:	8f 7e       	andi	r24, 0xEF	; 239
+ 844:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 89e:	14 c0       	rjmp	.+40     	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 846:	11 c0       	rjmp	.+34     	; 0x86a <_ZN3NRF7processEv+0x16c>
 			//Data Events:
 			case NRF_EVT_DATA_CREDIT:		//0x8A
 				//RxData[2]	:	number of data credits returned to the application controller
 				dataCredit += RxData[2];	
- 8a0:	fe 01       	movw	r30, r28
- 8a2:	ee 58       	subi	r30, 0x8E	; 142
- 8a4:	ff 4f       	sbci	r31, 0xFF	; 255
- 8a6:	9d 8d       	ldd	r25, Y+29	; 0x1d
- 8a8:	80 81       	ld	r24, Z
- 8aa:	89 0f       	add	r24, r25
- 8ac:	80 83       	st	Z, r24
+ 848:	fe 01       	movw	r30, r28
+ 84a:	ee 58       	subi	r30, 0x8E	; 142
+ 84c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 84e:	2d 8d       	ldd	r18, Y+29	; 0x1d
+ 850:	90 81       	ld	r25, Z
+ 852:	92 0f       	add	r25, r18
+ 854:	90 83       	st	Z, r25
 				
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);			
- 8ae:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 8b0:	8f 7e       	andi	r24, 0xEF	; 239
- 8b2:	8a 8f       	std	Y+26, r24	; 0x1a
+ 856:	8f 7e       	andi	r24, 0xEF	; 239
+ 858:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 8b4:	09 c0       	rjmp	.+18     	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 85a:	07 c0       	rjmp	.+14     	; 0x86a <_ZN3NRF7processEv+0x16c>
 					//data[i] = RxData[0] + 2;
 				//}
 				//
 				//status |= (1<<NRF_DATA_TO_PROCESS);
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 8b6:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 8b8:	8f 7e       	andi	r24, 0xEF	; 239
- 8ba:	8a 8f       	std	Y+26, r24	; 0x1a
+ 85c:	8f 7e       	andi	r24, 0xEF	; 239
+ 85e:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 8bc:	05 c0       	rjmp	.+10     	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 860:	04 c0       	rjmp	.+8      	; 0x86a <_ZN3NRF7processEv+0x16c>
 			case NRF_EVT_PIPE_ERROR:
 				
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
- 8be:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 8c0:	8f 7e       	andi	r24, 0xEF	; 239
- 8c2:	8a 8f       	std	Y+26, r24	; 0x1a
+ 862:	8f 7e       	andi	r24, 0xEF	; 239
+ 864:	8a 8f       	std	Y+26, r24	; 0x1a
 				break;
- 8c4:	01 c0       	rjmp	.+2      	; 0x8c8 <_ZN3NRF7processEv+0x1fa>
+ 866:	01 c0       	rjmp	.+2      	; 0x86a <_ZN3NRF7processEv+0x16c>
 			default:			
 				RxCount--;
- 8c6:	9d 8b       	std	Y+21, r25	; 0x15
+ 868:	9d 8b       	std	Y+21, r25	; 0x15
 				//RxData[0] = 0x00;					
 				break;
 		}//end switch		
 		
 		//set the NRF_RX_READY bit in the status register
 		status |= (1<<NRF_RX_READY);
- 8c8:	8a 8d       	ldd	r24, Y+26	; 0x1a
- 8ca:	80 68       	ori	r24, 0x80	; 128
- 8cc:	8a 8f       	std	Y+26, r24	; 0x1a
- 8ce:	0a c0       	rjmp	.+20     	; 0x8e4 <_ZN3NRF7processEv+0x216>
+ 86a:	8a 8d       	ldd	r24, Y+26	; 0x1a
+ 86c:	80 68       	ori	r24, 0x80	; 128
+ 86e:	8a 8f       	std	Y+26, r24	; 0x1a
+ 870:	20 c0       	rjmp	.+64     	; 0x8b2 <_ZN3NRF7processEv+0x1b4>
 	else{
 		//Receive Buffer doesn't contain useful data
 		
 		//if nRF8001 is requesting transfer, receive it
 		//if we have data to send, send it
 		if ((RDYN == 0) || (hasDataToSend())) {			
- 8d0:	2a 9b       	sbis	0x05, 2	; 5
- 8d2:	05 c0       	rjmp	.+10     	; 0x8de <_ZN3NRF7processEv+0x210>
- 8d4:	ce 01       	movw	r24, r28
- 8d6:	0e 94 dd 00 	call	0x1ba	; 0x1ba <_ZN3NRF13hasDataToSendEv>
- 8da:	88 23       	and	r24, r24
- 8dc:	19 f0       	breq	.+6      	; 0x8e4 <_ZN3NRF7processEv+0x216>
+ 872:	2a 9b       	sbis	0x05, 2	; 5
+ 874:	05 c0       	rjmp	.+10     	; 0x880 <_ZN3NRF7processEv+0x182>
+ 876:	ce 01       	movw	r24, r28
+ 878:	0e 94 fd 00 	call	0x1fa	; 0x1fa <_ZN3NRF13hasDataToSendEv>
+ 87c:	88 23       	and	r24, r24
+ 87e:	c9 f0       	breq	.+50     	; 0x8b2 <_ZN3NRF7processEv+0x1b4>
 			transferACI();
- 8de:	ce 01       	movw	r24, r28
- 8e0:	0e 94 30 01 	call	0x260	; 0x260 <_ZN3NRF11transferACIEv>
+ 880:	ce 01       	movw	r24, r28
+ 882:	0e 94 80 02 	call	0x500	; 0x500 <_ZN3NRF11transferACIEv>
+ 886:	15 c0       	rjmp	.+42     	; 0x8b2 <_ZN3NRF7processEv+0x1b4>
+		
+	
+	//setup message from services.h file loaded onto nRF8001
+	if( (mode == NRF_MODE_SETUP)  && !hasDataToSend() && !waitingForResponse() ) {
+		//load current line of setup msg into TX buffer
+		for(int i = 0; i <= setup_msgs[initCount].buffer[0]; i++){
+ 888:	70 91 7a 03 	lds	r23, 0x037A
+ 88c:	61 e2       	ldi	r22, 0x21	; 33
+ 88e:	76 9f       	mul	r23, r22
+ 890:	f0 01       	movw	r30, r0
+ 892:	11 24       	eor	r1, r1
+ 894:	e9 5f       	subi	r30, 0xF9	; 249
+ 896:	fe 4f       	sbci	r31, 0xFE	; 254
+ 898:	41 81       	ldd	r20, Z+1	; 0x01
+ 89a:	50 e0       	ldi	r21, 0x00	; 0
+ 89c:	fe 01       	movw	r30, r28
+ 89e:	fb 96       	adiw	r30, 0x3b	; 59
+ 8a0:	20 e0       	ldi	r18, 0x00	; 0
+ 8a2:	30 e0       	ldi	r19, 0x00	; 0
+#ifdef PROGRAMSPACE			
+			TxData[i] = pgm_read_byte(&setup_msgs[initCount].buffer[i]);
+#else
+			TxData[i] = setup_msgs[initCount].buffer[i];
+ 8a4:	61 e2       	ldi	r22, 0x21	; 33
+ 8a6:	76 9f       	mul	r23, r22
+ 8a8:	c0 01       	movw	r24, r0
+ 8aa:	11 24       	eor	r1, r1
+ 8ac:	89 5f       	subi	r24, 0xF9	; 249
+ 8ae:	9e 4f       	sbci	r25, 0xFE	; 254
+ 8b0:	41 cf       	rjmp	.-382    	; 0x734 <_ZN3NRF7processEv+0x36>
+		if ((RDYN == 0) || (hasDataToSend())) {			
+			transferACI();
 			
 		}
 	}//else RxData
 }//process
- 8e4:	df 91       	pop	r29
- 8e6:	cf 91       	pop	r28
- 8e8:	08 95       	ret
+ 8b2:	df 91       	pop	r29
+ 8b4:	cf 91       	pop	r28
+ 8b6:	08 95       	ret
 
-000008ea <_GLOBAL__sub_I_spi>:
+000008b8 <_GLOBAL__sub_I_spi>:
 	//(1<<MSTR)|             // Master/Slave select
 	//(0<<SPR1)|(1<<SPR0)|   // SPI Clock Rate
 	//(0<<CPOL)|             // Clock Polarity (0:SCK low / 1:SCK hi when idle)
 	//(0<<CPHA))             // Clock Phase (0:leading / 1:trailing edge sampling)
 
 SPI spi(SPI_SETTING);
- 8ea:	63 e7       	ldi	r22, 0x73	; 115
- 8ec:	8a e7       	ldi	r24, 0x7A	; 122
- 8ee:	93 e0       	ldi	r25, 0x03	; 3
- 8f0:	0e 94 b8 00 	call	0x170	; 0x170 <_ZN3SPIC1Eh>
- 8f4:	08 95       	ret
+ 8b8:	63 e7       	ldi	r22, 0x73	; 115
+ 8ba:	8b e7       	ldi	r24, 0x7B	; 123
+ 8bc:	93 e0       	ldi	r25, 0x03	; 3
+ 8be:	0e 94 d8 00 	call	0x1b0	; 0x1b0 <_ZN3SPIC1Eh>
+ 8c2:	08 95       	ret
 
-000008f6 <initTimer1>:
+000008c4 <_ZN6TIMER1C1Ehhj>:
+TIMER1::TIMER1(){
+	TIMER1(TIMER_DIV1, 0, 0);
+}
 
 ///@brief initialize AD converter on Atmega168 for
-void	initTimer1(uint8_t prescalar, uint8_t WGMmode, uint16_t reload){
+TIMER1::TIMER1(uint8_t pscalar, uint8_t WGMmode, uint16_t rload){
+ 8c4:	fc 01       	movw	r30, r24
+	reload = rload;
+ 8c6:	33 83       	std	Z+3, r19	; 0x03
+ 8c8:	22 83       	std	Z+2, r18	; 0x02
+	mode = WGMmode;
+ 8ca:	41 83       	std	Z+1, r20	; 0x01
+	prescalar = pscalar;
+ 8cc:	60 83       	st	Z, r22
 	
 	// The PRTIM1 bit in the Power reduction register must be written to zero to enable Timer/Counter1 module.
 	PRR &= ~(1<<PRTIM1);
- 8f6:	e4 e6       	ldi	r30, 0x64	; 100
- 8f8:	f0 e0       	ldi	r31, 0x00	; 0
- 8fa:	90 81       	ld	r25, Z
- 8fc:	97 7f       	andi	r25, 0xF7	; 247
- 8fe:	90 83       	st	Z, r25
+ 8ce:	a4 e6       	ldi	r26, 0x64	; 100
+ 8d0:	b0 e0       	ldi	r27, 0x00	; 0
+ 8d2:	8c 91       	ld	r24, X
+ 8d4:	87 7f       	andi	r24, 0xF7	; 247
+ 8d6:	8c 93       	st	X, r24
 	
+	//disable timer1
+	TCCR1B = 0x00;
+ 8d8:	10 92 81 00 	sts	0x0081, r1
 	
-	
-	TCCR1A = (WGMmode & 0x03);		//normal timer operation, no PWM, etc
- 900:	96 2f       	mov	r25, r22
- 902:	93 70       	andi	r25, 0x03	; 3
- 904:	90 93 80 00 	sts	0x0080, r25
-	TCCR1B = ((WGMmode & 0x0C)<<WGM12) | (prescalar << CS10);
- 908:	6c 70       	andi	r22, 0x0C	; 12
- 90a:	66 0f       	add	r22, r22
- 90c:	66 0f       	add	r22, r22
- 90e:	66 0f       	add	r22, r22
- 910:	86 2b       	or	r24, r22
- 912:	80 93 81 00 	sts	0x0081, r24
-	TCCR1C = 0x00;		//force output compare off	
- 916:	10 92 82 00 	sts	0x0082, r1
-	OCR1A = reload;
- 91a:	50 93 89 00 	sts	0x0089, r21
- 91e:	40 93 88 00 	sts	0x0088, r20
+	//clear counter	
 	TCNT1 = 0;
- 922:	10 92 85 00 	sts	0x0085, r1
- 926:	10 92 84 00 	sts	0x0084, r1
+ 8dc:	10 92 85 00 	sts	0x0085, r1
+ 8e0:	10 92 84 00 	sts	0x0084, r1
 	
-	TIFR1 = 1<<ICF1;			//Clear pending interrupts
- 92a:	80 e2       	ldi	r24, 0x20	; 32
- 92c:	86 bb       	out	0x16, r24	; 22
+	//set reload value
+	if (mode == 4) OCR1A = reload;
+ 8e4:	81 81       	ldd	r24, Z+1	; 0x01
+ 8e6:	84 30       	cpi	r24, 0x04	; 4
+ 8e8:	31 f4       	brne	.+12     	; 0x8f6 <_ZN6TIMER1C1Ehhj+0x32>
+ 8ea:	82 81       	ldd	r24, Z+2	; 0x02
+ 8ec:	93 81       	ldd	r25, Z+3	; 0x03
+ 8ee:	90 93 89 00 	sts	0x0089, r25
+ 8f2:	80 93 88 00 	sts	0x0088, r24
+	if (mode == 12) ICR1 = reload;
+ 8f6:	81 81       	ldd	r24, Z+1	; 0x01
+ 8f8:	8c 30       	cpi	r24, 0x0C	; 12
+ 8fa:	31 f4       	brne	.+12     	; 0x908 <_ZN6TIMER1C1Ehhj+0x44>
+ 8fc:	82 81       	ldd	r24, Z+2	; 0x02
+ 8fe:	93 81       	ldd	r25, Z+3	; 0x03
+ 900:	90 93 87 00 	sts	0x0087, r25
+ 904:	80 93 86 00 	sts	0x0086, r24
+	if (mode == 0) TCNT1 = reload;
+ 908:	81 81       	ldd	r24, Z+1	; 0x01
+ 90a:	81 11       	cpse	r24, r1
+ 90c:	06 c0       	rjmp	.+12     	; 0x91a <_ZN6TIMER1C1Ehhj+0x56>
+ 90e:	82 81       	ldd	r24, Z+2	; 0x02
+ 910:	93 81       	ldd	r25, Z+3	; 0x03
+ 912:	90 93 85 00 	sts	0x0085, r25
+ 916:	80 93 84 00 	sts	0x0084, r24
 	
-	TIMSK1 |= (1 << TOIE1) |	// Enable
- 92e:	ef e6       	ldi	r30, 0x6F	; 111
- 930:	f0 e0       	ldi	r31, 0x00	; 0
- 932:	80 81       	ld	r24, Z
- 934:	83 60       	ori	r24, 0x03	; 3
- 936:	80 83       	st	Z, r24
- 938:	08 95       	ret
+	//setup and enable timer
+	TCCR1A = (mode & 0x03);		//normal timer operation, no PWM, etc
+ 91a:	81 81       	ldd	r24, Z+1	; 0x01
+ 91c:	83 70       	andi	r24, 0x03	; 3
+ 91e:	80 93 80 00 	sts	0x0080, r24
+	//TCCR1B = ((mode & 0x0C)<<WGM12) | (prescalar << CS10);
+	TCCR1C = 0x00;		//force output compare off	
+ 922:	10 92 82 00 	sts	0x0082, r1
+ 926:	08 95       	ret
 
-0000093a <isTimer1FlagSet>:
-	(1<<OCIE1A);				// Enable capture event timer
+00000928 <_ZN6TIMER15startEv>:
 	//sei();
 }
 
-uint8_t isTimer1FlagSet(){
-	return ((TIFR1 & 1<<OCF1A)? 1:0);
- 93a:	86 b3       	in	r24, 0x16	; 22
+void	TIMER1::start(void)
+{
+	TCCR1B = ((mode & 0x0C)<<WGM12) | (prescalar << CS10);
+ 928:	fc 01       	movw	r30, r24
+ 92a:	21 81       	ldd	r18, Z+1	; 0x01
+ 92c:	2c 70       	andi	r18, 0x0C	; 12
+ 92e:	22 0f       	add	r18, r18
+ 930:	22 0f       	add	r18, r18
+ 932:	22 0f       	add	r18, r18
+ 934:	90 81       	ld	r25, Z
+ 936:	82 2f       	mov	r24, r18
+ 938:	89 2b       	or	r24, r25
+ 93a:	80 93 81 00 	sts	0x0081, r24
+ 93e:	08 95       	ret
+
+00000940 <_ZN6TIMER117isCompareAFlagSetEv>:
+	return ((TIFR1 & 1<<TOV1)? 1:0);
 	//return ((EIFR & 1<< INTF0)?1:0);
 }
- 93c:	86 95       	lsr	r24
- 93e:	81 70       	andi	r24, 0x01	; 1
- 940:	08 95       	ret
 
-00000942 <clearTimer1Flag>:
+uint8_t TIMER1::isCompareAFlagSet(){
+	return ((TIFR1 & 1<<OCF1A)? 1:0);
+ 940:	86 b3       	in	r24, 0x16	; 22
+	
+}
+ 942:	86 95       	lsr	r24
+ 944:	81 70       	andi	r24, 0x01	; 1
+ 946:	08 95       	ret
 
-void	clearTimer1Flag(){
-	TIFR1 |= (1<<OCF1A);
- 942:	b1 9a       	sbi	0x16, 1	; 22
- 944:	08 95       	ret
-
-00000946 <startTimer1>:
+00000948 <_ZN6TIMER117clearCompareAFlagEv>:
+	
 	//EIFR = (1<<INTF0);		//Reset flag
 }
 
+void	TIMER1::clearCompareAFlag(){
+	TIFR1 |= (1<<OCF1A);
+ 948:	b1 9a       	sbi	0x16, 1	; 22
+ 94a:	08 95       	ret
 
-void startTimer1(void) 
-{
- 946:	08 95       	ret
+0000094c <_ZN6TIMER18setCountEj>:
+	
+	//EIFR = (1<<INTF0);		//Reset flag
+}
 
-00000948 <_Z4initv>:
-void init(void){
-	
-	//MCUCR = (1<<PUD);	//disable all pull ups
-	
-	//d6,d7 - LEDs
-	DDRD = 0xC0;			//set PD7:6 to outputs for LEDs
- 948:	80 ec       	ldi	r24, 0xC0	; 192
- 94a:	8a b9       	out	0x0a, r24	; 10
-	//PD2 as an input for switch
-	RED_ON;					//Set PD7 high and PD6 low
- 94c:	8b b1       	in	r24, 0x0b	; 11
- 94e:	8f 73       	andi	r24, 0x3F	; 63
- 950:	80 68       	ori	r24, 0x80	; 128
- 952:	8b b9       	out	0x0b, r24	; 11
-	
-	//Switch
-	PORTD |= (1<<PD2);		//set PD2 to high(pullup resistor) for switch
- 954:	5a 9a       	sbi	0x0b, 2	; 11
-	
-	//ADC clock must be between 50-200kHz to get maximum resolution
-	//8MHz/64 (div64)	= 125,000
-	
-	//pin, prescalar
-	initADC(ADC_PIN, ADC_DIV64);
- 956:	66 e0       	ldi	r22, 0x06	; 6
- 958:	80 e0       	ldi	r24, 0x00	; 0
- 95a:	0e 94 7e 00 	call	0xfc	; 0xfc <initADC>
-	// 88,888.888 / 8 (div8)	= 11,111 = 0x2B67
-	
-	//prescalar, mode, reload
-	
-	//initTimer1(TIMER_DIV8, 4, 0x2B67);
-	initTimer1(TIMER_DIV64, 4, 0xFFFF);
- 95e:	4f ef       	ldi	r20, 0xFF	; 255
- 960:	5f ef       	ldi	r21, 0xFF	; 255
- 962:	64 e0       	ldi	r22, 0x04	; 4
- 964:	83 e0       	ldi	r24, 0x03	; 3
- 966:	0e 94 7b 04 	call	0x8f6	; 0x8f6 <initTimer1>
-	
-	//opamp
-	//opamp is Powered Down when PD is low, initialize HIGH?
-	//250nS delay when powering up, 50nS delay when powering down (1/8MHz = 125nS)
-	WakeOpAmp();
- 96a:	41 9a       	sbi	0x08, 1	; 8
- 96c:	08 95       	ret
+void	TIMER1::setCount(uint16_t count){
+	TCNT1 = count;
+ 94c:	70 93 85 00 	sts	0x0085, r23
+ 950:	60 93 84 00 	sts	0x0084, r22
+ 954:	08 95       	ret
 
-0000096e <main>:
+00000956 <main>:
+#define HEART_RATE_DATA_LENGTH 2
 
 void SetSleepMode(uint8_t mode);
 void init(void);
 
-int main(void)
-{	
- 96e:	cf 93       	push	r28
- 970:	df 93       	push	r29
- 972:	cd b7       	in	r28, 0x3d	; 61
- 974:	de b7       	in	r29, 0x3e	; 62
- 976:	27 97       	sbiw	r28, 0x07	; 7
- 978:	0f b6       	in	r0, 0x3f	; 63
- 97a:	f8 94       	cli
- 97c:	de bf       	out	0x3e, r29	; 62
- 97e:	0f be       	out	0x3f, r0	; 63
- 980:	cd bf       	out	0x3d, r28	; 61
+int main(void){	
+ 956:	cf 93       	push	r28
+ 958:	df 93       	push	r29
+ 95a:	cd b7       	in	r28, 0x3d	; 61
+ 95c:	de b7       	in	r29, 0x3e	; 62
+ 95e:	2d 97       	sbiw	r28, 0x0d	; 13
+ 960:	0f b6       	in	r0, 0x3f	; 63
+ 962:	f8 94       	cli
+ 964:	de bf       	out	0x3e, r29	; 62
+ 966:	0f be       	out	0x3f, r0	; 63
+ 968:	cd bf       	out	0x3d, r28	; 61
+	//timer
+	// 8MHz/90Hz			= 88,888.8888 cycles to count
+	// 88,888.888 / 8 (div8)	= 11,111 = 0x2B67
+	
+	//prescalar, mode, reload
+	TIMER1 timer(TIMER_DIV8, 4, 0x2B67);
+ 96a:	27 e6       	ldi	r18, 0x67	; 103
+ 96c:	3b e2       	ldi	r19, 0x2B	; 43
+ 96e:	44 e0       	ldi	r20, 0x04	; 4
+ 970:	62 e0       	ldi	r22, 0x02	; 2
+ 972:	ce 01       	movw	r24, r28
+ 974:	08 96       	adiw	r24, 0x08	; 8
+ 976:	0e 94 62 04 	call	0x8c4	; 0x8c4 <_ZN6TIMER1C1Ehhj>
+	
+	//pin, prescalar
+	ANALOG sensor(ADC_PIN, ADC_DIV64);
+ 97a:	46 e0       	ldi	r20, 0x06	; 6
+ 97c:	60 e0       	ldi	r22, 0x00	; 0
+ 97e:	ce 01       	movw	r24, r28
+ 980:	0c 96       	adiw	r24, 0x0c	; 12
+ 982:	0e 94 b0 00 	call	0x160	; 0x160 <_ZN6ANALOGC1Ehh>
 		
 	uint8_t count = 0;
 		 
 	state_t state = INIT;
 	//uint8_t heartRateData[HEART_RATE_DATA_LENGTH];
 	uint8_t oxygenSaturationData[PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE] = {0,1,2,3,4,5,6};
- 982:	87 e0       	ldi	r24, 0x07	; 7
- 984:	e0 e0       	ldi	r30, 0x00	; 0
- 986:	f1 e0       	ldi	r31, 0x01	; 1
- 988:	de 01       	movw	r26, r28
- 98a:	11 96       	adiw	r26, 0x01	; 1
- 98c:	01 90       	ld	r0, Z+
- 98e:	0d 92       	st	X+, r0
- 990:	8a 95       	dec	r24
- 992:	e1 f7       	brne	.-8      	; 0x98c <main+0x1e>
+ 986:	87 e0       	ldi	r24, 0x07	; 7
+ 988:	e0 e0       	ldi	r30, 0x00	; 0
+ 98a:	f1 e0       	ldi	r31, 0x01	; 1
+ 98c:	de 01       	movw	r26, r28
+ 98e:	11 96       	adiw	r26, 0x01	; 1
+ 990:	01 90       	ld	r0, Z+
+ 992:	0d 92       	st	X+, r0
+ 994:	8a 95       	dec	r24
+ 996:	e1 f7       	brne	.-8      	; 0x990 <main+0x3a>
 	#else
 		//round up by default
 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
 	#endif
 
 	__builtin_avr_delay_cycles(__ticks_dc);
- 994:	2f ef       	ldi	r18, 0xFF	; 255
- 996:	84 e3       	ldi	r24, 0x34	; 52
- 998:	9c e0       	ldi	r25, 0x0C	; 12
- 99a:	21 50       	subi	r18, 0x01	; 1
- 99c:	80 40       	sbci	r24, 0x00	; 0
- 99e:	90 40       	sbci	r25, 0x00	; 0
- 9a0:	e1 f7       	brne	.-8      	; 0x99a <main+0x2c>
- 9a2:	00 c0       	rjmp	.+0      	; 0x9a4 <main+0x36>
- 9a4:	00 00       	nop
-	
-	
-	
+ 998:	2f ef       	ldi	r18, 0xFF	; 255
+ 99a:	84 e3       	ldi	r24, 0x34	; 52
+ 99c:	9c e0       	ldi	r25, 0x0C	; 12
+ 99e:	21 50       	subi	r18, 0x01	; 1
+ 9a0:	80 40       	sbci	r24, 0x00	; 0
+ 9a2:	90 40       	sbci	r25, 0x00	; 0
+ 9a4:	e1 f7       	brne	.-8      	; 0x99e <main+0x48>
+ 9a6:	00 c0       	rjmp	.+0      	; 0x9a8 <main+0x52>
+ 9a8:	00 00       	nop
+#endif
 	
 	_delay_ms(500);
-	init();
- 9a6:	0e 94 a4 04 	call	0x948	; 0x948 <_Z4initv>
+	
+	//d6,d7 - LEDs
+	DDRD = 0xC0;			//set PD7:6 to outputs for LEDs
+ 9aa:	80 ec       	ldi	r24, 0xC0	; 192
+ 9ac:	8a b9       	out	0x0a, r24	; 10
+	//PD2 as an input for switch
+	RED_ON;					//Set PD7 high and PD6 low
+ 9ae:	8b b1       	in	r24, 0x0b	; 11
+ 9b0:	8f 73       	andi	r24, 0x3F	; 63
+ 9b2:	80 68       	ori	r24, 0x80	; 128
+ 9b4:	8b b9       	out	0x0b, r24	; 11
+	
+	//Switch
+	PORTD |= (1<<PD2);		//set PD2 to high(pullup resistor) for switch
+ 9b6:	5a 9a       	sbi	0x0b, 2	; 11
+	
+	//opamp is Powered Down when PD is low, initialize HIGH?
+	//250nS delay when powering up, 50nS delay when powering down (1/8MHz = 125nS)
+	WakeOpAmp();
+ 9b8:	41 9a       	sbi	0x08, 1	; 8
+	sensor.clearFlag();
+ 9ba:	ce 01       	movw	r24, r28
+ 9bc:	0c 96       	adiw	r24, 0x0c	; 12
+ 9be:	0e 94 c5 00 	call	0x18a	; 0x18a <_ZN6ANALOG9clearFlagEv>
+ 9c2:	ef ef       	ldi	r30, 0xFF	; 255
+ 9c4:	f4 e3       	ldi	r31, 0x34	; 52
+ 9c6:	2c e0       	ldi	r18, 0x0C	; 12
+ 9c8:	e1 50       	subi	r30, 0x01	; 1
+ 9ca:	f0 40       	sbci	r31, 0x00	; 0
+ 9cc:	20 40       	sbci	r18, 0x00	; 0
+ 9ce:	e1 f7       	brne	.-8      	; 0x9c8 <main+0x72>
+ 9d0:	00 c0       	rjmp	.+0      	; 0x9d2 <main+0x7c>
+ 9d2:	00 00       	nop
 		 
 	enum lights_t {I,R,O} led_state = R;
 		
 	uint8_t count = 0;
 		 
 	state_t state = INIT;
- 9aa:	b1 2c       	mov	r11, r1
-int main(void)
-{	
+ 9d4:	b1 2c       	mov	r11, r1
+	//pin, prescalar
+	ANALOG sensor(ADC_PIN, ADC_DIV64);
 	
 	enum state_t {INIT = 0x00, RESET, CONNECT, CONNECTING, SEND, RECEIVE, IDLE};
 		 
 	enum lights_t {I,R,O} led_state = R;
- 9ac:	44 24       	eor	r4, r4
- 9ae:	43 94       	inc	r4
-				
+ 9d6:	66 24       	eor	r6, r6
+ 9d8:	63 94       	inc	r6
+				settings = nrf.data[1];				
 			}
 			nrf.dataHasBeenProcessed();
 		}
 		
 		if (nrf.mode == NRF_MODE_STANDBY){
- 9b0:	0d ee       	ldi	r16, 0xED	; 237
- 9b2:	13 e0       	ldi	r17, 0x03	; 3
-						state = CONNECTING;
-					break;				
-				
-				case CONNECTING:	
-					if (nrf.isConnected())
-						state = IDLE;
- 9b4:	0f 2e       	mov	r0, r31
- 9b6:	f6 e0       	ldi	r31, 0x06	; 6
- 9b8:	af 2e       	mov	r10, r31
- 9ba:	f0 2d       	mov	r31, r0
-									oxygenSaturationData[5] = ADCH;
-									RED_ON;
-									led_state = R;
-									break;
-								case R:
-									oxygenSaturationData[2] = ADCL;
- 9bc:	0f 2e       	mov	r0, r31
- 9be:	f8 e7       	ldi	r31, 0x78	; 120
- 9c0:	cf 2e       	mov	r12, r31
- 9c2:	d1 2c       	mov	r13, r1
- 9c4:	f0 2d       	mov	r31, r0
-									oxygenSaturationData[1] = ADCH;
- 9c6:	0f 2e       	mov	r0, r31
- 9c8:	f9 e7       	ldi	r31, 0x79	; 121
- 9ca:	ef 2e       	mov	r14, r31
- 9cc:	f1 2c       	mov	r15, r1
- 9ce:	f0 2d       	mov	r31, r0
-									IR_ON;
-									led_state = I;
-									state = SEND;
- 9d0:	68 94       	set
- 9d2:	55 24       	eor	r5, r5
- 9d4:	52 f8       	bld	r5, 2
-									break;
-								case R:
-									oxygenSaturationData[2] = ADCL;
-									oxygenSaturationData[1] = ADCH;
-									IR_ON;
-									led_state = I;
- 9d6:	81 2c       	mov	r8, r1
-					
-					else {
-						if (isTimer1FlagSet()){
-							clearTimer1Flag();
-						
-							if(!(ADCSRA & (1<<ADIF)))
- 9d8:	0f 2e       	mov	r0, r31
- 9da:	fa e7       	ldi	r31, 0x7A	; 122
- 9dc:	6f 2e       	mov	r6, r31
- 9de:	71 2c       	mov	r7, r1
- 9e0:	f0 2d       	mov	r31, r0
-						state = IDLE;
-					break;
-					
-				case CONNECT:	//connect
-					if (nrf.connect(180,0x0100) == 0x00)
-						state = CONNECTING;
- 9e2:	0f 2e       	mov	r0, r31
- 9e4:	f3 e0       	ldi	r31, 0x03	; 3
- 9e6:	9f 2e       	mov	r9, r31
- 9e8:	f0 2d       	mov	r31, r0
-#endif	
-	
-	
-	while(1)
-	{
-		if (nrf.hasDataToProcess()){
- 9ea:	8c e7       	ldi	r24, 0x7C	; 124
- 9ec:	93 e0       	ldi	r25, 0x03	; 3
- 9ee:	0e 94 f4 00 	call	0x1e8	; 0x1e8 <_ZN3NRF16hasDataToProcessEv>
- 9f2:	88 23       	and	r24, r24
- 9f4:	21 f0       	breq	.+8      	; 0x9fe <main+0x90>
-			if (nrf.data[0] == PIPE_MODIFY_SETTINGS_PULSEOX_SETTING_RX){
-				settings = nrf.data[1];
-				
-			}
-			nrf.dataHasBeenProcessed();
- 9f6:	8c e7       	ldi	r24, 0x7C	; 124
- 9f8:	93 e0       	ldi	r25, 0x03	; 3
- 9fa:	0e 94 fa 00 	call	0x1f4	; 0x1f4 <_ZN3NRF20dataHasBeenProcessedEv>
-		}
-		
-		if (nrf.mode == NRF_MODE_STANDBY){
- 9fe:	f8 01       	movw	r30, r16
- a00:	90 81       	ld	r25, Z
- a02:	93 30       	cpi	r25, 0x03	; 3
- a04:	09 f0       	breq	.+2      	; 0xa08 <main+0x9a>
- a06:	a2 c0       	rjmp	.+324    	; 0xb4c <main+0x1de>
-			
-			
-			
-			switch (state){
- a08:	f3 e0       	ldi	r31, 0x03	; 3
- a0a:	bf 16       	cp	r11, r31
- a0c:	81 f1       	breq	.+96     	; 0xa6e <main+0x100>
- a0e:	fb 15       	cp	r31, r11
- a10:	30 f0       	brcs	.+12     	; 0xa1e <main+0xb0>
- a12:	21 e0       	ldi	r18, 0x01	; 1
- a14:	b2 16       	cp	r11, r18
- a16:	c9 f0       	breq	.+50     	; 0xa4a <main+0xdc>
- a18:	2b 15       	cp	r18, r11
- a1a:	e8 f0       	brcs	.+58     	; 0xa56 <main+0xe8>
- a1c:	0a c0       	rjmp	.+20     	; 0xa32 <main+0xc4>
- a1e:	85 e0       	ldi	r24, 0x05	; 5
- a20:	b8 16       	cp	r11, r24
- a22:	09 f4       	brne	.+2      	; 0xa26 <main+0xb8>
- a24:	3b c0       	rjmp	.+118    	; 0xa9c <main+0x12e>
- a26:	b8 16       	cp	r11, r24
- a28:	48 f1       	brcs	.+82     	; 0xa7c <main+0x10e>
- a2a:	96 e0       	ldi	r25, 0x06	; 6
- a2c:	b9 12       	cpse	r11, r25
- a2e:	8e c0       	rjmp	.+284    	; 0xb4c <main+0x1de>
- a30:	3c c0       	rjmp	.+120    	; 0xaaa <main+0x13c>
-				case INIT:	//initializing
-					if (!nrf.isInitializing()){
- a32:	8c e7       	ldi	r24, 0x7C	; 124
- a34:	93 e0       	ldi	r25, 0x03	; 3
- a36:	0e 94 d4 00 	call	0x1a8	; 0x1a8 <_ZN3NRF14isInitializingEv>
- a3a:	81 11       	cpse	r24, r1
- a3c:	87 c0       	rjmp	.+270    	; 0xb4c <main+0x1de>
-						startTimer1();
- a3e:	0e 94 a3 04 	call	0x946	; 0x946 <startTimer1>
-						state = CONNECT;						
- a42:	68 94       	set
- a44:	bb 24       	eor	r11, r11
- a46:	b1 f8       	bld	r11, 1
- a48:	81 c0       	rjmp	.+258    	; 0xb4c <main+0x1de>
-					//_delay_ms(25);
-#endif
-					break;
-				case RESET:	//temp
-					//TODO:
-					nrf.radioReset();
- a4a:	8c e7       	ldi	r24, 0x7C	; 124
- a4c:	93 e0       	ldi	r25, 0x03	; 3
- a4e:	0e 94 18 02 	call	0x430	; 0x430 <_ZN3NRF10radioResetEv>
-						state = IDLE;
- a52:	ba 2c       	mov	r11, r10
-					break;
- a54:	7b c0       	rjmp	.+246    	; 0xb4c <main+0x1de>
-					
-				case CONNECT:	//connect
-					if (nrf.connect(180,0x0100) == 0x00)
- a56:	40 e0       	ldi	r20, 0x00	; 0
- a58:	51 e0       	ldi	r21, 0x01	; 1
- a5a:	64 eb       	ldi	r22, 0xB4	; 180
- a5c:	70 e0       	ldi	r23, 0x00	; 0
- a5e:	8c e7       	ldi	r24, 0x7C	; 124
- a60:	93 e0       	ldi	r25, 0x03	; 3
- a62:	0e 94 aa 01 	call	0x354	; 0x354 <_ZN3NRF7connectEjj>
- a66:	88 23       	and	r24, r24
- a68:	09 f4       	brne	.+2      	; 0xa6c <main+0xfe>
- a6a:	69 c0       	rjmp	.+210    	; 0xb3e <main+0x1d0>
- a6c:	6f c0       	rjmp	.+222    	; 0xb4c <main+0x1de>
-						state = CONNECTING;
-					break;				
-				
-				case CONNECTING:	
-					if (nrf.isConnected())
- a6e:	8c e7       	ldi	r24, 0x7C	; 124
- a70:	93 e0       	ldi	r25, 0x03	; 3
- a72:	0e 94 ee 00 	call	0x1dc	; 0x1dc <_ZN3NRF11isConnectedEv>
- a76:	81 11       	cpse	r24, r1
- a78:	64 c0       	rjmp	.+200    	; 0xb42 <main+0x1d4>
- a7a:	68 c0       	rjmp	.+208    	; 0xb4c <main+0x1de>
-						state = IDLE;
-					break;
-					
-				case SEND:					
-					if (0x00 == nrf.setLocalData(PIPE_OXYGEN_SATURATION_O2_SET, oxygenSaturationData, PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE)){						
- a7c:	27 e0       	ldi	r18, 0x07	; 7
- a7e:	ae 01       	movw	r20, r28
- a80:	4f 5f       	subi	r20, 0xFF	; 255
- a82:	5f 4f       	sbci	r21, 0xFF	; 255
- a84:	61 e0       	ldi	r22, 0x01	; 1
- a86:	8c e7       	ldi	r24, 0x7C	; 124
- a88:	93 e0       	ldi	r25, 0x03	; 3
- a8a:	0e 94 6d 02 	call	0x4da	; 0x4da <_ZN3NRF12setLocalDataEhPhh>
- a8e:	81 11       	cpse	r24, r1
- a90:	5d c0       	rjmp	.+186    	; 0xb4c <main+0x1de>
-						oxygenSaturationData[0]++;						
- a92:	89 81       	ldd	r24, Y+1	; 0x01
- a94:	8f 5f       	subi	r24, 0xFF	; 255
- a96:	89 83       	std	Y+1, r24	; 0x01
-						
-						state = IDLE;	
- a98:	ba 2c       	mov	r11, r10
- a9a:	58 c0       	rjmp	.+176    	; 0xb4c <main+0x1de>
-					}					
-					break;
-				
-				case RECEIVE:
-					nrf.requestData(PIPE_MODIFY_SETTINGS_PULSEOX_SETTING_RX);
- a9c:	62 e0       	ldi	r22, 0x02	; 2
- a9e:	8c e7       	ldi	r24, 0x7C	; 124
- aa0:	93 e0       	ldi	r25, 0x03	; 3
- aa2:	0e 94 c5 02 	call	0x58a	; 0x58a <_ZN3NRF11requestDataEh>
-					state = IDLE;
- aa6:	ba 2c       	mov	r11, r10
-					break;				
- aa8:	51 c0       	rjmp	.+162    	; 0xb4c <main+0x1de>
-																
-				case IDLE:		//idle
-					if(!nrf.isConnected()){
- aaa:	8c e7       	ldi	r24, 0x7C	; 124
- aac:	93 e0       	ldi	r25, 0x03	; 3
- aae:	0e 94 ee 00 	call	0x1dc	; 0x1dc <_ZN3NRF11isConnectedEv>
- ab2:	88 23       	and	r24, r24
- ab4:	09 f4       	brne	.+2      	; 0xab8 <main+0x14a>
- ab6:	47 c0       	rjmp	.+142    	; 0xb46 <main+0x1d8>
-					//if (SW == 0)//TODO: button press resets device
-						//state == RESET;
-						
-					
-					else {
-						if (isTimer1FlagSet()){
- ab8:	0e 94 9d 04 	call	0x93a	; 0x93a <isTimer1FlagSet>
- abc:	88 23       	and	r24, r24
- abe:	49 f0       	breq	.+18     	; 0xad2 <main+0x164>
-							clearTimer1Flag();
- ac0:	0e 94 a1 04 	call	0x942	; 0x942 <clearTimer1Flag>
-						
-							if(!(ADCSRA & (1<<ADIF)))
- ac4:	f3 01       	movw	r30, r6
- ac6:	80 81       	ld	r24, Z
- ac8:	84 fd       	sbrc	r24, 4
- aca:	03 c0       	rjmp	.+6      	; 0xad2 <main+0x164>
-								startADC(ADC_PIN);
- acc:	88 2d       	mov	r24, r8
- ace:	0e 94 95 00 	call	0x12a	; 0x12a <startADC>
-						
-						}//if
-					
-						if (isADCfinished()){
- ad2:	0e 94 9d 00 	call	0x13a	; 0x13a <isADCfinished>
- ad6:	88 23       	and	r24, r24
- ad8:	c9 f1       	breq	.+114    	; 0xb4c <main+0x1de>
-						
-							clearADCinterrupt();
- ada:	0e 94 a5 00 	call	0x14a	; 0x14a <clearADCinterrupt>
-							switch (led_state){
- ade:	f1 e0       	ldi	r31, 0x01	; 1
- ae0:	4f 16       	cp	r4, r31
- ae2:	01 f1       	breq	.+64     	; 0xb24 <main+0x1b6>
- ae4:	4f 16       	cp	r4, r31
- ae6:	20 f0       	brcs	.+8      	; 0xaf0 <main+0x182>
- ae8:	22 e0       	ldi	r18, 0x02	; 2
- aea:	42 12       	cpse	r4, r18
- aec:	2f c0       	rjmp	.+94     	; 0xb4c <main+0x1de>
- aee:	0d c0       	rjmp	.+26     	; 0xb0a <main+0x19c>
-								case I:
-									oxygenSaturationData[4] = ADCL;
- af0:	f6 01       	movw	r30, r12
- af2:	80 81       	ld	r24, Z
- af4:	8d 83       	std	Y+5, r24	; 0x05
-									oxygenSaturationData[3] = ADCH;
- af6:	f7 01       	movw	r30, r14
- af8:	80 81       	ld	r24, Z
- afa:	8c 83       	std	Y+4, r24	; 0x04
-									LEDS_OFF;
- afc:	8b b1       	in	r24, 0x0b	; 11
- afe:	8f 73       	andi	r24, 0x3F	; 63
- b00:	8b b9       	out	0x0b, r24	; 11
-									led_state = O;
- b02:	68 94       	set
- b04:	44 24       	eor	r4, r4
- b06:	41 f8       	bld	r4, 1
-									break;
- b08:	21 c0       	rjmp	.+66     	; 0xb4c <main+0x1de>
-								case O:
-									oxygenSaturationData[6] = ADCL;
- b0a:	f6 01       	movw	r30, r12
- b0c:	80 81       	ld	r24, Z
- b0e:	8f 83       	std	Y+7, r24	; 0x07
-									oxygenSaturationData[5] = ADCH;
- b10:	f7 01       	movw	r30, r14
- b12:	80 81       	ld	r24, Z
- b14:	8e 83       	std	Y+6, r24	; 0x06
-									RED_ON;
- b16:	8b b1       	in	r24, 0x0b	; 11
- b18:	8f 73       	andi	r24, 0x3F	; 63
- b1a:	80 68       	ori	r24, 0x80	; 128
- b1c:	8b b9       	out	0x0b, r24	; 11
-									led_state = R;
- b1e:	44 24       	eor	r4, r4
- b20:	43 94       	inc	r4
-									break;
- b22:	14 c0       	rjmp	.+40     	; 0xb4c <main+0x1de>
-								case R:
-									oxygenSaturationData[2] = ADCL;
- b24:	f6 01       	movw	r30, r12
- b26:	80 81       	ld	r24, Z
- b28:	8b 83       	std	Y+3, r24	; 0x03
-									oxygenSaturationData[1] = ADCH;
- b2a:	f7 01       	movw	r30, r14
- b2c:	80 81       	ld	r24, Z
- b2e:	8a 83       	std	Y+2, r24	; 0x02
-									IR_ON;
- b30:	8b b1       	in	r24, 0x0b	; 11
- b32:	8f 73       	andi	r24, 0x3F	; 63
- b34:	80 64       	ori	r24, 0x40	; 64
- b36:	8b b9       	out	0x0b, r24	; 11
-									led_state = I;
-									state = SEND;
- b38:	b5 2c       	mov	r11, r5
-									break;
-								case R:
-									oxygenSaturationData[2] = ADCL;
-									oxygenSaturationData[1] = ADCH;
-									IR_ON;
-									led_state = I;
- b3a:	48 2c       	mov	r4, r8
-									state = SEND;
-									break;
- b3c:	07 c0       	rjmp	.+14     	; 0xb4c <main+0x1de>
-						state = IDLE;
-					break;
-					
-				case CONNECT:	//connect
-					if (nrf.connect(180,0x0100) == 0x00)
-						state = CONNECTING;
- b3e:	b9 2c       	mov	r11, r9
- b40:	05 c0       	rjmp	.+10     	; 0xb4c <main+0x1de>
-					break;				
-				
-				case CONNECTING:	
-					if (nrf.isConnected())
-						state = IDLE;
- b42:	ba 2c       	mov	r11, r10
- b44:	03 c0       	rjmp	.+6      	; 0xb4c <main+0x1de>
+ 9da:	0d ee       	ldi	r16, 0xED	; 237
+ 9dc:	13 e0       	ldi	r17, 0x03	; 3
 					state = IDLE;
 					break;				
 																
 				case IDLE:		//idle
 					if(!nrf.isConnected()){
 						state = CONNECT;
- b46:	68 94       	set
- b48:	bb 24       	eor	r11, r11
- b4a:	b1 f8       	bld	r11, 1
+ 9de:	68 94       	set
+ 9e0:	99 24       	eor	r9, r9
+ 9e2:	91 f8       	bld	r9, 1
+									oxygenSaturationData[5] = ADCH;
+									RED_ON;
+									led_state = R;
+									break;
+								case R:
+									oxygenSaturationData[2] = ADCL;
+ 9e4:	0f 2e       	mov	r0, r31
+ 9e6:	f8 e7       	ldi	r31, 0x78	; 120
+ 9e8:	cf 2e       	mov	r12, r31
+ 9ea:	d1 2c       	mov	r13, r1
+ 9ec:	f0 2d       	mov	r31, r0
+									oxygenSaturationData[1] = ADCH;
+ 9ee:	0f 2e       	mov	r0, r31
+ 9f0:	f9 e7       	ldi	r31, 0x79	; 121
+ 9f2:	ef 2e       	mov	r14, r31
+ 9f4:	f1 2c       	mov	r15, r1
+ 9f6:	f0 2d       	mov	r31, r0
+									IR_ON;
+									led_state = I;
+									state = SEND;
+ 9f8:	68 94       	set
+ 9fa:	44 24       	eor	r4, r4
+ 9fc:	42 f8       	bld	r4, 2
+									break;
+								case R:
+									oxygenSaturationData[2] = ADCL;
+									oxygenSaturationData[1] = ADCH;
+									IR_ON;
+									led_state = I;
+ 9fe:	51 2c       	mov	r5, r1
+									break;
+								case O:
+									oxygenSaturationData[6] = ADCL;
+									oxygenSaturationData[5] = ADCH;
+									RED_ON;
+									led_state = R;
+ a00:	88 24       	eor	r8, r8
+ a02:	83 94       	inc	r8
+					}					
+					break;
+				
+				case RECEIVE:
+					nrf.requestData(PIPE_MODIFY_SETTINGS_PULSEOX_SETTING_RX);
+					state = IDLE;
+ a04:	0f 2e       	mov	r0, r31
+ a06:	f6 e0       	ldi	r31, 0x06	; 6
+ a08:	af 2e       	mov	r10, r31
+ a0a:	f0 2d       	mov	r31, r0
+						state = IDLE;
+					break;
+					
+				case CONNECT:	//connect
+					if (nrf.connect(180,0x0100) == 0x00)
+						state = CONNECTING;
+ a0c:	0f 2e       	mov	r0, r31
+ a0e:	f3 e0       	ldi	r31, 0x03	; 3
+ a10:	7f 2e       	mov	r7, r31
+ a12:	f0 2d       	mov	r31, r0
+	lcdClearDisplay();
+#endif	
+	
+	while(1)
+	{
+		if (nrf.hasDataToProcess()){
+ a14:	8c e7       	ldi	r24, 0x7C	; 124
+ a16:	93 e0       	ldi	r25, 0x03	; 3
+ a18:	0e 94 0e 01 	call	0x21c	; 0x21c <_ZN3NRF16hasDataToProcessEv>
+ a1c:	88 23       	and	r24, r24
+ a1e:	21 f0       	breq	.+8      	; 0xa28 <main+0xd2>
+			if (nrf.data[0] == PIPE_MODIFY_SETTINGS_PULSEOX_SETTING_RX){
+				settings = nrf.data[1];				
+			}
+			nrf.dataHasBeenProcessed();
+ a20:	8c e7       	ldi	r24, 0x7C	; 124
+ a22:	93 e0       	ldi	r25, 0x03	; 3
+ a24:	0e 94 14 01 	call	0x228	; 0x228 <_ZN3NRF20dataHasBeenProcessedEv>
+		}
+		
+		if (nrf.mode == NRF_MODE_STANDBY){
+ a28:	f8 01       	movw	r30, r16
+ a2a:	80 81       	ld	r24, Z
+ a2c:	83 30       	cpi	r24, 0x03	; 3
+ a2e:	09 f0       	breq	.+2      	; 0xa32 <main+0xdc>
+ a30:	9e c0       	rjmp	.+316    	; 0xb6e <main+0x218>
+			
+			
+			
+			switch (state){
+ a32:	8b 2d       	mov	r24, r11
+ a34:	90 e0       	ldi	r25, 0x00	; 0
+ a36:	87 30       	cpi	r24, 0x07	; 7
+ a38:	91 05       	cpc	r25, r1
+ a3a:	08 f0       	brcs	.+2      	; 0xa3e <main+0xe8>
+ a3c:	98 c0       	rjmp	.+304    	; 0xb6e <main+0x218>
+ a3e:	fc 01       	movw	r30, r24
+ a40:	ef 59       	subi	r30, 0x9F	; 159
+ a42:	ff 4f       	sbci	r31, 0xFF	; 255
+ a44:	0c 94 cb 05 	jmp	0xb96	; 0xb96 <__tablejump2__>
+				case INIT:	//initializing
+					if (!nrf.isInitializing()){
+ a48:	8c e7       	ldi	r24, 0x7C	; 124
+ a4a:	93 e0       	ldi	r25, 0x03	; 3
+ a4c:	0e 94 f4 00 	call	0x1e8	; 0x1e8 <_ZN3NRF14isInitializingEv>
+ a50:	81 11       	cpse	r24, r1
+ a52:	8d c0       	rjmp	.+282    	; 0xb6e <main+0x218>
+						timer.start();
+ a54:	ce 01       	movw	r24, r28
+ a56:	08 96       	adiw	r24, 0x08	; 8
+ a58:	0e 94 94 04 	call	0x928	; 0x928 <_ZN6TIMER15startEv>
+						state = CONNECT;						
+ a5c:	b9 2c       	mov	r11, r9
+ a5e:	87 c0       	rjmp	.+270    	; 0xb6e <main+0x218>
+					//_delay_ms(25);
+#endif
+					break;
+				case RESET:	//temp
+					//TODO:
+					nrf.radioReset();
+ a60:	8c e7       	ldi	r24, 0x7C	; 124
+ a62:	93 e0       	ldi	r25, 0x03	; 3
+ a64:	0e 94 3d 02 	call	0x47a	; 0x47a <_ZN3NRF10radioResetEv>
+						state = IDLE;
+ a68:	ba 2c       	mov	r11, r10
+					break;
+ a6a:	81 c0       	rjmp	.+258    	; 0xb6e <main+0x218>
+					
+				case CONNECT:	//connect
+					if (nrf.connect(180,0x0100) == 0x00)
+ a6c:	40 e0       	ldi	r20, 0x00	; 0
+ a6e:	51 e0       	ldi	r21, 0x01	; 1
+ a70:	64 eb       	ldi	r22, 0xB4	; 180
+ a72:	70 e0       	ldi	r23, 0x00	; 0
+ a74:	8c e7       	ldi	r24, 0x7C	; 124
+ a76:	93 e0       	ldi	r25, 0x03	; 3
+ a78:	0e 94 41 02 	call	0x482	; 0x482 <_ZN3NRF7connectEjj>
+ a7c:	88 23       	and	r24, r24
+ a7e:	09 f4       	brne	.+2      	; 0xa82 <main+0x12c>
+ a80:	71 c0       	rjmp	.+226    	; 0xb64 <main+0x20e>
+ a82:	75 c0       	rjmp	.+234    	; 0xb6e <main+0x218>
+						state = CONNECTING;
+					break;				
+				
+				case CONNECTING:	
+					if (nrf.isConnected())
+ a84:	8c e7       	ldi	r24, 0x7C	; 124
+ a86:	93 e0       	ldi	r25, 0x03	; 3
+ a88:	0e 94 08 01 	call	0x210	; 0x210 <_ZN3NRF11isConnectedEv>
+ a8c:	81 11       	cpse	r24, r1
+ a8e:	6c c0       	rjmp	.+216    	; 0xb68 <main+0x212>
+ a90:	6e c0       	rjmp	.+220    	; 0xb6e <main+0x218>
+						state = IDLE;
+					break;
+					
+				case SEND:					
+					if (0x00 == nrf.setLocalData(PIPE_OXYGEN_SATURATION_O2_SET, oxygenSaturationData, PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE)){						
+ a92:	27 e0       	ldi	r18, 0x07	; 7
+ a94:	ae 01       	movw	r20, r28
+ a96:	4f 5f       	subi	r20, 0xFF	; 255
+ a98:	5f 4f       	sbci	r21, 0xFF	; 255
+ a9a:	68 2d       	mov	r22, r8
+ a9c:	8c e7       	ldi	r24, 0x7C	; 124
+ a9e:	93 e0       	ldi	r25, 0x03	; 3
+ aa0:	0e 94 01 02 	call	0x402	; 0x402 <_ZN3NRF12setLocalDataEhPhh>
+ aa4:	81 11       	cpse	r24, r1
+ aa6:	63 c0       	rjmp	.+198    	; 0xb6e <main+0x218>
+						oxygenSaturationData[0]++;						
+ aa8:	89 81       	ldd	r24, Y+1	; 0x01
+ aaa:	8f 5f       	subi	r24, 0xFF	; 255
+ aac:	89 83       	std	Y+1, r24	; 0x01
+						
+						state = IDLE;	
+ aae:	ba 2c       	mov	r11, r10
+ ab0:	5e c0       	rjmp	.+188    	; 0xb6e <main+0x218>
+					}					
+					break;
+				
+				case RECEIVE:
+					nrf.requestData(PIPE_MODIFY_SETTINGS_PULSEOX_SETTING_RX);
+ ab2:	69 2d       	mov	r22, r9
+ ab4:	8c e7       	ldi	r24, 0x7C	; 124
+ ab6:	93 e0       	ldi	r25, 0x03	; 3
+ ab8:	0e 94 90 01 	call	0x320	; 0x320 <_ZN3NRF11requestDataEh>
+					state = IDLE;
+ abc:	ba 2c       	mov	r11, r10
+					break;				
+ abe:	57 c0       	rjmp	.+174    	; 0xb6e <main+0x218>
+																
+				case IDLE:		//idle
+					if(!nrf.isConnected()){
+ ac0:	8c e7       	ldi	r24, 0x7C	; 124
+ ac2:	93 e0       	ldi	r25, 0x03	; 3
+ ac4:	0e 94 08 01 	call	0x210	; 0x210 <_ZN3NRF11isConnectedEv>
+ ac8:	88 23       	and	r24, r24
+ aca:	09 f4       	brne	.+2      	; 0xace <main+0x178>
+ acc:	4f c0       	rjmp	.+158    	; 0xb6c <main+0x216>
+					//if (SW == 0)//TODO: button press resets device
+						//state == RESET;
+						
+					
+					else {
+						if (timer.isCompareAFlagSet()){
+ ace:	ce 01       	movw	r24, r28
+ ad0:	08 96       	adiw	r24, 0x08	; 8
+ ad2:	0e 94 a0 04 	call	0x940	; 0x940 <_ZN6TIMER117isCompareAFlagSetEv>
+ ad6:	88 23       	and	r24, r24
+ ad8:	71 f0       	breq	.+28     	; 0xaf6 <main+0x1a0>
+							timer.clearCompareAFlag();
+ ada:	ce 01       	movw	r24, r28
+ adc:	08 96       	adiw	r24, 0x08	; 8
+ ade:	0e 94 a4 04 	call	0x948	; 0x948 <_ZN6TIMER117clearCompareAFlagEv>
+							timer.setCount(0);
+ ae2:	60 e0       	ldi	r22, 0x00	; 0
+ ae4:	70 e0       	ldi	r23, 0x00	; 0
+ ae6:	ce 01       	movw	r24, r28
+ ae8:	08 96       	adiw	r24, 0x08	; 8
+ aea:	0e 94 a6 04 	call	0x94c	; 0x94c <_ZN6TIMER18setCountEj>
+						
+ 							//if( (!sensor.isReading()) && (!sensor.isInterruptFlagSet()) )
+ 								sensor.start();
+ aee:	ce 01       	movw	r24, r28
+ af0:	0c 96       	adiw	r24, 0x0c	; 12
+ af2:	0e 94 b6 00 	call	0x16c	; 0x16c <_ZN6ANALOG5startEv>
+ 						
+ 						}//if
+ 					
+ 						//if (!sensor.isReading()){
+						if (sensor.isInterruptFlagSet()){
+ af6:	ce 01       	movw	r24, r28
+ af8:	0c 96       	adiw	r24, 0x0c	; 12
+ afa:	0e 94 c1 00 	call	0x182	; 0x182 <_ZN6ANALOG18isInterruptFlagSetEv>
+ afe:	88 23       	and	r24, r24
+ b00:	b1 f1       	breq	.+108    	; 0xb6e <main+0x218>
+							//timer.clearCompareAFlag();
+							//timer.setCount(0);
+							sensor.clearFlag();
+ b02:	ce 01       	movw	r24, r28
+ b04:	0c 96       	adiw	r24, 0x0c	; 12
+ b06:	0e 94 c5 00 	call	0x18a	; 0x18a <_ZN6ANALOG9clearFlagEv>
+							switch (led_state){
+ b0a:	f1 e0       	ldi	r31, 0x01	; 1
+ b0c:	6f 16       	cp	r6, r31
+ b0e:	e9 f0       	breq	.+58     	; 0xb4a <main+0x1f4>
+ b10:	6f 16       	cp	r6, r31
+ b12:	20 f0       	brcs	.+8      	; 0xb1c <main+0x1c6>
+ b14:	22 e0       	ldi	r18, 0x02	; 2
+ b16:	62 16       	cp	r6, r18
+ b18:	61 f0       	breq	.+24     	; 0xb32 <main+0x1dc>
+ b1a:	29 c0       	rjmp	.+82     	; 0xb6e <main+0x218>
+								case I:
+									oxygenSaturationData[4] = ADCL;
+ b1c:	f6 01       	movw	r30, r12
+ b1e:	80 81       	ld	r24, Z
+ b20:	8d 83       	std	Y+5, r24	; 0x05
+									oxygenSaturationData[3] = ADCH;
+ b22:	f7 01       	movw	r30, r14
+ b24:	80 81       	ld	r24, Z
+ b26:	8c 83       	std	Y+4, r24	; 0x04
+									LEDS_OFF;
+ b28:	8b b1       	in	r24, 0x0b	; 11
+ b2a:	8f 73       	andi	r24, 0x3F	; 63
+ b2c:	8b b9       	out	0x0b, r24	; 11
+									led_state = O;
+ b2e:	69 2c       	mov	r6, r9
+									break;
+ b30:	1e c0       	rjmp	.+60     	; 0xb6e <main+0x218>
+								case O:
+									oxygenSaturationData[6] = ADCL;
+ b32:	f6 01       	movw	r30, r12
+ b34:	80 81       	ld	r24, Z
+ b36:	8f 83       	std	Y+7, r24	; 0x07
+									oxygenSaturationData[5] = ADCH;
+ b38:	f7 01       	movw	r30, r14
+ b3a:	80 81       	ld	r24, Z
+ b3c:	8e 83       	std	Y+6, r24	; 0x06
+									RED_ON;
+ b3e:	8b b1       	in	r24, 0x0b	; 11
+ b40:	8f 73       	andi	r24, 0x3F	; 63
+ b42:	80 68       	ori	r24, 0x80	; 128
+ b44:	8b b9       	out	0x0b, r24	; 11
+									led_state = R;
+ b46:	68 2c       	mov	r6, r8
+									break;
+ b48:	12 c0       	rjmp	.+36     	; 0xb6e <main+0x218>
+								case R:
+									oxygenSaturationData[2] = ADCL;
+ b4a:	f6 01       	movw	r30, r12
+ b4c:	80 81       	ld	r24, Z
+ b4e:	8b 83       	std	Y+3, r24	; 0x03
+									oxygenSaturationData[1] = ADCH;
+ b50:	f7 01       	movw	r30, r14
+ b52:	80 81       	ld	r24, Z
+ b54:	8a 83       	std	Y+2, r24	; 0x02
+									IR_ON;
+ b56:	8b b1       	in	r24, 0x0b	; 11
+ b58:	8f 73       	andi	r24, 0x3F	; 63
+ b5a:	80 64       	ori	r24, 0x40	; 64
+ b5c:	8b b9       	out	0x0b, r24	; 11
+									led_state = I;
+									state = SEND;
+ b5e:	b4 2c       	mov	r11, r4
+									break;
+								case R:
+									oxygenSaturationData[2] = ADCL;
+									oxygenSaturationData[1] = ADCH;
+									IR_ON;
+									led_state = I;
+ b60:	65 2c       	mov	r6, r5
+									state = SEND;
+									break;
+ b62:	05 c0       	rjmp	.+10     	; 0xb6e <main+0x218>
+						state = IDLE;
+					break;
+					
+				case CONNECT:	//connect
+					if (nrf.connect(180,0x0100) == 0x00)
+						state = CONNECTING;
+ b64:	b7 2c       	mov	r11, r7
+ b66:	03 c0       	rjmp	.+6      	; 0xb6e <main+0x218>
+					break;				
+				
+				case CONNECTING:	
+					if (nrf.isConnected())
+						state = IDLE;
+ b68:	ba 2c       	mov	r11, r10
+ b6a:	01 c0       	rjmp	.+2      	; 0xb6e <main+0x218>
+					state = IDLE;
+					break;				
+																
+				case IDLE:		//idle
+					if(!nrf.isConnected()){
+						state = CONNECT;
+ b6c:	b9 2c       	mov	r11, r9
 		//display
 		//sprintf(line1, " %02X%02X %02X %02X%02X ", nrf.RxCount, nrf.dataCredit, state, nrf.status, nrf.mode);
 		sprintf(line2, "%02X%02X %02X %02X%02X ", nrf.RxCount, /*nrf.dataCredit,*/ state, nrf.status, nrf.mode, nrf.lastCommand);
 		displayLCD();
 #else
 		if (nrf.mode == NRF_MODE_SETUP)
- b4c:	f8 01       	movw	r30, r16
- b4e:	90 81       	ld	r25, Z
- b50:	92 30       	cpi	r25, 0x02	; 2
- b52:	31 f4       	brne	.+12     	; 0xb60 <main+0x1f2>
- b54:	8f e2       	ldi	r24, 0x2F	; 47
- b56:	95 e7       	ldi	r25, 0x75	; 117
- b58:	01 97       	sbiw	r24, 0x01	; 1
- b5a:	f1 f7       	brne	.-4      	; 0xb58 <main+0x1ea>
- b5c:	00 c0       	rjmp	.+0      	; 0xb5e <main+0x1f0>
- b5e:	00 00       	nop
+ b6e:	f8 01       	movw	r30, r16
+ b70:	80 81       	ld	r24, Z
+ b72:	82 30       	cpi	r24, 0x02	; 2
+ b74:	31 f4       	brne	.+12     	; 0xb82 <main+0x22c>
+ b76:	8f e2       	ldi	r24, 0x2F	; 47
+ b78:	95 e7       	ldi	r25, 0x75	; 117
+ b7a:	01 97       	sbiw	r24, 0x01	; 1
+ b7c:	f1 f7       	brne	.-4      	; 0xb7a <main+0x224>
+ b7e:	00 c0       	rjmp	.+0      	; 0xb80 <main+0x22a>
+ b80:	00 00       	nop
 			_delay_ms(15);
 #endif			
 
 		nrf.process();
- b60:	8c e7       	ldi	r24, 0x7C	; 124
- b62:	93 e0       	ldi	r25, 0x03	; 3
- b64:	0e 94 67 03 	call	0x6ce	; 0x6ce <_ZN3NRF7processEv>
-#ifdef TESTMODE	
-	lcdClearDisplay();
-#endif	
-	
-	
-	while(1)
- b68:	40 cf       	rjmp	.-384    	; 0x9ea <main+0x7c>
+ b82:	8c e7       	ldi	r24, 0x7C	; 124
+ b84:	93 e0       	ldi	r25, 0x03	; 3
+ b86:	0e 94 7f 03 	call	0x6fe	; 0x6fe <_ZN3NRF7processEv>
+		
+	}//while 1
+ b8a:	44 cf       	rjmp	.-376    	; 0xa14 <main+0xbe>
 
-00000b6a <_GLOBAL__sub_I_nrf>:
-#endif
+00000b8c <_GLOBAL__sub_I_nrf>:
+
 
 
 //#include "hal_aci_tl.h"
 
 NRF nrf;
- b6a:	8c e7       	ldi	r24, 0x7C	; 124
- b6c:	93 e0       	ldi	r25, 0x03	; 3
- b6e:	0e 94 19 01 	call	0x232	; 0x232 <_ZN3NRFC1Ev>
- b72:	08 95       	ret
+ b8c:	8c e7       	ldi	r24, 0x7C	; 124
+ b8e:	93 e0       	ldi	r25, 0x03	; 3
+ b90:	0e 94 28 01 	call	0x250	; 0x250 <_ZN3NRFC1Ev>
+ b94:	08 95       	ret
 
-00000b74 <__tablejump2__>:
- b74:	ee 0f       	add	r30, r30
- b76:	ff 1f       	adc	r31, r31
+00000b96 <__tablejump2__>:
+ b96:	ee 0f       	add	r30, r30
+ b98:	ff 1f       	adc	r31, r31
 
-00000b78 <__tablejump__>:
- b78:	05 90       	lpm	r0, Z+
- b7a:	f4 91       	lpm	r31, Z
- b7c:	e0 2d       	mov	r30, r0
- b7e:	09 94       	ijmp
+00000b9a <__tablejump__>:
+ b9a:	05 90       	lpm	r0, Z+
+ b9c:	f4 91       	lpm	r31, Z
+ b9e:	e0 2d       	mov	r30, r0
+ ba0:	09 94       	ijmp
 
-00000b80 <_exit>:
- b80:	f8 94       	cli
+00000ba2 <_exit>:
+ ba2:	f8 94       	cli
 
-00000b82 <__stop_program>:
- b82:	ff cf       	rjmp	.-2      	; 0xb82 <__stop_program>
+00000ba4 <__stop_program>:
+ ba4:	ff cf       	rjmp	.-2      	; 0xba4 <__stop_program>
