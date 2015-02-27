@@ -47,16 +47,9 @@ void displayLCD(void){
 #include "nrf8001.h"
 #include "services.h"
 
-#ifdef __cplusplus
-extern "C" {
-	#endif
-	
-	#include "timer1.h"
-	#include "myqADC.h"
+#include "timer1.h"
+#include "myqADC.h"
 
-	#ifdef __cplusplus
-}
-#endif
 
 
 //#include "hal_aci_tl.h"
@@ -69,8 +62,16 @@ NRF nrf;
 void SetSleepMode(uint8_t mode);
 void init(void);
 
-int main(void)
-{	
+int main(void){	
+	//timer
+	// 8MHz/90Hz			= 88,888.8888 cycles to count
+	// 88,888.888 / 8 (div8)	= 11,111 = 0x2B67
+	
+	//prescalar, mode, reload
+	TIMER1 timer(TIMER_DIV8, 4, 0x2B67);
+	
+	//pin, prescalar
+	ANALOG sensor(ADC_PIN, ADC_DIV64);
 	
 	enum state_t {INIT = 0x00, RESET, CONNECT, CONNECTING, SEND, RECEIVE, IDLE};
 		 
@@ -96,23 +97,31 @@ int main(void)
 	//////////////////////////////////////////////////////////////////////////
 #endif
 	
-	
-	
-	
 	_delay_ms(500);
-	init();
 	
+	//d6,d7 - LEDs
+	DDRD = 0xC0;			//set PD7:6 to outputs for LEDs
+	//PD2 as an input for switch
+	RED_ON;					//Set PD7 high and PD6 low
+	
+	//Switch
+	PORTD |= (1<<PD2);		//set PD2 to high(pullup resistor) for switch
+	
+	//opamp is Powered Down when PD is low, initialize HIGH?
+	//250nS delay when powering up, 50nS delay when powering down (1/8MHz = 125nS)
+	WakeOpAmp();
+	sensor.clearFlag();
+		
+	_delay_ms(500);
 #ifdef TESTMODE	
 	lcdClearDisplay();
 #endif	
-	
 	
 	while(1)
 	{
 		if (nrf.hasDataToProcess()){
 			if (nrf.data[0] == PIPE_MODIFY_SETTINGS_PULSEOX_SETTING_RX){
-				settings = nrf.data[1];
-				
+				settings = nrf.data[1];				
 			}
 			nrf.dataHasBeenProcessed();
 		}
@@ -124,7 +133,7 @@ int main(void)
 			switch (state){
 				case INIT:	//initializing
 					if (!nrf.isInitializing()){
-						startTimer1();
+						timer.start();
 						state = CONNECT;						
 					}
 #ifdef TESTMODE
@@ -176,17 +185,20 @@ int main(void)
 						
 					
 					else {
-						if (isTimer1FlagSet()){
-							clearTimer1Flag();
+						if (timer.isCompareAFlagSet()){
+							timer.clearCompareAFlag();
+							timer.setCount(0);
 						
-							if(!(ADCSRA & (1<<ADIF)))
-								startADC(ADC_PIN);
-						
-						}//if
-					
-						if (isADCfinished()){
-						
-							clearADCinterrupt();
+ 							//if( (!sensor.isReading()) && (!sensor.isInterruptFlagSet()) )
+ 								sensor.start();
+ 						
+ 						}//if
+ 					
+ 						//if (!sensor.isReading()){
+						if (sensor.isInterruptFlagSet()){
+							//timer.clearCompareAFlag();
+							//timer.setCount(0);
+							sensor.clearFlag();
 							switch (led_state){
 								case I:
 									oxygenSaturationData[4] = ADCL;
@@ -266,50 +278,6 @@ void SetSleepMode(uint8_t mode){
 
 #pragma endregion sleep
 
-void init(void){
-	
-	//MCUCR = (1<<PUD);	//disable all pull ups
-	
-	//d6,d7 - LEDs
-	DDRD = 0xC0;			//set PD7:6 to outputs for LEDs
-	//PD2 as an input for switch
-	RED_ON;					//Set PD7 high and PD6 low
-	
-	//Switch
-	PORTD |= (1<<PD2);		//set PD2 to high(pullup resistor) for switch
-	//EIMSK |= (1<<INT0);		//turn on interrupt 0 (PD2)
-	//PCICR |= (1<<PCIE2);	//Enable PCINT2
-	//PCMSK2 |= (1<<PCINT18); //Trigger on change of PCINT18 (PD2)
-	//sei();					//enable interrupts
-	
-	//DDRB = 0X20;		//all inputs except B5 output
-	//PORTB |= (1<<PB0);	//pull up resistor on (PB0)
-	
-	//DDRD  = 0b11111011;   // set PD2 to input
-	
-	//ADC
-	
-	//ADC clock must be between 50-200kHz to get maximum resolution
-	//8MHz/64 (div64)	= 125,000
-	
-	//pin, prescalar
-	initADC(ADC_PIN, ADC_DIV64);
-	
-	//timer
-	// 8MHz/90Hz			= 88,888.8888 cycles to count
-	// 88,888.888 / 8 (div8)	= 11,111 = 0x2B67
-	
-	//prescalar, mode, reload
-	
-	//initTimer1(TIMER_DIV8, 4, 0x2B67);
-	initTimer1(TIMER_DIV64, 4, 0xFFFF);
-	
-	//opamp
-	//opamp is Powered Down when PD is low, initialize HIGH?
-	//250nS delay when powering up, 50nS delay when powering down (1/8MHz = 125nS)
-	WakeOpAmp();
-	
-	
-}
+
 
 

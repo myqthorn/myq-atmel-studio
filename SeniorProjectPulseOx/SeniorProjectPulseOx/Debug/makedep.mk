@@ -4,7 +4,7 @@
 
 ..\..\my includes\23008LCD.c
 
-..\..\my includes\myqADC.c
+..\..\my includes\myqADC.cpp
 
 ..\..\my includes\myqI2C.c
 
@@ -14,7 +14,7 @@
 
 ..\..\my includes\portexpander.c
 
-..\..\my includes\timer1.c
+..\..\my includes\timer1.cpp
 
 SeniorProjectPulseOx.cpp
 

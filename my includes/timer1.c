@@ -10,18 +10,28 @@ void	initTimer1(uint8_t prescalar, uint8_t WGMmode, uint16_t reload){
 	// The PRTIM1 bit in the Power reduction register must be written to zero to enable Timer/Counter1 module.
 	PRR &= ~(1<<PRTIM1);
 	
+	//disable timer1
+	TCCR1B = 0x00;
 	
+	//clear counter	
+	TCNT1 = 0;
 	
+	//set reload value
+	if (WGMmode == 4) OCR1A = reload;
+	if (WGMmode == 12) ICR1 = reload;
+	if (WGMmode == 0) TCNT1 = reload;
+	
+	//setup and enable timer
 	TCCR1A = (WGMmode & 0x03);		//normal timer operation, no PWM, etc
 	TCCR1B = ((WGMmode & 0x0C)<<WGM12) | (prescalar << CS10);
 	TCCR1C = 0x00;		//force output compare off	
-	OCR1A = reload;
-	TCNT1 = 0;
+	
+	
 	
 	TIFR1 = 1<<ICF1;			//Clear pending interrupts
 	
-	TIMSK1 |= (1 << TOIE1) |	// Enable
-	(1<<OCIE1A);				// Enable capture event timer
+// 	TIMSK1 |= (1 << TOIE1) |	// Enable
+// 	(1<<OCIE1A);				// Enable capture event timer
 	//sei();
 }
 
