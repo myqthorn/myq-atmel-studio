@@ -4,8 +4,6 @@
  * Created: 10/1/2014 6:18:59 PM
  *  Author: myQ
  */ 
-
-
 #include "HardwareProfile.h"
 
 #ifdef TESTMODE
@@ -16,51 +14,35 @@
 //this block is necessary to include C files in a C++ project
 /////////////////////////////////////////////////////////////
 #ifdef __cplusplus
-extern "C" {
-#endif
-	
+extern "C" {	
 #include "23008LCD.h"
-
-#ifdef __cplusplus
 }
+#else
+#include "23008LCD.h"
 #endif
 /////////////////////////////////////////////////////////////
 char line1[40], line2[40];         // LCD line arrays
-void displayLCD(void){
-	
+void displayLCD(void){	
 	lcdGoto(0,0);
 	lcdPuts(line1);		// Display line 1
 	lcdGoto(0,1);		// Skip to next line
-	lcdPuts(line2);
-	
+	lcdPuts(line2);	
 }
-
 #endif	//TESTMODE
  
-
-
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
-
-
 #include "nrf8001.h"
 #include "services.h"
-
 #include "timer1.h"
 #include "myqADC.h"
-
-
-
 //#include "hal_aci_tl.h"
 
 NRF nrf;
-
-
-#define HEART_RATE_DATA_LENGTH 2
+//#define HEART_RATE_DATA_LENGTH 2
 
 void SetSleepMode(uint8_t mode);
-void init(void);
 
 int main(void){	
 	//timer
@@ -74,13 +56,11 @@ int main(void){
 	ANALOG sensor(ADC_PIN, ADC_DIV64);
 	
 	enum state_t {INIT = 0x00, RESET, CONNECT, CONNECTING, SEND, RECEIVE, IDLE};
-		 
 	enum lights_t {I,R,O} led_state = R;
 		
 	uint8_t count = 0;
 		 
 	state_t state = INIT;
-	//uint8_t heartRateData[HEART_RATE_DATA_LENGTH];
 	uint8_t oxygenSaturationData[PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE] = {0,1,2,3,4,5,6};
 	uint8_t settings = 0x00;
 	
