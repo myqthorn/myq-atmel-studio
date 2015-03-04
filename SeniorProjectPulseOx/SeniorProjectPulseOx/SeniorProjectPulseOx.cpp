@@ -39,6 +39,10 @@ void displayLCD(void){
 #include "myqADC.h"
 //#include "hal_aci_tl.h"
 
+//size of pipe in settings.h sets size of queue, which is how many times we read
+//the data before we send
+#define NUM_QUEUE ((PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE-1)/6)
+
 NRF nrf;
 //#define HEART_RATE_DATA_LENGTH 2
 
@@ -61,7 +65,8 @@ int main(void){
 	uint8_t count = 0;
 		 
 	state_t state = INIT;
-	uint8_t oxygenSaturationData[PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE] = {0,1,2,3,4,5,6};
+	uint8_t oxygenSaturationData[PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE];// = {0,1,2,3,4,5,6};
+	uint8_t count = 0;
 	uint8_t settings = 0x00;
 	
 #ifdef TESTMODE
@@ -107,7 +112,6 @@ int main(void){
 		}
 		
 		if (nrf.mode == NRF_MODE_STANDBY){
-			
 			
 			
 			switch (state){
@@ -181,23 +185,26 @@ int main(void){
 							sensor.clearFlag();
 							switch (led_state){
 								case I:
-									oxygenSaturationData[4] = ADCL;
-									oxygenSaturationData[3] = ADCH;
+									oxygenSaturationData[6*count+4] = ADCL;
+									oxygenSaturationData[6*count+3] = ADCH;
 									LEDS_OFF;
 									led_state = O;
 									break;
 								case O:
-									oxygenSaturationData[6] = ADCL;
-									oxygenSaturationData[5] = ADCH;
+									oxygenSaturationData[6*count+6] = ADCL;
+									oxygenSaturationData[6*count+5] = ADCH;
 									RED_ON;
 									led_state = R;
 									break;
 								case R:
-									oxygenSaturationData[2] = ADCL;
-									oxygenSaturationData[1] = ADCH;
+									oxygenSaturationData[6*count+2] = ADCL;
+									oxygenSaturationData[6*count+1] = ADCH;
 									IR_ON;
 									led_state = I;
-									state = SEND;
+									if (++count == NUM_QUEUE){
+										count = 0;
+										state = SEND;
+									}
 									break;
 							
 							} //switch	
