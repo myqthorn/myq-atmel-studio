@@ -53,5 +53,7 @@
 
 	#define JUMPERS_23008 (0b000) //User-defined hardware address of MCP23008 : A2, A1 & A0
 
+	//PulseOx Commands from Android Device
+	#define PULSEOX_GO_TO_SLEEP		0x01
 
 #endif
