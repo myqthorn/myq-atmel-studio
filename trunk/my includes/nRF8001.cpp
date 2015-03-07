@@ -88,7 +88,7 @@ NRF::NRF(){
 	status |= (1<<NRF_RX_READY | 1<<NRF_WAIT_FOR_RESPONSE);
 }
 void NRF::process(void){	
-	
+	uint8_t i;
 	if (isReadyToReceiveData()){
 		clearRxData();
 	}
@@ -254,7 +254,7 @@ void NRF::process(void){
 				//RxData[2..9]		: 64-bit PipesOpen bitmap
 				//RxData[10..17]	: 64-bit PipesClosed bitmap
 				//see pg 148 of datasheet for details
-				for (uint8_t i = 0 ; i<8; i++){
+				for (i = 0 ; i<8; i++){
 					pipesOpen[i] = RxData[i+2];
 					pipesClosed[i] = RxData[i+10];
 				}
@@ -304,11 +304,13 @@ void NRF::process(void){
 				
 				// Fill data with RxData values
 				
-				//for (uint8_t i = 0; i< RxData[0] - 1;i++){
-					//data[i] = RxData[0] + 2;
-				//}
-				//
-				//status |= (1<<NRF_DATA_TO_PROCESS);
+				for (i = 0; i< RxData[0] - 1;i++){
+					data[i] = RxData[0] + 2;
+				}
+				
+				//set data flag in status
+				status |= (1<<NRF_DATA_TO_PROCESS);
+								
 				//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 				status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
 				break;

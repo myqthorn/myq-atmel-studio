@@ -59,7 +59,7 @@ int main(void){
 	//pin, prescalar
 	ANALOG sensor(ADC_PIN, ADC_DIV64);
 	
-	enum state_t {INIT = 0x00, RESET, CONNECT, CONNECTING, SEND, RECEIVE, IDLE};
+	enum state_t {INIT = 0x00, RESET, CONNECT, CONNECTING, SEND, RECEIVE, IDLE, GO2SLEEP};
 	enum lights_t {I,R,O} led_state = R;
 		
 	uint8_t count = 0;
@@ -109,6 +109,8 @@ int main(void){
 				settings = nrf.data[1];				
 			}
 			nrf.dataHasBeenProcessed();
+			if (settings = PULSEOX_GO_TO_SLEEP)
+				state = GO2SLEEP;
 		}
 		
 		if (nrf.mode == NRF_MODE_STANDBY){
@@ -132,7 +134,7 @@ int main(void){
 				case RESET:	//temp
 					//TODO:
 					nrf.radioReset();
-						state = IDLE;
+						//state = IDLE;
 					break;
 					
 				case CONNECT:	//connect
@@ -161,29 +163,16 @@ int main(void){
 				case IDLE:		//idle
 					if(!nrf.isConnected()){
 						state = CONNECT;
-					}
-					
-					//reset
-					//if (SW == 0)//TODO: button press resets device
-						//state == RESET;
-						
-					
-					else {
+					}else {
 						if (timer.isCompareAFlagSet()){
 							timer.clearCompareAFlag();
 							timer.setCount(0);
-						
- 							//if( (!sensor.isReading()) && (!sensor.isInterruptFlagSet()) )
- 								sensor.start();
- 						
+							sensor.start();
  						}//if
  					
- 						//if (!sensor.isReading()){
-						if (sensor.isInterruptFlagSet()){
-							//timer.clearCompareAFlag();
-							//timer.setCount(0);
+ 						if (sensor.isInterruptFlagSet()){
 							sensor.clearFlag();
-							switch (led_state){
+							switch(led_state){
 								case I:
 									oxygenSaturationData[6*count+4] = ADCL;
 									oxygenSaturationData[6*count+3] = ADCH;
@@ -206,20 +195,20 @@ int main(void){
 										state = SEND;
 									}
 									break;
-							
-							} //switch	
-						} //if (isADCfinished())	
-					
+							} //switch(led_state)
+						} //if (sensor.isInterruptFlagSet())						
 					}
 					//receive settings
 						//TODO:
-					//send		
-						//TODO:
-						
+					case GO2SLEEP:
+						LEDS_OFF;
+						//TODO: shut down opamp, put uC to sleep, ISR for wakeup
+					
 					break;
 				default:
 					//state = idle;
 					break;
+					
 			}//switch(state)
 		}//if (nrf.mode == NRF_MODE_STANDBY)
 
