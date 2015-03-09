@@ -44,9 +44,31 @@ void displayLCD(void){
 #define NUM_QUEUE ((PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE-1)/6)
 
 NRF nrf;
-//#define HEART_RATE_DATA_LENGTH 2
 
-void SetSleepMode(uint8_t mode);
+bool buttonWasPressed = false;
+
+
+#pragma region sleep
+
+#define SLEEP_MODE_IDLE			0b000
+#define SLEEP_MODE_ADC			0b001
+#define SLEEP_MODE_POWER_DOWN	0b010
+#define SLEEP_MODE_POWER_SAVE	0b011
+#define SLEEP_MODE_STANDBY		0b110
+#define EnableSleep() 			SMCR |= (1<<SE)
+#define DisableSleep()			SMCR &= ~(1<<SE)
+void SetSleepMode(uint8_t mode){
+	if((mode == SLEEP_MODE_STANDBY) | (mode<=SLEEP_MODE_POWER_SAVE))
+	SMCR = (mode<<SM0);
+}
+
+//Sleep should be done in this order:
+//	1. SetSleepMode();
+//	2. EnableSleep();
+//  3. SLEEP;
+//	4. After waking, DisableSleep()
+
+#pragma endregion sleep
 
 int main(void){	
 	//timer
@@ -59,10 +81,8 @@ int main(void){
 	//pin, prescalar
 	ANALOG sensor(ADC_PIN, ADC_DIV64);
 	
-	enum state_t {INIT = 0x00, RESET, CONNECT, CONNECTING, SEND, RECEIVE, IDLE, GO2SLEEP};
+	enum state_t {INIT = 0x00, CONNECT, CONNECTING, SEND, RECEIVE, IDLE, GO2SLEEP, WAKEUP};
 	enum lights_t {I,R,O} led_state = R;
-		
-	uint8_t count = 0;
 		 
 	state_t state = INIT;
 	uint8_t oxygenSaturationData[PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE];// = {0,1,2,3,4,5,6};
@@ -92,6 +112,13 @@ int main(void){
 	//Switch
 	PORTD |= (1<<PD2);		//set PD2 to high(pullup resistor) for switch
 	
+	//External Interrupt Mask Register
+	EIMSK |= (1<<INT0);	//turn on interrupt 0 (PD2)
+	
+	////External Interrupt Control Register A
+	//EICRA = 0x02;		//Interrupt on falling edge of INT0
+	EICRA = 0x00;		//Interrupt on low level of INT0
+	
 	//opamp is Powered Down when PD is low, initialize HIGH?
 	//250nS delay when powering up, 50nS delay when powering down (1/8MHz = 125nS)
 	WakeOpAmp();
@@ -102,25 +129,32 @@ int main(void){
 	lcdClearDisplay();
 #endif	
 	
-	while(1)
-	{
+	while(1){		
 		if (nrf.hasDataToProcess()){
 			if (nrf.data[0] == PIPE_MODIFY_SETTINGS_PULSEOX_SETTING_RX){
 				settings = nrf.data[1];				
 			}
 			nrf.dataHasBeenProcessed();
-			if (settings = PULSEOX_GO_TO_SLEEP)
+			if (settings == PULSEOX_GO_TO_SLEEP)
 				state = GO2SLEEP;
 		}
 		
-		if (nrf.mode == NRF_MODE_STANDBY){
-			
+		if (nrf.mode == NRF_MODE_STANDBY){			
+			if(buttonWasPressed){
+				buttonWasPressed = false;
+				if (state == GO2SLEEP){
+					state = WAKEUP;
+				}else{
+					state = GO2SLEEP;
+				}
+			}
 			
 			switch (state){
 				case INIT:	//initializing
 					if (!nrf.isInitializing()){
 						timer.start();
-						state = CONNECT;						
+						sei();				
+						state = GO2SLEEP;
 					}
 #ifdef TESTMODE
 					//display
@@ -130,12 +164,7 @@ int main(void){
 #else
 					//_delay_ms(25);
 #endif
-					break;
-				case RESET:	//temp
-					//TODO:
-					nrf.radioReset();
-						//state = IDLE;
-					break;
+					break;				
 					
 				case CONNECT:	//connect
 					if (nrf.connect(180,0x0100) == 0x00)
@@ -149,8 +178,7 @@ int main(void){
 					
 				case SEND:					
 					if (0x00 == nrf.setLocalData(PIPE_OXYGEN_SATURATION_O2_SET, oxygenSaturationData, PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE)){						
-						oxygenSaturationData[0]++;						
-						
+						oxygenSaturationData[0]++;									
 						state = IDLE;	
 					}					
 					break;
@@ -162,7 +190,7 @@ int main(void){
 																
 				case IDLE:		//idle
 					if(!nrf.isConnected()){
-						state = CONNECT;
+						state = GO2SLEEP;
 					}else {
 						if (timer.isCompareAFlagSet()){
 							timer.clearCompareAFlag();
@@ -197,13 +225,33 @@ int main(void){
 									break;
 							} //switch(led_state)
 						} //if (sensor.isInterruptFlagSet())						
-					}
-					//receive settings
-						//TODO:
-					case GO2SLEEP:
-						LEDS_OFF;
-						//TODO: shut down opamp, put uC to sleep, ISR for wakeup
+					}	
+					break;
+				case GO2SLEEP:
+					LEDS_OFF;
+					//TODO: shut down opamp
+					SleepOpAmp();
+					//disconnect
+					if (nrf.isConnected())
+						nrf.disconnect(0x01);
 					
+					if (!nrf.isConnected()){
+						//put nrf to sleep
+						nrf.sleep();	
+						//put uC to sleep							
+						SetSleepMode(SLEEP_MODE_POWER_DOWN);
+						EnableSleep();
+						__asm__ __volatile__ ("sleep" ::);
+					}
+					break;
+				case WAKEUP:
+					DisableSleep();					
+					RED_ON;
+					//wakeup opamp
+					WakeOpAmp();
+					//wakeup nrf
+					nrf.wakeup();
+					state = CONNECT;
 					break;
 				default:
 					//state = idle;
@@ -211,7 +259,6 @@ int main(void){
 					
 			}//switch(state)
 		}//if (nrf.mode == NRF_MODE_STANDBY)
-
 
 #ifdef TESTMODE
 		//display
@@ -222,38 +269,16 @@ int main(void){
 		if (nrf.mode == NRF_MODE_SETUP)
 			_delay_ms(15);
 #endif			
-
-		nrf.process();
-		
+		nrf.process();		
 	}//while 1
 }//main
 
-
-
-#pragma region sleep
-
-#define SLEEP_MODE_IDLE			0b000
-#define SLEEP_MODE_ADC			0b001
-#define SLEEP_MODE_POWER_DOWN	0b010
-#define SLEEP_MODE_POWER_SAVE	0b011
-#define SLEEP_MODE_STANDBY		0b110
-#define EnableSleep() 			SMCR |= (1<<SE)
-#define DisableSleep()			SMCR &= ~(1<<SE)
-void SetSleepMode(uint8_t mode){
-		if((mode == SLEEP_MODE_STANDBY) | (mode<=SLEEP_MODE_POWER_SAVE))
-			SMCR = (mode<<SM0);	
+ISR(INT0_vect){
+	//to debounce switch, wait 5ms, then check for low condition again
+	_delay_ms(5);
+	if (!(PIND & (1<<PD2)))
+	buttonWasPressed = true;
+	
 }
-
-
-//Sleep should be done in this order: 
-//	1. SetSleepMode();
-//	2. EnableSleep();
-//  3. SLEEP;
-//	4. After waking, DisableSleep()
-
-
-#pragma endregion sleep
-
-
 
 
