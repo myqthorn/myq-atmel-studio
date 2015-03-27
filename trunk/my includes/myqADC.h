@@ -25,7 +25,8 @@
 void	initADC(uint8_t channel, uint8_t prescalar);
 void	startADC(uint8_t channel);
 void	readADC(uint8_t channel);
-uint8_t	isADCfinished();
+uint8_t	isADCgoing();
+uint8_t	isADCflagSet();
 void	clearADCinterrupt();
 void	ADCoff();
 

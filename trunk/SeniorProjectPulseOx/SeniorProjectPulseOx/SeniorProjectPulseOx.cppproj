@@ -5,7 +5,7 @@
     <ProjectVersion>6.2</ProjectVersion>
     <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
     <ProjectGuid>{13252277-2f07-4e7c-ba6d-5ac849635d7c}</ProjectGuid>
-    <avrdevice>ATmega168</avrdevice>
+    <avrdevice>ATmega328</avrdevice>
     <avrdeviceseries>none</avrdeviceseries>
     <OutputType>Executable</OutputType>
     <Language>CPP</Language>
@@ -39,7 +39,8 @@
       </framework-data>
     </AsfFrameworkConfig>
     <avrtoolinterface />
-    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtool>
+    </avrtool>
     <com_atmel_avrdbg_tool_simulator>
       <ToolType xmlns="">com.atmel.avrdbg.tool.simulator</ToolType>
       <ToolName xmlns="">Simulator</ToolName>

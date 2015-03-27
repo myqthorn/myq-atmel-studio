@@ -84,6 +84,7 @@ class NRF {
 		uint8_t waitingForResponse();
 		uint8_t isConnected();
 		uint8_t isBonded();
+		uint8_t isSleeping();
 		uint8_t hasDataToProcess();
 		void	dataHasBeenProcessed();
 		
@@ -177,7 +178,7 @@ class NRF {
 	#define NRF_WAIT_FOR_RESPONSE			4
 	#define NRF_CONNECTED					3
 	#define NRF_BONDED						2
-	//#define NRF_			1
+	#define NRF_SLEEPING					1
 	//#define NRF_			0
 	
 	//modes
