@@ -81,6 +81,7 @@ NRF::NRF(){
 	
 	init();
 	RxCount = 0x00;
+	temperature = 0x00;
 	//mode = 0x00;
 	//set to INIT_MODE and RX_READY
 	//we are waiting for a NRF_EVT_DEVICE_STARTED in NRF_MODE_SETUP
@@ -139,6 +140,7 @@ void NRF::process(void){
 				if (RxData[2]>0)
 					mode = RxData[2];
 				
+				status &= ~(1<<NRF_SLEEPING);
 				
 				//when NRF_CMD_WAKEUP has been called, the NRF_WAIT_FOR_RESPONSE bit in the status register should NOT be cleared
 				//when finishing a NRF_CMD_SETUP, the NRF_WAIT_FOR_RESPONSE bit in the status register SHOULD be cleared
@@ -396,7 +398,9 @@ void NRF::processCommandResponse(){
 			//then a NRF_EVT_COMMAND_RESPONSE with a NRF_CMD_WAKEUP, which brings us here
 			//RxData[3]		: status - better be success
 			//RxData[4]		: none
-		
+			
+			status &= ~(1<<NRF_SLEEPING);
+			
 			//clear the NRF_WAIT_FOR_RESPONSE bit in the status register
 			status &= ~(1<<NRF_WAIT_FOR_RESPONSE);
 			break;
@@ -665,6 +669,7 @@ uint8_t NRF::DTMcommand(uint16_t command){
 }//DTMcommand
 
 uint8_t NRF::sleep(){
+	status |= (1<<NRF_SLEEPING);
 	return (PrepareTxData(NRF_CMD_SLEEP));
 }//sleep
 
@@ -874,6 +879,9 @@ uint8_t NRF::hasDataToProcess(void){
 }
 void	NRF::dataHasBeenProcessed(void){
 	status &= ~(1<<NRF_DATA_TO_PROCESS);
+}
+uint8_t NRF::isSleeping(void){
+	return ((status & (1<<NRF_SLEEPING))?TRUE:FALSE);
 }
 #pragma endregion Status Functions
 

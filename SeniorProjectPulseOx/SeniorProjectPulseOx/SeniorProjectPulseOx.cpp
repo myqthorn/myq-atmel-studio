@@ -143,8 +143,10 @@ int main(void){
 			if(buttonWasPressed){
 				buttonWasPressed = false;
 				if (state == GO2SLEEP){
+					RED_ON; //testing
 					state = WAKEUP;
 				}else{
+					RED_ON;
 					state = GO2SLEEP;
 				}
 			}
@@ -153,8 +155,10 @@ int main(void){
 				case INIT:	//initializing
 					if (!nrf.isInitializing()){
 						timer.start();
-						sei();				
+						sei();	
+						RED_ON;			
 						state = GO2SLEEP;
+						//state = IDLE;
 					}
 #ifdef TESTMODE
 					//display
@@ -228,8 +232,6 @@ int main(void){
 					}	
 					break;
 				case GO2SLEEP:
-					LEDS_OFF;
-					//TODO: shut down opamp
 					SleepOpAmp();
 					//disconnect
 					if (nrf.isConnected())
@@ -237,21 +239,33 @@ int main(void){
 					
 					if (!nrf.isConnected()){
 						//put nrf to sleep
-						nrf.sleep();	
-						//put uC to sleep							
-						SetSleepMode(SLEEP_MODE_POWER_DOWN);
-						EnableSleep();
-						__asm__ __volatile__ ("sleep" ::);
+						//if (!nrf.isSleeping()){
+							//nrf.sleep();
+						//}																
+						//
+						//if (nrf.isSleeping() && !nrf.hasDataToSend()){							
+							LEDS_OFF;
+							//put uC to sleep							
+  							SetSleepMode(SLEEP_MODE_POWER_DOWN);
+  							EnableSleep();
+  							__asm__ __volatile__ ("sleep" ::);
+						//}
 					}
 					break;
 				case WAKEUP:
 					DisableSleep();					
-					RED_ON;
+					
 					//wakeup opamp
 					WakeOpAmp();
 					//wakeup nrf
-					nrf.wakeup();
-					state = CONNECT;
+					//if (nrf.isSleeping() && !nrf.hasDataToSend()){
+						//nrf.wakeup();
+					//}
+					
+					if (!nrf.isSleeping() && !nrf.hasDataToSend()){
+						RED_ON;
+						state = CONNECT;
+					}
 					break;
 				default:
 					//state = idle;

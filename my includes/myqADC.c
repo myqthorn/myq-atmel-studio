@@ -21,6 +21,7 @@ void initADC(uint8_t channel, uint8_t prescalar){
 	
 	//Disable the digital input for the ADC channels we will be using
 	DIDR0 |= (1<<channel);
+	clearADCinterrupt();
 }
 
 void readADC(uint8_t channel){
@@ -29,7 +30,7 @@ void readADC(uint8_t channel){
 	startADC(channel);
 	
 	//wait for conversion to finish (interrupt flag is set)
-	while( !isADCfinished() );
+	while( !isADCflagSet() );
 	
 	clearADCinterrupt();
 }
@@ -42,9 +43,13 @@ void startADC(uint8_t channel){
 	ADCSRA |= (1<<ADSC);
 }
 
-uint8_t isADCfinished(){
-	return ((ADCSRA & (1<<ADSC))?0:1);
-	//return ((ADCSRA & (1<<ADIF)));
+uint8_t isADCgoing(){
+	return ((ADCSRA & (1<<ADSC)));
+}
+
+uint8_t isADCflagSet(){
+	//return ((ADCSRA & (1<<ADSC))?0:1);
+	return ((ADCSRA & (1<<ADIF)));
 }
 
 void clearADCinterrupt(){
