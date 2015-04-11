@@ -15,9 +15,9 @@
 	#define F_CPU 	(8000000L)
 
 	//PulseOx sensor LED's
-	#define IR_ON 		DDRD |= (1<<PD5);PORTD = ((PORTD & ~0xE0)|(1<<PD6)|(1<<PD5))
-	#define RED_ON 		DDRD &= ~(1<<PD5); PORTD = ((PORTD & ~0xC0)|(1<<PD7))
-	#define LEDS_OFF 	PORTD = (PORTD & ~0xE0)
+	#define IR_ON 		DDRD |= (1<<PD5);PORTD = ((PIND & ~0xE0)|(1<<PD6)|(1<<PD5))
+	#define RED_ON 		DDRD &= ~(1<<PD5); PORTD = ((PIND & ~0xC0)|(1<<PD7))
+	#define LEDS_OFF 	DDRD &= ~(1<<PD5); PORTD = (PIND & ~0xE0)
 	
 	//ADC
 	#define ADC_PIN		0

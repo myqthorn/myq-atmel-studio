@@ -105,12 +105,12 @@ int main(void){
 	_delay_ms(500);
 	
 	//d6,d7 - LEDs
-	DDRD = 0xC0;			//set PD7:6 to outputs for LEDs
+	DDRD = 0xE0;			//set PD7:6 to outputs for LEDs
 	//PD2 as an input for switch
 	RED_ON;					//Set PD7 high and PD6 low
-	
+	//while (1);
 	//Switch
-	PORTD |= (1<<PD2);		//set PD2 to high(pullup resistor) for switch
+	PORTD = (1<<PD2);		//set PD2 to high(pullup resistor) for switch
 	
 	//External Interrupt Mask Register
 	EIMSK |= (1<<INT0);	//turn on interrupt 0 (PD2)
@@ -128,6 +128,7 @@ int main(void){
 #ifdef TESTMODE	
 	lcdClearDisplay();
 #endif	
+	RED_ON; //TESTING
 	
 	while(1){		
 		if (nrf.hasDataToProcess()){
@@ -146,7 +147,7 @@ int main(void){
 					RED_ON; //testing
 					state = WAKEUP;
 				}else{
-					RED_ON;
+					RED_ON;					
 					state = GO2SLEEP;
 				}
 			}
@@ -156,9 +157,12 @@ int main(void){
 					if (!nrf.isInitializing()){
 						timer.start();
 						sei();	
-						RED_ON;			
-						state = GO2SLEEP;
-						//state = IDLE;
+						RED_ON;		
+						//this will put it to sleep the first time it boots up	
+						//state = GO2SLEEP;		//FINAL PRODUCT	
+						
+						//this will go straight into connect mode upon boot			
+						state = CONNECT;		//TESTING			
 					}
 #ifdef TESTMODE
 					//display
@@ -239,17 +243,17 @@ int main(void){
 					
 					if (!nrf.isConnected()){
 						//put nrf to sleep
-						//if (!nrf.isSleeping()){
-							//nrf.sleep();
-						//}																
-						//
-						//if (nrf.isSleeping() && !nrf.hasDataToSend()){							
+						if (!nrf.isSleeping()){
+							nrf.sleep();
+						}																
+						
+						if (nrf.isSleeping() && !nrf.hasDataToSend()){							
 							LEDS_OFF;
 							//put uC to sleep							
   							SetSleepMode(SLEEP_MODE_POWER_DOWN);
   							EnableSleep();
   							__asm__ __volatile__ ("sleep" ::);
-						//}
+						}
 					}
 					break;
 				case WAKEUP:
@@ -258,12 +262,11 @@ int main(void){
 					//wakeup opamp
 					WakeOpAmp();
 					//wakeup nrf
-					//if (nrf.isSleeping() && !nrf.hasDataToSend()){
-						//nrf.wakeup();
-					//}
+					if (nrf.isSleeping() && !nrf.hasDataToSend()){
+						nrf.wakeup();
+					}
 					
-					if (!nrf.isSleeping() && !nrf.hasDataToSend()){
-						RED_ON;
+					if (!nrf.isSleeping() && !nrf.hasDataToSend()){						
 						state = CONNECT;
 					}
 					break;
