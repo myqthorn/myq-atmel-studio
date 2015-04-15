@@ -42,7 +42,7 @@ void displayLCD(void){
 //size of pipe in settings.h sets size of queue, which is how many times we read
 //the data before we send
 #define NUM_QUEUE ((PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE-1)/6)
-
+#define SAMPLE_ORDER 0
 NRF nrf;
 
 bool buttonWasPressed = false;
@@ -87,6 +87,8 @@ int main(void){
 	state_t state = INIT;
 	uint8_t oxygenSaturationData[PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE];// = {0,1,2,3,4,5,6};
 	uint8_t count = 0;
+	uint8_t readCount = 0; 
+	uint16_t readSum = 0;
 	uint8_t settings = 0x00;
 	
 #ifdef TESTMODE
@@ -208,30 +210,38 @@ int main(void){
  					
  						if (sensor.isInterruptFlagSet()){
 							sensor.clearFlag();
-							switch(led_state){
-								case I:
-									oxygenSaturationData[6*count+4] = ADCL;
-									oxygenSaturationData[6*count+3] = ADCH;
-									LEDS_OFF;
-									led_state = O;
-									break;
-								case O:
-									oxygenSaturationData[6*count+6] = ADCL;
-									oxygenSaturationData[6*count+5] = ADCH;
-									RED_ON;
-									led_state = R;
-									break;
-								case R:
-									oxygenSaturationData[6*count+2] = ADCL;
-									oxygenSaturationData[6*count+1] = ADCH;
-									IR_ON;
-									led_state = I;
-									if (++count == NUM_QUEUE){
-										count = 0;
-										state = SEND;
-									}
-									break;
-							} //switch(led_state)
+							readSum += ADC;
+							if (++readCount == 1<<SAMPLE_ORDER){
+								readSum>>=SAMPLE_ORDER;
+								switch(led_state){
+									case I:
+										oxygenSaturationData[6*count+4] = readSum & 0xFF;
+										oxygenSaturationData[6*count+3] = readSum >> 8;
+										LEDS_OFF;
+										led_state = O;
+										break;
+									case O:
+										oxygenSaturationData[6*count+6] = readSum & 0xFF;
+										oxygenSaturationData[6*count+5] = readSum >> 8;
+										RED_ON;
+										led_state = R;
+										break;
+									case R:
+										oxygenSaturationData[6*count+2] = readSum & 0xFF;
+										oxygenSaturationData[6*count+1] = readSum >> 8;
+										IR_ON;
+										led_state = I;
+										if (++count == NUM_QUEUE){
+											count = 0;
+											state = SEND;
+										}
+										break;
+								} //switch(led_state)
+							readSum = 0;
+							readCount = 0;
+							}else{	
+							sensor.start();
+							}//if (readCount)
 						} //if (sensor.isInterruptFlagSet())						
 					}	
 					break;
