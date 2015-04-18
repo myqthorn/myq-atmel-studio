@@ -2,8 +2,17 @@
  * SeniorProjectPulseOx.cpp
  *
  * Created: 10/1/2014 6:18:59 PM
- *  Author: myQ
- */ 
+ *  Author: Mike Litster
+	Description: Pulse Oximeter. Transmits 7 bytes via Bluetooth as follows:
+		1: counter
+		2: MSB IR value
+		3: LSB IR value
+		4: MSB Red value
+		5: LSB Red value
+		6: MSB Ambient
+		7: LSB Ambient
+	
+*/	
 #include "HardwareProfile.h"
 
 #ifdef TESTMODE
@@ -37,16 +46,14 @@ void displayLCD(void){
 #include "services.h"
 #include "timer1.h"
 #include "myqADC.h"
-//#include "hal_aci_tl.h"
 
 //size of pipe in settings.h sets size of queue, which is how many times we read
 //the data before we send
 #define NUM_QUEUE ((PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE-1)/6)
 #define SAMPLE_ORDER 0
-NRF nrf;
+NRF nrf;	//bluetooth module
 
 bool buttonWasPressed = false;
-
 
 #pragma region sleep
 
@@ -73,24 +80,25 @@ void SetSleepMode(uint8_t mode){
 int main(void){	
 	//timer
 	// 8MHz/90Hz			= 88,888.8888 cycles to count
-	// 88,888.888 / 8 (div8)	= 11,111 = 0x2B67
-	
+	// 88,888.888 / 8 (div8)	= 11,111 = 0x2B67	
 	//prescalar, mode, reload
 	TIMER1 timer(TIMER_DIV8, 4, 0x2B67);
 	
 	//pin, prescalar
 	ANALOG sensor(ADC_PIN, ADC_DIV64);
 	
-	enum state_t {INIT = 0x00, CONNECT, CONNECTING, SEND, RECEIVE, IDLE, GO2SLEEP, WAKEUP};
+	enum state_t {INIT = 0x00, CONNECT, CONNECTING, SEND, RECEIVE, IDLE, GO2SLEEP, WAKEUP, WAKING};
 	enum lights_t {I,R,O} led_state = R;
 		 
 	state_t state = INIT;
 	uint8_t oxygenSaturationData[PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE];// = {0,1,2,3,4,5,6};
 	uint8_t count = 0;
-	uint8_t readCount = 0; 
-	uint16_t readSum = 0;
-	uint8_t settings = 0x00;
+	uint8_t readCount = 0;	//keeps track of how many times the ADC is read before it is averaged
+	uint16_t readSum = 0;	//sums up the ADC values
+	uint8_t settings = 0x00;	//settings is updated from the Bluetooth, so the Android device can
+								//potentially change the settings
 	
+//in testing, we have a 16x4 character LCD screen
 #ifdef TESTMODE
 	//////////////////////////////////////////////////////////////////////////
 	//LCD initialization
@@ -104,8 +112,7 @@ int main(void){
 	//////////////////////////////////////////////////////////////////////////
 #endif
 	
-	_delay_ms(500);
-	
+	_delay_ms(500);	
 	//d6,d7 - LEDs
 	DDRD = 0xE0;			//set PD7:6 to outputs for LEDs
 	//PD2 as an input for switch
@@ -121,7 +128,7 @@ int main(void){
 	//EICRA = 0x02;		//Interrupt on falling edge of INT0
 	EICRA = 0x00;		//Interrupt on low level of INT0
 	
-	//opamp is Powered Down when PD is low, initialize HIGH?
+	//opamp is Powered Down when PD is low, initialize HIGH
 	//250nS delay when powering up, 50nS delay when powering down (1/8MHz = 125nS)
 	WakeOpAmp();
 	sensor.clearFlag();
@@ -142,19 +149,23 @@ int main(void){
 				state = GO2SLEEP;
 		}
 		
+		//here we change the device's state to sleep or wakeup with a button press
+		//the Bluetooth module's operational state is NRF_MODE_STANDBY
 		if (nrf.mode == NRF_MODE_STANDBY){			
 			if(buttonWasPressed){
 				buttonWasPressed = false;
-				if (state == GO2SLEEP){
-					RED_ON; //testing
+				//RED_ON; //testing
+				if (state == GO2SLEEP){					
 					state = WAKEUP;
-				}else{
-					RED_ON;					
+				}else{				
 					state = GO2SLEEP;
 				}
 			}
 			
 			switch (state){
+				//INIT state is entered into upon bootup,
+				//this is where the Bluetooth initialization instructions are
+				//sent to the module
 				case INIT:	//initializing
 					if (!nrf.isInitializing()){
 						timer.start();
@@ -175,17 +186,19 @@ int main(void){
 					//_delay_ms(25);
 #endif
 					break;				
-					
-				case CONNECT:	//connect
+				//	CONNECT state is used to send the connect command to the BT Module
+				case CONNECT:
+				RED_ON;	
 					if (nrf.connect(180,0x0100) == 0x00)
 						state = CONNECTING;
 					break;				
-				
+				// CONNECTING state is used to wait until the BT module connects
 				case CONNECTING:	
 					if (nrf.isConnected())
 						state = IDLE;
 					break;
-					
+				
+				// SEND state sends the ADC values to the BT module	
 				case SEND:					
 					if (0x00 == nrf.setLocalData(PIPE_OXYGEN_SATURATION_O2_SET, oxygenSaturationData, PIPE_OXYGEN_SATURATION_O2_SET_MAX_SIZE)){						
 						oxygenSaturationData[0]++;									
@@ -193,11 +206,13 @@ int main(void){
 					}					
 					break;
 				
+				//RECEIVE state is used to receive the settings back from the Android device
 				case RECEIVE:
-					nrf.requestData(PIPE_MODIFY_SETTINGS_PULSEOX_SETTING_RX);
+					nrf.requestData(PIPE_MODIFY_SETTINGS_PULSEOX_SETTING_RX);   
 					state = IDLE;
-					break;				
-																
+					break;	
+								
+				//IDLE is where the ADC is read and averaged												
 				case IDLE:		//idle
 					if(!nrf.isConnected()){
 						state = GO2SLEEP;
@@ -245,8 +260,12 @@ int main(void){
 						} //if (sensor.isInterruptFlagSet())						
 					}	
 					break;
+					
+				//Nighty night, little PulseOx don't let the bed bugs bite time to sip some current 
+				//and save some battery. No more gulpin' down those milliamps.
 				case GO2SLEEP:
 					SleepOpAmp();
+					sensor.off();
 					//disconnect
 					if (nrf.isConnected())
 						nrf.disconnect(0x01);
@@ -266,15 +285,28 @@ int main(void){
 						}
 					}
 					break;
+					
+				//good morning, Dear, did you sleep well?
+				//fire up the op amp and BT module
 				case WAKEUP:
 					DisableSleep();					
 					
 					//wakeup opamp
 					WakeOpAmp();
+					sensor.reinitialize();
 					//wakeup nrf
-					if (nrf.isSleeping() && !nrf.hasDataToSend()){
-						nrf.wakeup();
+					//if (nrf.isSleeping() && !nrf.hasDataToSend()){
+						//nrf.wakeup();
+					//}
+					
+					if (nrf.isSleeping()){
+						//clear up any remnants from when we went to sleep
+						nrf.status = (1<<NRF_RX_READY | 1<<NRF_SLEEPING);
+						nrf.wakeup();	
+						state = WAKING;					
 					}
+					break;
+				case WAKING:
 					
 					if (!nrf.isSleeping() && !nrf.hasDataToSend()){						
 						state = CONNECT;
@@ -282,8 +314,7 @@ int main(void){
 					break;
 				default:
 					//state = idle;
-					break;
-					
+					break;					
 			}//switch(state)
 		}//if (nrf.mode == NRF_MODE_STANDBY)
 
@@ -296,10 +327,12 @@ int main(void){
 		if (nrf.mode == NRF_MODE_SETUP)
 			_delay_ms(15);
 #endif			
-		nrf.process();		
+		nrf.process();		//handle all events for BT module
 	}//while 1
 }//main
 
+
+//interrupt on button press
 ISR(INT0_vect){
 	//to debounce switch, wait 5ms, then check for low condition again
 	_delay_ms(5);
