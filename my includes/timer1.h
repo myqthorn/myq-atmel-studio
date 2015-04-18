@@ -1,5 +1,7 @@
 //timer1.h
-
+//Mike Litster
+//Will Eccles
+//use with Timer1 on Atmega168/328
 
 #ifndef _TIMER_1_H
 #define _TIMER_1_H
@@ -43,8 +45,7 @@
 		private:
 			uint8_t		prescalar;
 			uint8_t		mode;
-			uint16_t	reload;
-			
+			uint16_t	reload;			
 		};
 		
 #endif // cplusplus

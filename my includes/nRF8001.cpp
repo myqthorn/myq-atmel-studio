@@ -1,4 +1,7 @@
-﻿
+﻿//nRF8001.cpp
+//Mike Litster 
+//Will Eccles
+//interface with Nordic Semiconductor's nRF8001 Bluetooth IC
 
 #include "nRF8001.h"
 
@@ -22,21 +25,9 @@
 //services.h is a configuration file made with Nordic Semiconductor's nRFgo program
 #include "services.h"
 
-
-//#ifdef PROGMEM
-	//#undef PROGMEM
-	//#define PROGMEM __attribute__(( section(".progmem.data") ))
-//#endif
-
 #define TRUE	1
 #define FALSE	0
 
-//Currently working on :---------------------------------------------------------------------------------------------------------
-//Event Handling 25 Dec
-//Data Command Functions 26 Dec
-//TODO: remove all instances of NRF_INIT_MODE - they should be commented out
-//TODO: set SPI speed high again
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //this came from ble_heart_rate_template.ino-------------------------------------------------
 /*
@@ -71,23 +62,23 @@ static hal_aci_data_t const setup_msgs[NB_SETUP_MESSAGES] = SETUP_MESSAGES_CONTE
 
 SPI spi(SPI_SETTING);
 
-
-//uint8_t initCodes[12][32];
 static uint8_t initCount = 0;
 
-//NRF::NRF(hal_aci_data_t *message){
 NRF::NRF(){
-	//msg = message;
 	
 	init();
 	RxCount = 0x00;
 	temperature = 0x00;
-	//mode = 0x00;
+	
 	//set to INIT_MODE and RX_READY
 	//we are waiting for a NRF_EVT_DEVICE_STARTED in NRF_MODE_SETUP
 	//status |= (1<<NRF_RX_READY | 1<<NRF_INIT_MODE | 1<<NRF_WAIT_FOR_RESPONSE);
 	status |= (1<<NRF_RX_READY | 1<<NRF_WAIT_FOR_RESPONSE);
 }
+
+//this is where the work is done
+//this needs to be called in the main loop
+//all event handling, data transmission are handled here
 void NRF::process(void){	
 	uint8_t i;
 	if (isReadyToReceiveData()){
@@ -610,6 +601,13 @@ uint8_t NRF::PrepareTxData(uint8_t command, uint8_t *data, uint8_t length){
 	return 0x00;	//success
 }//PrepareTxData
 
+///@description Prepares send buffer TxData and sets NRF_TX_READY flag in status buffer. Data will be sent during process() function.
+///@brief Send data from uC to nRF8001
+///@param command command to be sent
+///@param content setting that depends upon command being set
+///@param data points to array of data to be sent
+///@param length Length of data
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::PrepareTxData(uint8_t command, uint8_t content, uint8_t *data, uint8_t length){
 	
 	int i;
@@ -635,6 +633,10 @@ uint8_t NRF::PrepareTxData(uint8_t command, uint8_t content, uint8_t *data, uint
 	return 0x00;	//success
 }//PrepareTxData
 
+///@description Prepares send buffer TxData and sets NRF_TX_READY flag in status buffer. Data will be sent during process() function.
+///@brief Send a simple command to nRF8001
+///@param command command to be sent
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::PrepareTxData(uint8_t command){
 	if (isInitializing())
 		return 0x01;
@@ -668,11 +670,14 @@ uint8_t NRF::DTMcommand(uint16_t command){
 	return (PrepareTxData(NRF_CMD_DTM_COMMAND, localData, 2));
 }//DTMcommand
 
+///@description prepares to send sleep command to nRF
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::sleep(){
 	status |= (1<<NRF_SLEEPING);
 	return (PrepareTxData(NRF_CMD_SLEEP));
 }//sleep
 
+///@description prepares to send wakeup command to nRF
 ///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::wakeup(void){	
 	return (PrepareTxData(NRF_CMD_WAKEUP));
@@ -708,6 +713,10 @@ uint8_t NRF::radioReset(){
 	return (PrepareTxData(NRF_CMD_RADIO_RESET));
 }//
 
+///@description prepares to send connect command to nRF
+///@param timeout	Advertising time in seconds
+///@param advInterval Advertising interval set in periods of 0.625 msec
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::connect(uint16_t timeout, uint16_t advInterval){	
 	//uint8_t localData[4];	
 	//localData[0] = (timeout&0x00FF);	//LSB
@@ -736,6 +745,10 @@ uint8_t NRF::connect(uint16_t timeout, uint16_t advInterval){
 	return 0x00;
 }//
 
+///@description prepares to send bond command to nRF
+///@param timeout	Advertising time in seconds
+///@param advInterval Advertising interval set in periods of 0.625 msec
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::bond(uint16_t timeout, uint16_t advInterval){	
 	uint8_t localData[4];	
 	localData[0] = (timeout&0x00FF);	//LSB
@@ -745,18 +758,37 @@ uint8_t NRF::bond(uint16_t timeout, uint16_t advInterval){
 	return (PrepareTxData(NRF_CMD_BOND, localData, 4));
 }//
 
+///@description prepares to send disconnect command to nRF
+///@param reason code representing reason for disconnnection
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::disconnect(uint8_t reason){
 	return (PrepareTxData(NRF_CMD_DISCONNECT, &reason, 1));
 }//
 
+///@description prepares to send set transmit power command to nRF
+///@param TxPowerLevel	0x00 -18dBm
+///						0x01 -12dBm
+///						0x02 -6 dBm
+///						0x03  0 dBm (Default value)
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::setTxPower(uint8_t TxPowerLevel){
 	return (PrepareTxData(NRF_CMD_SET_TX_POWER, &TxPowerLevel, 1));
 }//
 
+///@description prepares to send change timing request command to nRF
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::changeTimingRequest(){
 return (PrepareTxData(NRF_CMD_CHANGE_TIMING_REQUEST));
 }//
 
+
+//this function not implemented yet
+///@description prepares to send change timing request command to nRF
+///@param intervalMin
+///@param intervalMax
+///@param slaveLatency
+///@param timeout
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::changeTimingRequest(uint16_t intervalMin, uint16_t intervalMax, uint16_t slaveLatency, uint16_t timeout){
 	uint8_t localData[8];	
 	localData[0] = (intervalMin&0x00FF);		//LSB
@@ -770,10 +802,12 @@ uint8_t NRF::changeTimingRequest(uint16_t intervalMin, uint16_t intervalMax, uin
 	return (PrepareTxData(NRF_CMD_CHANGE_TIMING_REQUEST, localData, 8));
 }//
 
+//this function not implemented yet
 uint8_t NRF::openRemotePipe(uint8_t servicePipeNumber){
 	return (PrepareTxData(NRF_CMD_OPEN_REMOTE_PIPE, &servicePipeNumber, 1));
 }//
 
+//this function not implemented yet
 uint8_t NRF::setApplLatency(uint8_t enable, uint16_t latency){
 	uint8_t localData[3];	
 	localData[0] = enable;
@@ -782,19 +816,26 @@ uint8_t NRF::setApplLatency(uint8_t enable, uint16_t latency){
 	return (PrepareTxData(NRF_CMD_SET_APP_LATENCY, localData, 3));
 }//
 
+//this function not implemented yet
 uint8_t NRF::setKey(uint8_t *key){	
 	return (PrepareTxData(NRF_CMD_SET_KEY, 0x01, key, 6));
 }//
 
+//this function not implemented yet
 uint8_t NRF::rejectKey(){
 	uint8_t localData = 0x00;		//reject key request
 	return (PrepareTxData(NRF_CMD_SET_KEY, &localData, 1));
 }//
 
+//this function not implemented yet
 uint8_t NRF::openAdvPipe(uint8_t *pipeBitmap){
 return (PrepareTxData(NRF_CMD_OPEN_ADV_PIPE, pipeBitmap, 8));
 }//
 
+///@description prepares to send broadcast command to nRF
+///@param timeout	Advertising time in seconds
+///@param advInterval Advertising interval set in periods of 0.625 msec
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::broadcast(uint16_t timeout, uint16_t advInterval){
 	uint8_t localData[4];	
 	localData[0] = (timeout&0x00FF);		//LSB
@@ -804,24 +845,33 @@ uint8_t NRF::broadcast(uint16_t timeout, uint16_t advInterval){
 	return (PrepareTxData(NRF_CMD_BROADCAST, localData, 4));
 }//
 
+//this function not implemented yet
 uint8_t NRF::bondSecurityRequest(){
 return (PrepareTxData(NRF_CMD_BOND_SEC_REQUEST));
 }//
 
+//this function not implemented yet
 uint8_t NRF::directedConnect(){
 return (PrepareTxData(NRF_CMD_DIRECT_CONNECT));
 }//
 
+//this function not implemented yet
 uint8_t NRF::closeRemotePipe(uint8_t servicePipeNumber){
 return (PrepareTxData(NRF_CMD_CLOSE_REMOTE_PIPE, &servicePipeNumber, 1));
 }//
 #pragma endregion System Command Functions
 
 #pragma region Data Command Functions
+///@description sends data out on the service pipe specified
+///@param servicePipeNumber index of the service pipe to be used
+///@param data data to put on the pipe
+///@param length number of byte of data
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::setLocalData(uint8_t servicePipeNumber, uint8_t *data, uint8_t length){	
 	return (PrepareTxData(NRF_CMD_SET_LOCAL_DATA, servicePipeNumber, data, length));
 }//
 
+//this function not implemented yet
 uint8_t NRF::sendData(uint8_t servicePipeNumber, uint8_t *data, uint8_t length){
 	uint8_t retVal = PrepareTxData(NRF_CMD_SET_LOCAL_DATA, servicePipeNumber, data, length);
 	if (retVal == 0x00)
@@ -829,6 +879,7 @@ uint8_t NRF::sendData(uint8_t servicePipeNumber, uint8_t *data, uint8_t length){
 	return (retVal);
 }//
 
+//this function not implemented yet
 uint8_t NRF::sendDataAck(uint8_t servicePipeNumber){
 	uint8_t retVal = PrepareTxData(NRF_CMD_SEND_DATA_ACK, &servicePipeNumber, 1);
 	if (retVal == 0x00)
@@ -836,6 +887,9 @@ uint8_t NRF::sendDataAck(uint8_t servicePipeNumber){
 	return (retVal);
 }//
 
+///@description requests data on the service pipe specified
+///@param servicePipeNumber index of the service pipe to be used
+///@returns	error 0x00: success, 0x01: NRF initializing, 0x02: uC has not sent current data to NRF, 0x03: nRF has not responded from last command yet
 uint8_t NRF::requestData(uint8_t servicePipeNumber){
 	uint8_t retVal = PrepareTxData(NRF_CMD_REQUEST_DATA, &servicePipeNumber, 1);
 	if (retVal == 0x00)
@@ -843,6 +897,7 @@ uint8_t NRF::requestData(uint8_t servicePipeNumber){
 	return (retVal);
 }//
 
+//this function not implemented yet
 uint8_t NRF::sendDataNack(uint8_t servicePipeNumber, uint8_t errorCode){
 	uint8_t retVal = PrepareTxData(NRF_CMD_REQUEST_DATA, servicePipeNumber, &errorCode, 1);
 	if (retVal == 0x00)
@@ -855,36 +910,65 @@ uint8_t NRF::sendDataNack(uint8_t servicePipeNumber, uint8_t errorCode){
 #pragma endregion Data Command Functions
 
 #pragma region Status Functions
+///@description checks to see if the nRF is finished initialize
+///@returns TRUE when nRF is in initializing mode, FALSE otherwise
 uint8_t NRF::isInitializing(void){
 	//return ((status & (1<<NRF_INIT_MODE))?TRUE:FALSE);
 	return (mode == NRF_MODE_SETUP);
 }
+
+///@description checks the transmit flag 
+///@returns TRUE when there is data prepared that hasn't been sent
 uint8_t NRF::hasDataToSend(void){
 	return ((status & (1<<NRF_TX_READY))?TRUE:FALSE);
 }
+
+///@description checks the recieve flag
+///@returns FALSE when there is data in the receive buffer to be processed, TRUE otherwise
 uint8_t NRF::isReadyToReceiveData(){
 	return ((status & (1<<NRF_RX_READY))?TRUE:FALSE);
 }
+
+///@description only one command can be sent to the nRF8001 at a time, we have to wait until the nRF responds before
+///					we can send another command. When there is a command sent the flag is set, when the response is 
+///					is recieved, this flag is cleared
+///@returns TRUE when a command has been sent until it is responded to, FALSE otherwise
 uint8_t NRF::waitingForResponse(void){
 	return ((status & (1<<NRF_WAIT_FOR_RESPONSE))?TRUE:FALSE);
 	}
+
+///@description Tells us if the nRF is connected to another BT device
+///@returns	TRUE when we are connected, FALSE otherwise
 uint8_t NRF::isConnected(void){
 	return ((status & (1<<NRF_CONNECTED))?TRUE:FALSE);
 }	
+
+///@description Tells us if we are bonded to another BT device
+///@returns TRUE when bonded, FALSE otherwise
 uint8_t NRF::isBonded(void){
 	return ((status & (1<<NRF_BONDED))?TRUE:FALSE);	
 }
+
+///@description Tells us if the data received from the nRF has been processed
+///@returns TRUE when there is data that has been received and not processed, FALSE otherwise
 uint8_t NRF::hasDataToProcess(void){
 	return ((status & (1<<NRF_DATA_TO_PROCESS))?TRUE:FALSE);
 }
 void	NRF::dataHasBeenProcessed(void){
 	status &= ~(1<<NRF_DATA_TO_PROCESS);
 }
+
+///@description Tells us if we have put the nRF to sleep
+///@returns TRUE when the nRF is sleeping, FALSE otherwise
 uint8_t NRF::isSleeping(void){
 	return ((status & (1<<NRF_SLEEPING))?TRUE:FALSE);
 }
+
 #pragma endregion Status Functions
 
+///@description		Tells us if the command is a system command and therefore needs to wait for a response before sending another command
+///@param command	The command to be inspected
+///@returns			TRUE if the command is a a system command(requiring waiting for a response), FALSE otherwise
 uint8_t	NRF::isSystemCommand(uint8_t command){
 	return ((	command == NRF_CMD_SET_LOCAL_DATA	||
 		command == NRF_CMD_SEND_DATA		||
@@ -892,21 +976,23 @@ uint8_t	NRF::isSystemCommand(uint8_t command){
 		command == NRF_CMD_REQUEST_DATA		||
 		command == NRF_CMD_SEND_DATA_NACK	 )	? FALSE: TRUE);
 }
+
+///@description Lets us know when Service Discovery is complete
+///@returns TRUE when Service Discovery is complete, FALSE otherwise
 uint8_t NRF::isServiceDiscoveryFinished(void){
 	//if bit0 in pipesOpen[0] is set, Service Discovery is complete.
 	return((pipesOpen[0] & 0x01)? TRUE: FALSE);
 	
 }
 
-
+///@description Initializes the microcontroller to interface with the nRF8001 module
 void NRF::init(){
 	//ACT and RDYN set as inputs	
 	ACT_DDR &= ~(1<<ACT_PIN);	
 	RDYN_DDR &= ~(1<<RDYN_PIN);
 	
 	//REQN set as output
-	REQN_DDR |= (1<<REQN_PIN);
-	
+	REQN_DDR |= (1<<REQN_PIN);	
 	
 	//////DON'T KNOW WHY THIS IS CAUSING A PROBLEM********************************************************
 	//set pullup on RDYN
@@ -928,9 +1014,6 @@ Note: The maximum length of a command packet is 32 bytes, including the length b
 be held low if the application controller receives an event and has no message to send to the nRF8001.
 */
 /*
-
-
-
 The application controller receives the ACI event by performing the following procedure:
 1. nRF8001 sets the RDYN pin to ground.
 2. The application controller sets the REQN pin to ground and starts clocking on the SCK pin.
@@ -948,6 +1031,8 @@ application controller.
 The application controller shall always read the length byte from nRF8001 and check if the length is
 greater than 0. If the length is greater than 0 the data on the MISO line shall be read
 */
+
+///@description Sends the data in the TxData buffer and receives data in the RxData buffer
 void NRF::transferACI(void){
 	uint8_t length; 
 	
@@ -1037,10 +1122,14 @@ void NRF::transferACI(void){
 	}//else if(RDYN == 0)	
 	
 }//transferACI()
+
+///@description clears the transmit buffer
 void NRF::clearTxData(){
 	for(int i = 0; i<32; i++) 
 		TxData[i] = 0x00;		
 }
+
+///@description clears the receive buffer
 void NRF::clearRxData(){
 	for(int i = 0; i<32; i++)
 		RxData[i] = 0x00;

@@ -1,3 +1,9 @@
+//nRF8001.h
+//Mike Litster
+//Will Eccles
+//interface with Nordic Semiconductor's nRF8001 Bluetooth IC
+
+
 #ifndef NRF8001_H
 #define NRF8001_H
 
@@ -25,19 +31,15 @@ for example:
 
 */
 
-
-
 class NRF {
 	public:
 		uint8_t data[21]; // byte0 is the pipe it came from
 		uint8_t RxCount;
 		uint16_t temperature;
-		uint16_t version;
-		
+		uint16_t version;		
 		
 		//NRF(hal_aci_data_t *);
-		NRF();	
-		
+		NRF();			
 		
 		//System Command Functions
 		uint8_t test(uint8_t testFeature);
@@ -74,9 +76,7 @@ class NRF {
 		uint8_t sendDataAck(uint8_t servicePipeNumber);
 		uint8_t requestData(uint8_t servicePipeNumber);
 		uint8_t sendDataNack(uint8_t servicePipeNumber, uint8_t errorCode);
-		
-		
-		
+				
 		//Status Functions
 		uint8_t isInitializing();
 		uint8_t hasDataToSend();
@@ -86,7 +86,7 @@ class NRF {
 		uint8_t isBonded();
 		uint8_t isSleeping();
 		uint8_t hasDataToProcess();
-		void	dataHasBeenProcessed();
+		void	dataHasBeenProcessed();		
 		
 		uint8_t	isSystemCommand(uint8_t command);
 		uint8_t isServiceDiscoveryFinished();
@@ -100,11 +100,9 @@ class NRF {
 		uint8_t RxData[32], TxData[32], pipesOpen[8], pipesClosed[8], key[6];
 		
 		uint8_t mode; //
-		uint8_t dataCredit;
-		
+		uint8_t dataCredit;		
 		uint8_t lastCommand;
-		
-			
+					
 		uint8_t PrepareTxData(uint8_t command, uint8_t *data, uint8_t length);
 		uint8_t PrepareTxData(uint8_t command, uint8_t content, uint8_t *data, uint8_t length);
 		uint8_t PrepareTxData(uint8_t command);
